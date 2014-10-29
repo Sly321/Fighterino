@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/images/background">
+        <file>hills_clean.png</file>
+        <file>Background_v_0.4.png</file>
+        <file>forrest.png</file>
+        <file>water.png</file>
+        <file>forrest_clean.png</file>
+    </qresource>
+    <qresource prefix="/images/icons">
+        <file>newgame.jpg</file>
+        <file>icon.png</file>
+        <file>icon2.gif</file>
+    </qresource>
+    <qresource prefix="/sprites">
+        <file>stand.png</file>
+    </qresource>
+</RCC>
