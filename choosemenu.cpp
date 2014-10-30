@@ -10,11 +10,12 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     pushButtonBack = new QPushButton("Back", this);
     rectChoose = new QPushButton(this);
 
-
+    faceTemplate.load(":/sprites/template/face.bmp");
+    faceTemplate = faceTemplate.scaled(100,100, Qt::KeepAspectRatio);
 
     icon1.load(":/images/icons/icon.png");
     icon2.load(":/images/icons/icon2.gif");
-    rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: green; border-style: outset;}");
+    rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
 
     QRect *rectofbla = new QRect(25,25,25,25);
     size_t offset = rectofbla->x() * icon1.depth() / 8 + rectofbla->y() * icon1.bytesPerLine();
@@ -56,7 +57,7 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     /* Animation for the States */
     animation = new QPropertyAnimation(rectChoose, "geometry");
     animation->setDuration(300);    // ANIMATIONS DURATION
-    animation->setEasingCurve(QEasingCurve::OutElastic); // ANIMATIONS ... ANIMATION
+    animation->setEasingCurve(QEasingCurve::OutExpo); // ANIMATIONS ... ANIMATION
 
     /* Topleft Right */
     tlr = topleft->addTransition(this, SIGNAL(right()), top);
@@ -156,9 +157,9 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 
     machine->start();
 
-    connect(pushButtonBack, SIGNAL(clicked()), this, SLOT(backToStartmenu()));
+    //connect(pushButtonBack, SIGNAL(clicked()), this, SLOT(backToStartmenu()));
 
-    connect(machine, SIGNAL(entered()), this, SLOT(selected()));
+    connect(top, SIGNAL(entered()), this, SLOT(selected()));
 }
 
 void ChooseMenu::paintEvent(QPaintEvent *e) {
@@ -167,6 +168,7 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     painter.drawImage(245,145, icon1);
     painter.drawImage(350,145, icon2);
     painter.drawImage(455, 145, icon3);
+    painter.drawImage(245, 250, faceTemplate);
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
             int posX = 245 + (100 * x) + (5 * x);
@@ -178,9 +180,8 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     QPen pen(QBrush(Qt::green), 2);
 
     painter.setPen(pen);
-
-
-    painter.drawText(QRect(245, 460, 310, 100), selectedString, QTextOption(Qt::AlignCenter));
+    qDebug() << "Painting now";
+    painter.drawText(QRect(245, 460, 310, 100), "Dies " + selectedString, QTextOption(Qt::AlignCenter));
 }
 
 void ChooseMenu::keyPressEvent(QKeyEvent *e) {
@@ -216,4 +217,5 @@ void ChooseMenu::backToStartmenu() {
 void ChooseMenu::selected() {
     selectedString = "Top";
     qDebug() << "selected() called";
+    this->update();
 }

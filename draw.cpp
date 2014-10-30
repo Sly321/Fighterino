@@ -1,11 +1,12 @@
 #include "draw.h"
 
+
 Draw::Draw(QWidget *parent) : QWidget(parent)
 {
     /* Bools initialization */
     showFps = false;
 
-    character = new Character();
+    character = new Character(1);
 
     parentWindow = parent;
 
@@ -46,7 +47,6 @@ void Draw::paintEvent(QPaintEvent *e) {
 
     QRect rect(xpos, ypos, 80, 60);
 
-
     QPainter textPainter(this);
     textPainter.setPen(QPen(Qt::darkGreen));
     textPainter.setBrush(QBrush(Qt::darkGreen));
@@ -79,17 +79,70 @@ void Draw::paintEvent(QPaintEvent *e) {
 
     i++;
 
+    QBrush uiBg(Qt::blue, Qt::Dense4Pattern);
+    textPainter.setBrush(uiBg);
+    textPainter.drawRect(0, 0, 800, 200);
+    //textPainter.setBrush(nobrush);
+
     textPainter.setPen(QPen(Qt::red));
     textPainter.setBrush(QBrush(Qt::yellow));
 
     if(showFps) { textPainter.drawText(QRect(700,0,80,20), "FPS: " + QString::number(fpsInt)); }
 
-
-
     textPainter.drawImage(character->getX(), character->getY(), character->getChar());
     textPainter.drawRect(animRect);
     textPainter.drawText(animRect, "X", QTextOption(Qt::AlignCenter));
 
+
+    /* LEFT PICTURE / HEALTH / MANA */
+    textPainter.setPen(QPen(Qt::gray));
+    textPainter.setBrush(QBrush(Qt::black));
+    textPainter.drawRect(QRect(10,10,205,50));      // Background
+
+    textPainter.setPen(QPen(Qt::white));
+    textPainter.setBrush(QBrush(Qt::darkMagenta));
+    textPainter.drawRect(QRect(15,15,40,40));       // Picture Character
+
+    textPainter.setPen(QPen(Qt::darkRed));
+    textPainter.setBrush(QBrush(Qt::darkRed));
+    textPainter.drawRect(QRect(60,15,150,15)); // Healthbar All
+    textPainter.setBrush(QBrush(Qt::red));
+    textPainter.drawRect(QRect(60,15,character->getLife(),15)); // Healthbar Current
+    textPainter.setPen(QPen(Qt::white));
+    textPainter.drawText(QRect(60,15,150,15), QString::number(character->getLife()) + " / 150", QTextOption(Qt::AlignCenter)); // Healthtext
+
+    textPainter.setPen(QPen(Qt::darkBlue));
+    textPainter.setBrush(QBrush(Qt::darkBlue));
+    textPainter.drawRect(QRect(60,40,150,15)); // Manabar All
+    textPainter.setBrush(QBrush(Qt::blue));
+    textPainter.drawRect(QRect(60,40,character->getMana(),15)); // Manabar Current
+    textPainter.setPen(QPen(Qt::white));
+    textPainter.drawText(QRect(60,40,150,15), QString::number(character->getMana()) + " / 150", QTextOption(Qt::AlignCenter)); // Manatext
+
+    /* RIGHT PICTURE / HEALTH / MANA */
+    textPainter.setPen(QPen(Qt::gray));
+    textPainter.setBrush(QBrush(Qt::black));
+    textPainter.drawRect(QRect(585, 10, 205, 50));      // Background
+
+    textPainter.setPen(QPen(Qt::white));
+    textPainter.setBrush(QBrush(Qt::darkMagenta));
+    textPainter.drawRect(QRect(745, 15, 40, 40));       // Picture Character
+
+    textPainter.setPen(QPen(Qt::darkRed));
+    textPainter.setBrush(QBrush(Qt::darkRed));
+    textPainter.drawRect(QRect(590, 15, 150, 15)); // Healthbar All
+    textPainter.setBrush(QBrush(Qt::red));
+    textPainter.drawRect(QRect(590, 15, character->getLife(), 15)); // Healthbar Current
+    textPainter.setPen(QPen(Qt::white));
+    textPainter.drawText(QRect(590, 15, 150, 15), QString::number(character->getLife()) + " / 150", QTextOption(Qt::AlignCenter)); // Healthtext
+
+    textPainter.setPen(QPen(Qt::darkBlue));
+    textPainter.setBrush(QBrush(Qt::darkBlue));
+    textPainter.drawRect(QRect(590, 40, 150, 15)); // Manabar All
+    textPainter.setBrush(QBrush(Qt::blue));
+    textPainter.drawRect(QRect(590, 40, character->getMana(), 15)); // Manabar Current
+    textPainter.setPen(QPen(Qt::white));
+    textPainter.drawText(QRect(590, 40, 150, 15), QString::number(character->getMana()) + " / 150", QTextOption(Qt::AlignCenter)); // Manatext
 }
 
 void Draw::moveRight() {

@@ -2,31 +2,19 @@
 
 Fighterino::Fighterino(QWidget *parent)
 {
-    QGraphicsScene scene;
-    scene.addRect(QRectF(0, 0, 100, 200), QPen(Qt::black), QBrush(Qt::green));
-
-    this->setWindowTitle("QKeyCollide");
+    this->setWindowTitle("Fighterino");
     this->setMinimumSize(QSize(800, 600));
-    //this->setStyleSheet("QWidget { opacity: 10; }");
 
     windows = new QStackedWidget(this);
-    startmenu = new StartMenu();
-
-    QWidget *test2 = new QWidget();
-
-    QLabel *label2 = new QLabel("Test2\nIn the terminal, you can also see all keys i registered.");
-    QVBoxLayout *test2Layout = new QVBoxLayout;
-    test2Layout->addWidget(label2);
-    test2->setLayout(test2Layout);
-
+    startmenu = new StartMenu(this);
     drawWidget = new Draw(this);
     chooseMenu = new ChooseMenu(this);
+    QWidget *test2 = new QWidget();
 
     windows->addWidget(startmenu);
     windows->addWidget(test2);
     windows->addWidget(drawWidget);
     windows->addWidget(chooseMenu);
-
     windows->setGeometry(QRect(0,0,800,600));
 
     QVBoxLayout *wdg1 = new QVBoxLayout;
@@ -40,7 +28,7 @@ Fighterino::Fighterino(QWidget *parent)
     this->setLayout(mainLayout);
     this->setFixedSize(800,600);
 
-    connect(chat, SIGNAL(setCurrent(int)), windows, SLOT(setCurrentIndex(int)));
+    connect(chat, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
     connect(startmenu, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
     connect(chooseMenu, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
 }
@@ -222,11 +210,19 @@ void Fighterino::keyReleaseEvent(QKeyEvent *e) {
 }
 
 void Fighterino::setChooseMenu(int selected) {
-    qDebug() << "SLOT setChooseMenu() in QKeyCollide";
+    qDebug() << "SLOT setChooseMenu() in Fighterino.cpp";
     switch (selected) {
     case START_MENU:
         windows->setCurrentIndex(START_MENU);
         this->setFocus();
+        break;
+    case OPTIONS_MENU:
+        windows->setCurrentIndex(OPTIONS_MENU);
+        this->setFocus();
+        break;
+    case STAGE_WINDOW:
+        windows->setCurrentIndex(STAGE_WINDOW);
+        drawWidget->setFocus();
         break;
     case CHAMP_SELECT:
         windows->setCurrentIndex(CHAMP_SELECT);

@@ -37,8 +37,8 @@ void Chat::hideChat() {
             emit setCurrent(1);
         } else if (line->text() == "/3") {
             emit setCurrent(2);
-        } else if (line->text() == "/fps") {
-            //parent->drawWidget->setFpsVisible(!drawWidget->isFpsVisible());
+        } else if (line->text() == "/4") {
+            emit setCurrent(3);
         } else if (line->text() == "/quit") {
             parent->close();
         } else if (line->text() == "/help") {

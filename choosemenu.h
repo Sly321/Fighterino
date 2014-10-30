@@ -15,6 +15,7 @@ private:
     QImage icon2;
     QImage icon3;
     QImage icon4;
+    QImage faceTemplate;
 
     QWidget *parentWindow;
     QPushButton *pushButtonBack;

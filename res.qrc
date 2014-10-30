@@ -14,4 +14,7 @@
     <qresource prefix="/sprites">
         <file>stand.png</file>
     </qresource>
+    <qresource prefix="/sprites/template">
+        <file>face.bmp</file>
+    </qresource>
 </RCC>

@@ -5,6 +5,7 @@
 
 StartMenu::StartMenu(QWidget *parent) : QWidget(parent), ui(new Ui::StartMenu)
 {
+    this->parent = parent;
     countAnimation = 0;
     timerUpdate = new QTimer(this);
     connect(timerUpdate, SIGNAL(timeout()), this, SLOT(update()));
@@ -55,4 +56,9 @@ void StartMenu::on_pushButton_6_clicked()
 {
     qDebug() << "Emit setCurrent(3) from startmenu.cpp";
     emit setCurrent(3);
+}
+
+void StartMenu::on_pushButton_3_clicked()
+{
+    parent->close();
 }

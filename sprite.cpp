@@ -20,6 +20,7 @@ QImage Sprite::getImage(int sequence) {
     } else {
         return bild;
     }
-
 }
+
+//void Sprite::paint(Q)
 

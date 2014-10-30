@@ -1,10 +1,12 @@
 #include "character.h"
 
-Character::Character(QObject *parent) : QObject(parent)
+Character::Character(int a, QObject *parent) : QObject(parent)
 {
+    life = 15;
+    mana = 75;
     option = 1;
     timer = new QTimer();
-    timer->setInterval(50);
+    timer->setInterval(120);
     connect(timer, SIGNAL(timeout()), this, SLOT(count()));
 
     timer->start();
@@ -31,6 +33,14 @@ int Character::getX() {
 
 int Character::getY() {
     return yPos;
+}
+
+int Character::getLife() {
+    return life;
+}
+
+int Character::getMana() {
+    return mana;
 }
 
 void Character::count() {

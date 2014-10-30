@@ -29,6 +29,8 @@ public slots:
 private slots:
     void on_pushButton_6_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::StartMenu *ui;
     QRect text;
@@ -36,6 +38,7 @@ private:
     QRect title;
     QTimer *timerUpdate;
     int countAnimation;
+    QWidget *parent;
 
 protected:
     void paintEvent(QPaintEvent *e);
