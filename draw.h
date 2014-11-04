@@ -3,6 +3,7 @@
 
 #include <QtWidgets>
 #include "character.h"
+#include "sprite.h"
 
 class Draw : public QWidget
 {
@@ -45,6 +46,7 @@ private:
     QTimer *seconds;
     QPropertyAnimation *animation;
     QWidget *parentWindow;
+    Sprite *bigBang;
 
 protected:
     void paintEvent(QPaintEvent *e);

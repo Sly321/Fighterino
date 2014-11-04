@@ -6,6 +6,9 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
     /* Bools initialization */
     showFps = false;
 
+    bigBang = new Sprite(QImage(":/sprites/bigbang.bmp"));
+
+
     character = new Character(1);
 
     parentWindow = parent;
@@ -81,7 +84,7 @@ void Draw::paintEvent(QPaintEvent *e) {
 
     QBrush uiBg(Qt::blue, Qt::Dense4Pattern);
     textPainter.setBrush(uiBg);
-    textPainter.drawRect(0, 0, 800, 200);
+    textPainter.drawRect(0, 0, 800, 100);
     //textPainter.setBrush(nobrush);
 
     textPainter.setPen(QPen(Qt::red));
@@ -143,6 +146,8 @@ void Draw::paintEvent(QPaintEvent *e) {
     textPainter.drawRect(QRect(590, 40, character->getMana(), 15)); // Manabar Current
     textPainter.setPen(QPen(Qt::white));
     textPainter.drawText(QRect(590, 40, 150, 15), QString::number(character->getMana()) + " / 150", QTextOption(Qt::AlignCenter)); // Manatext
+
+    textPainter.drawImage(300,180, bigBang->getImage(320,320,(i % 12)+1));
 }
 
 void Draw::moveRight() {
@@ -179,7 +184,7 @@ int Draw::fps() {
 }
 
 void Draw::setFpsVisible(bool b) {
-    qDebug() << "Fps visible: " + b;
+    qDebug() << "Fps visible: ";
     showFps = b;
 }
 

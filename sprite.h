@@ -9,6 +9,7 @@ public:
     Sprite(QImage bild);
     QImage getImage();
     QImage getImage(int sequence);
+    QImage getImage(int x, int y, int sequence);
 
 private:
     QImage bild;

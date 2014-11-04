@@ -76,7 +76,15 @@ public slots:
 
 private slots:
     void backToStartmenu();
-    void selected();
+    void selectedTopleft();
+    void selectedTop();
+    void selectedTopright();
+    void selectedMidleft();
+    void selectedMid();
+    void selectedMidright();
+    void selectedBotleft();
+    void selectedBot();
+    void selectedBotright();
 
 protected:
     void paintEvent(QPaintEvent *e);

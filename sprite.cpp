@@ -22,5 +22,15 @@ QImage Sprite::getImage(int sequence) {
     }
 }
 
-//void Sprite::paint(Q)
+QImage Sprite::getImage(int x, int y, int sequence) {
+    // 320 x 320
+    int anzahlSpalten = this->x / x;
+    int anzahlZeilen = this->y / y;
+    if (sequence <= anzahlSpalten) {
+
+    }
+    QRect rect(x * ((sequence-1) % anzahlSpalten), y * ((sequence-1) / anzahlSpalten), x, y);
+    return QImage(bild.copy(rect));
+}
+
 

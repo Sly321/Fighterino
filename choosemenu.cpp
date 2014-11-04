@@ -159,7 +159,15 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 
     //connect(pushButtonBack, SIGNAL(clicked()), this, SLOT(backToStartmenu()));
 
-    connect(top, SIGNAL(entered()), this, SLOT(selected()));
+    connect(topleft, SIGNAL(entered()), this, SLOT(selectedTopleft()));
+    connect(top, SIGNAL(entered()), this, SLOT(selectedTop()));
+    connect(topright, SIGNAL(entered()), this, SLOT(selectedTopright()));
+    connect(midleft, SIGNAL(entered()), this, SLOT(selectedMidleft()));
+    connect(mid, SIGNAL(entered()), this, SLOT(selectedMid()));
+    connect(midright, SIGNAL(entered()), this, SLOT(selectedMidright()));
+    connect(botleft, SIGNAL(entered()), this, SLOT(selectedBotleft()));
+    connect(bot, SIGNAL(entered()), this, SLOT(selectedBot()));
+    connect(botright, SIGNAL(entered()), this, SLOT(selectedBotright()));
 }
 
 void ChooseMenu::paintEvent(QPaintEvent *e) {
@@ -214,8 +222,47 @@ void ChooseMenu::backToStartmenu() {
     emit setCurrent(0);
 }
 
-void ChooseMenu::selected() {
+void ChooseMenu::selectedTopleft() {
+    selectedString = "Topleft";
+    this->update();
+}
+
+void ChooseMenu::selectedTop() {
     selectedString = "Top";
-    qDebug() << "selected() called";
+    this->update();
+}
+
+void ChooseMenu::selectedTopright() {
+    selectedString = "Topright";
+    this->update();
+}
+
+void ChooseMenu::selectedMidleft() {
+    selectedString = "Midleft";
+    this->update();
+}
+
+void ChooseMenu::selectedMid() {
+    selectedString = "Mid";
+    this->update();
+}
+
+void ChooseMenu::selectedMidright() {
+    selectedString = "Midright";
+    this->update();
+}
+
+void ChooseMenu::selectedBotleft() {
+    selectedString = "Botleft";
+    this->update();
+}
+
+void ChooseMenu::selectedBot() {
+    selectedString = "Bot";
+    this->update();
+}
+
+void ChooseMenu::selectedBotright() {
+    selectedString = "Botright";
     this->update();
 }

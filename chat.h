@@ -15,6 +15,7 @@ public:
     void showOnlyChat();
     void hideOnlyChat();
 
+
 signals:
     void setCurrent(int a);
 

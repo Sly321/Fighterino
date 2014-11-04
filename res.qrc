@@ -13,6 +13,7 @@
     </qresource>
     <qresource prefix="/sprites">
         <file>stand.png</file>
+        <file>bigbang.bmp</file>
     </qresource>
     <qresource prefix="/sprites/template">
         <file>face.bmp</file>
