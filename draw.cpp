@@ -97,18 +97,22 @@ void Draw::keyPressEvent(QKeyEvent *e) {
     case Qt::Key_0:
         qDebug() << "keyPressEvent: 0 in Draw";
         break;
-    case Qt::Key_1:
-        qDebug() << "keyPressEvent: 1 in Draw";
+    case Qt::Key_Escape:
+        qDebug() << "keyPressEvent: Escape in Draw";
         parentWindow->setFocus();
         qDebug() << "Focus switched to ParentWidget";
         break;
-    case Qt::Key_Right:
-        qDebug() << "keyPressEvent: Right in Draw";
+    case Qt::Key_D:
+        qDebug() << "keyPressEvent: D in Draw";
         character->moveRight(true);
         break;
-    case Qt::Key_Left:
-        qDebug() << "keyPressEvent: Left in Draw";
+    case Qt::Key_A:
+        qDebug() << "keyPressEvent: A in Draw";
         character->moveLeft(true);
+        break;
+    case Qt::Key_S:
+        qDebug() << "keyPressEvent: S in Draw";
+        character->setCrouch(true);
         break;
     case Qt::Key_Space:
         qDebug() << "keyPressEvent: Space in Draw";
@@ -119,13 +123,17 @@ void Draw::keyPressEvent(QKeyEvent *e) {
 
 void Draw::keyReleaseEvent(QKeyEvent *e) {
     switch (e->key()) {
-    case Qt::Key_Right:
-        qDebug() << "keyReleaseEvent: Right in Draw";
+    case Qt::Key_D:
+        qDebug() << "keyReleaseEvent: D in Draw";
         character->moveRight(false);
         break;
-    case Qt::Key_Left:
-        qDebug() << "keyReleaseEvent: Left in Draw";
+    case Qt::Key_A:
+        qDebug() << "keyReleaseEvent: A in Draw";
         character->moveLeft(false);
+        break;
+    case Qt::Key_S:
+        qDebug() << "keyReleaseEvent: S in Draw";
+        character->setCrouch(false);
         break;
     }
 }

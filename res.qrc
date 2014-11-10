@@ -21,5 +21,10 @@
     <qresource prefix="/character/template">
         <file>walk.png</file>
         <file>stand.png</file>
+        <file>jump.png</file>
+        <file>crouch.png</file>
+    </qresource>
+    <qresource prefix="/character/misc">
+        <file>shadow.png</file>
     </qresource>
 </RCC>
