@@ -18,4 +18,8 @@
     <qresource prefix="/sprites/template">
         <file>face.bmp</file>
     </qresource>
+    <qresource prefix="/character/template">
+        <file>walk.png</file>
+        <file>stand.png</file>
+    </qresource>
 </RCC>

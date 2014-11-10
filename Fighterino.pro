@@ -20,7 +20,10 @@ SOURCES += main.cpp\
     choosemenu.cpp \
     sprite.cpp \
     character.cpp \
-    fighterino.cpp
+    fighterino.cpp \
+    drawobject.cpp \
+    background.cpp \
+    interface.cpp
 
 HEADERS  += \
     draw.h \
@@ -30,7 +33,10 @@ HEADERS  += \
     definitions.h \
     sprite.h \
     character.h \
-    fighterino.h
+    fighterino.h \
+    drawobject.h \
+    background.h \
+    interface.h
 
 FORMS    += \
     startmenu.ui

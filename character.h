@@ -9,15 +9,20 @@
 class Character : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit Character(int a, QObject *parent = 0);
-    QImage getChar();
+    explicit Character(int _option, QObject *parent = 0);
+    void drawChar(QPainter *p);
     int getX();
     int getY();
     int getLife();
     int getMana();
 
 private:
+    bool walkingLeft;
+    bool walkingRight;
+    bool standing;
+
     int option;
     int xPos;
     int yPos;
@@ -25,6 +30,8 @@ private:
     Sprite *stand;
     Sprite *walk;
     Sprite *jump;
+    Sprite *crouch;
+
     QTimer *timer;
 
     int life;
@@ -33,9 +40,13 @@ private:
 signals:
 
 public slots:
+    void moveRight(bool value);
+    void moveLeft(bool value);
 
 private slots:
     void count();
+    void calculate();
+
 
 };
 

@@ -51,7 +51,7 @@ void Fighterino::keyPressEvent(QKeyEvent *e) {
     case Qt::Key_3:
         qDebug() << "keyPressEvent: 3";
         windows->setCurrentIndex(2);
-        //drawWidget->setFocus();
+        drawWidget->setFocus();
         qDebug() << "Focus switched to Window 3";
         break;
     case Qt::Key_4:
@@ -76,19 +76,15 @@ void Fighterino::keyPressEvent(QKeyEvent *e) {
         /* Arrow Keys */
     case Qt::Key_Left:
         qDebug() << "keyPressEvent: left";
-        drawWidget->moveLeft();
         break;
     case Qt::Key_Right:
         qDebug() << "keyPressEvent: right";
-        drawWidget->moveRight();
         break;
     case Qt::Key_Down:
         qDebug() << "keyPressEvent: down";
-        drawWidget->moveDown();
         break;
     case Qt::Key_Up:
         qDebug() << "keyPressEvent: up";
-        drawWidget->moveUp();
         break;
 
         /* Alphabetic Keys */
