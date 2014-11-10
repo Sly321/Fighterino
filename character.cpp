@@ -5,7 +5,8 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     walkingLeft = false;
     walkingRight = false;
     standing = false;
-    jump = false;
+    jumping = false;
+    jumpingRight = false;
 
     life = 15;
     mana = 75;
@@ -72,7 +73,12 @@ void Character::moveLeft(bool value) {
 }
 
 void Character::jumpUp(bool value) {
-    jump = value;
+    if(walkingRight) {
+        jumpingRight = true;
+    } else {
+        jumping = value;
+    }
+
 }
 
 // integrate moveLeftDone etc.
@@ -81,23 +87,28 @@ void Character::jumpUp(bool value) {
  *
  * @brief Character::calculate
  */
-void Character::calculate() {
-    if(walkingRight) {
+void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abfrage
+    if(jumpingRight) {
+        if (jumpYPos >= -90) {
+            jumpYPos -= 4;
+            xPos += 4;
+        } else {
+            jumpingRight = false;
+        }
+    } else if(jumping) {
+        if (jumpYPos >= -90) {
+            jumpYPos -= 4;
+            xPos += 4;
+        } else {
+            jumping = false;
+        }
+    } else if (!jumping && jumpYPos < 0) {
+        jumpYPos += 4;
+    } else if(walkingRight) {
         xPos = xPos + 2;
     } else if (walkingLeft) {
         xPos = xPos - 2;
     }
-
-    if(jump) { //WENN LEERTASTE GEDRÜCKT LUTSCHT ER SCHWÄNZE
-        if (jumpYPos >= -90) {
-            jumpYPos -= 4;
-        } else {
-            jump = false;
-        }
-    } else if (!jump && jumpYPos < 0) {
-        jumpYPos += 4;
-    }
-
 }
 
 

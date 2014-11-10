@@ -22,9 +22,9 @@ private:
     bool walkingLeft;
     bool walkingRight;
     bool standing;
-    bool jump;
-    bool jumpRight;
-    bool jumpLeft;
+    bool jumping;
+    bool jumpingRight;
+    bool jumpingLeft;
 
     int option;
     int xPos;
