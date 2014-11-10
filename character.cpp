@@ -5,6 +5,7 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     walkingLeft = false;
     walkingRight = false;
     standing = false;
+    jump = false;
 
     life = 15;
     mana = 75;
@@ -17,6 +18,7 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
 
     xPos = 50;
     yPos = 300;
+    jumpYPos = 0;
 
     switch(option) {
     case 1:
@@ -35,9 +37,9 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
 void Character::drawChar(QPainter *p) {
     calculate();
     if (!walkingRight) {
-        p->drawImage(xPos, yPos, stand->getImage(imageSequence % 4));
+        p->drawImage(xPos, yPos + jumpYPos, stand->getImage(imageSequence % 4));
     } else if (walkingRight){
-        p->drawImage(xPos, yPos, walk->getImage(imageSequence % 6));
+        p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
     }
 }
 
@@ -69,6 +71,10 @@ void Character::moveLeft(bool value) {
     walkingLeft = value;
 }
 
+void Character::jumpUp(bool value) {
+    jump = value;
+}
+
 // integrate moveLeftDone etc.
 
 /**Calculates the position of the Caracter
@@ -81,6 +87,17 @@ void Character::calculate() {
     } else if (walkingLeft) {
         xPos = xPos - 2;
     }
+
+    if(jump) { //WENN LEERTASTE GEDRÜCKT LUTSCHT ER SCHWÄNZE
+        if (jumpYPos >= -90) {
+            jumpYPos -= 4;
+        } else {
+            jump = false;
+        }
+    } else if (!jump && jumpYPos < 0) {
+        jumpYPos += 4;
+    }
+
 }
 
 

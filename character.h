@@ -22,14 +22,18 @@ private:
     bool walkingLeft;
     bool walkingRight;
     bool standing;
+    bool jump;
+    bool jumpRight;
+    bool jumpLeft;
 
     int option;
     int xPos;
     int yPos;
+    int jumpYPos;
     int imageSequence;
     Sprite *stand;
     Sprite *walk;
-    Sprite *jump;
+    //Sprite *jump;
     Sprite *crouch;
 
     QTimer *timer;
@@ -42,6 +46,7 @@ signals:
 public slots:
     void moveRight(bool value);
     void moveLeft(bool value);
+    void jumpUp(bool value);
 
 private slots:
     void count();

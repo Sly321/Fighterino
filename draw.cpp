@@ -110,6 +110,10 @@ void Draw::keyPressEvent(QKeyEvent *e) {
         qDebug() << "keyPressEvent: Left in Draw";
         character->moveLeft(true);
         break;
+    case Qt::Key_Space:
+        qDebug() << "keyPressEvent: Space in Draw";
+        character->jumpUp(true);
+        break;
     }
 }
 
