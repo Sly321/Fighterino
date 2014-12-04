@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     fighterino.cpp \
     drawobject.cpp \
     background.cpp \
-    interface.cpp
+    uioverlay.cpp \
+    choosebackground.cpp
 
 HEADERS  += \
     draw.h \
@@ -36,7 +37,8 @@ HEADERS  += \
     fighterino.h \
     drawobject.h \
     background.h \
-    interface.h
+    uioverlay.h \
+    choosebackground.h
 
 FORMS    += \
     startmenu.ui

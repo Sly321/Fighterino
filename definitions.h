@@ -8,5 +8,6 @@ Menu windows defines for setCurrentWidget(int);
 #define OPTIONS_MENU 1
 #define STAGE_WINDOW 2
 #define CHAMP_SELECT 3
+#define BG_SELECT    4
 
 #endif // DEFINITIONS_H

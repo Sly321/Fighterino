@@ -5,23 +5,22 @@
 #include "character.h"
 #include "drawobject.h"
 #include "background.h"
-#include "interface.h"
+#include "uioverlay.h"
 
 class Draw : public QWidget
 {
     Q_OBJECT
 
-    Q_PROPERTY(QRect q_animRect MEMBER animRect READ getAnimRect WRITE setAnimRect)
 public:
     explicit Draw(QWidget *parent = 0);
     void setFpsVisible(bool b);
     bool isFpsVisible();
-    void setAnimRect(QRect rect) { animRect = rect; }
-    QRect getAnimRect() { return animRect; }
-    void f_animation();
-    void e_animation();
+    void load(int character, int background);
 
 signals:
+    void chatSignal();
+    void showOnlyChat();
+    void hideOnlyChat();
 
 public slots:
     int fps();
@@ -29,7 +28,7 @@ public slots:
 private:
     Character *character;
     Background *background;
-    Interface *interface;
+    UIOverlay *interface;
 
     QRect animRect;
     bool showFps;

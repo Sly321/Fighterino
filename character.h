@@ -27,18 +27,21 @@ private:
     bool jumpingRight;
     bool jumpingLeft;
     bool crouching;
+    bool punching;
 
     int option;
     int xPos;
     int yPos;
     int jumpYPos;
     int imageSequence;
+    int punchCount;
 
     QImage shadow;
     Sprite *stand;
     Sprite *walk;
     Sprite *jump;
     Sprite *crouch;
+    Sprite *imgPunch;
 
     QTimer *timer;
 
@@ -52,11 +55,11 @@ public slots:
     void moveLeft(bool value);
     void jumpUp(bool value);
     void setCrouch(bool value);
+    void punch();
 
 private slots:
     void count();
     void calculate();
-    //void charXPosition(int increment);
 
 };
 

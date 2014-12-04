@@ -6,11 +6,15 @@ Chat::Chat(QWidget *parent) : QWidget(parent)
     line->setVisible(false);
     line->setStyleSheet("QLineEdit { background-color: rgba(0,0,0, 70%); color: white; }");
 
+    connect(line, SIGNAL(returnPressed()), this, SLOT(signal()));
+
     chat = new QTextEdit;
     chat->setStyleSheet("QTextEdit { background-color: rgba(0,0,0, 70%); color: white; }");
     chat->setVisible(false);
     chat->setReadOnly(true);
     chat->setText("Welcome! This is the Chat.cpp, enjoy!");
+
+    chat->focusPolicy();
 
     QVBoxLayout *chatLayout = new QVBoxLayout;
     chatLayout->addWidget(chat);
@@ -52,11 +56,11 @@ void Chat::hideChat() {
         qDebug() << "hideChat()";
         line->setVisible(false);
         chat->setVisible(false);
-        parent->setFocus();
+        emit setFocusTo(2);
     }
 }
 
-void Chat::singnal() {
+void Chat::signal() {
     if(line->isVisible()) {
         hideChat();
     } else {

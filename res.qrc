@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/images/background">
         <file>hills_clean.png</file>
-        <file>Background_v_0.4.png</file>
         <file>forrest.png</file>
         <file>water.png</file>
         <file>forrest_clean.png</file>
@@ -23,6 +22,7 @@
         <file>stand.png</file>
         <file>jump.png</file>
         <file>crouch.png</file>
+        <file>punching.png</file>
     </qresource>
     <qresource prefix="/character/misc">
         <file>shadow.png</file>

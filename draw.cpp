@@ -1,5 +1,7 @@
 #include "draw.h"
 
+
+
 Draw::Draw(QWidget *parent) : QWidget(parent)
 {
     parentWindow = parent;
@@ -8,10 +10,6 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
     showFps = true;
 
     /* Objects to draw */
-    character = new Character(1);
-    background = new Background();
-    interface = new Interface();
-
     bigBang = new DrawObject(":/sprites/bigbang.bmp", 320, 320);
 
     /* Int initialization */
@@ -25,18 +23,6 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
     seconds = new QTimer(this);
     connect(seconds, SIGNAL(timeout()), this, SLOT(fps()));
     seconds->start(1000);
-
-    /* Animation */ /*
-    animRect.setCoords(10,10,10,10);
-    animRect.setSize(QSize(50,50));
-
-    animation = new QPropertyAnimation(this, "q_animRect");
-    animation->setEndValue(QRect(10,300,50,50));
-    animation->setEasingCurve(QEasingCurve::OutBounce);
-    animation->setDuration(2000);
-    animation->setLoopCount(5);
-
-    connect(animation, SIGNAL(currentLoopChanged(int)), animation, SLOT(pause())); /* */
 }
 
 void Draw::paintEvent(QPaintEvent *e) {
@@ -52,12 +38,6 @@ void Draw::paintEvent(QPaintEvent *e) {
     textPainter.setPen(QPen(Qt::red));
     textPainter.setBrush(QBrush(Qt::yellow));
     if(showFps) { textPainter.drawText(QRect(700,0,80,20), "FPS: " + QString::number(fpsInt)); }
-
-    /* AnimRect */
-    //textPainter.drawRect(animRect);
-    //textPainter.drawText(animRect, "X", QTextOption(Qt::AlignCenter));
-
-    //textPainter.drawImage(300,180, bigBang->getObject());
 }
 
 /**
@@ -95,7 +75,10 @@ void Draw::keyPressEvent(QKeyEvent *e) {
     switch (e->key()) {
         /* Numeric Keys */
     case Qt::Key_0:
-        qDebug() << "keyPressEvent: 0 in Draw";
+
+        break;
+    case Qt::Key_1:
+        character->punch();
         break;
     case Qt::Key_Escape:
         qDebug() << "keyPressEvent: Escape in Draw";
@@ -118,32 +101,38 @@ void Draw::keyPressEvent(QKeyEvent *e) {
         qDebug() << "keyPressEvent: Space in Draw";
         character->jumpUp(true);
         break;
+    case Qt::Key_Return:
+        emit chatSignal();
+        break;
+    case Qt::Key_Y:
+        emit showOnlyChat();
+        break;
     }
 }
 
 void Draw::keyReleaseEvent(QKeyEvent *e) {
     switch (e->key()) {
     case Qt::Key_D:
-        qDebug() << "keyReleaseEvent: D in Draw";
         character->moveRight(false);
         break;
     case Qt::Key_A:
-        qDebug() << "keyReleaseEvent: A in Draw";
         character->moveLeft(false);
         break;
     case Qt::Key_S:
-        qDebug() << "keyReleaseEvent: S in Draw";
         character->setCrouch(false);
+        break;
+    case Qt::Key_Return:
+        break;
+    case Qt::Key_Y:
+        emit hideOnlyChat();
         break;
     }
 }
 
-// Testings
-
-void Draw::f_animation() {
-    animation->start();
-}
-
-void Draw::e_animation() {
-    animation->resume();
+void Draw::load(int selChar, int selBackg) {
+    character = new Character(1);
+    background = new Background(1);
+    //character = new Character(selChar);
+    //background = new Background(selBackg);
+    interface = new UIOverlay();
 }

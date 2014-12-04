@@ -5,8 +5,8 @@
 
 ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 {
-
     parentWindow = parent;
+    auswahl = 0;
     pushButtonBack = new QPushButton("Back", this);
     rectChoose = new QPushButton(this);
 
@@ -157,7 +157,7 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 
     machine->start();
 
-    //connect(pushButtonBack, SIGNAL(clicked()), this, SLOT(backToStartmenu()));
+    connect(pushButtonBack, SIGNAL(clicked()), this, SLOT(backToStartmenu()));
 
     connect(topleft, SIGNAL(entered()), this, SLOT(selectedTopleft()));
     connect(top, SIGNAL(entered()), this, SLOT(selectedTop()));
@@ -186,36 +186,41 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
         }
     }
     QPen pen(QBrush(Qt::green), 2);
-
     painter.setPen(pen);
     qDebug() << "Painting now";
     painter.drawText(QRect(245, 460, 310, 100), "Dies " + selectedString, QTextOption(Qt::AlignCenter));
+    painter.setFont(QFont("Arial", 60, -1, false));
+    painter.setBrush(Qt::red);
+    painter.setPen(Qt::red);
+    painter.drawText(QRect(0,0,800,200), "Charakterauswahl", QTextOption(Qt::AlignCenter));
 }
 
 void ChooseMenu::keyPressEvent(QKeyEvent *e) {
     switch(e->key()) {
     case Qt::Key_Left:
-        qDebug() << "keyPressEvent: left in chooseMenu";
         emit left();
         break;
     case Qt::Key_Right:
-        qDebug() << "keyPressEvent: right in chooseMenu";
         emit right();
         break;
     case Qt::Key_Down:
-        qDebug() << "keyPressEvent: down in chooseMenu";
         emit down();
         break;
     case Qt::Key_Up:
-        qDebug() << "keyPressEvent: up in chooseMenu";
         emit up();
         break;
+    case Qt::Key_Return:
+        forwardChoosebg();
+        break;
     case Qt::Key_Escape:
-        qDebug() << "keyPressEvent: escape in chooseMenu";
         backToStartmenu();
         break;
     }
+}
 
+void ChooseMenu::forwardChoosebg() {
+    emit setCharacter(auswahl);
+    emit setCurrent(4);
 }
 
 void ChooseMenu::backToStartmenu() {
@@ -224,45 +229,55 @@ void ChooseMenu::backToStartmenu() {
 
 void ChooseMenu::selectedTopleft() {
     selectedString = "Topleft";
+    auswahl = 1;
     this->update();
 }
 
 void ChooseMenu::selectedTop() {
     selectedString = "Top";
+    auswahl = 2;
     this->update();
 }
 
 void ChooseMenu::selectedTopright() {
     selectedString = "Topright";
+    auswahl = 3;
     this->update();
 }
 
 void ChooseMenu::selectedMidleft() {
     selectedString = "Midleft";
+    auswahl = 4;
     this->update();
 }
 
 void ChooseMenu::selectedMid() {
     selectedString = "Mid";
+    auswahl = 5;
     this->update();
 }
 
 void ChooseMenu::selectedMidright() {
     selectedString = "Midright";
+    auswahl = 6;
     this->update();
 }
 
 void ChooseMenu::selectedBotleft() {
     selectedString = "Botleft";
+    auswahl = 7;
     this->update();
 }
 
 void ChooseMenu::selectedBot() {
     selectedString = "Bot";
+    auswahl = 8;
     this->update();
 }
 
 void ChooseMenu::selectedBotright() {
     selectedString = "Botright";
+    auswahl = 9;
     this->update();
 }
+

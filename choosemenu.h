@@ -10,6 +10,7 @@ public:
     explicit ChooseMenu(QWidget *parent = 0);
 
 private:
+    int auswahl;
     QString selectedString;
     QImage icon1;
     QImage icon2;
@@ -67,6 +68,7 @@ private:
 
 signals:
     void setCurrent(int);
+    void setCharacter(int);
     void right();
     void down();
     void up();
@@ -76,6 +78,7 @@ public slots:
 
 private slots:
     void backToStartmenu();
+    void forwardChoosebg();
     void selectedTopleft();
     void selectedTop();
     void selectedTopright();

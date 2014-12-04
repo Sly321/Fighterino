@@ -9,7 +9,9 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     jumpingUp = false;
     jumpingRight = false;
     crouching = false;
+    punching = false;
 
+    punchCount = 0;
     life = 15;
     mana = 75;
     option = _option;
@@ -29,7 +31,7 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
         walk = new Sprite(QImage(":/character/template/walk.png"));
         jump = new Sprite(QImage(":/character/template/jump.png"));
         crouch = new Sprite(QImage(":/character/template/crouch.png"));
-
+        imgPunch = new Sprite(QImage(":/character/template/punching.png"));
         shadow.load(":/character/misc/shadow.png");
 
         break;
@@ -57,12 +59,19 @@ void Character::drawChar(QPainter *p) {
         p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
     } else if (walkingLeft) {
         p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
+    } else if (punching) {
+        punchCount++;
+        if(punchCount >= 40) {
+            punching = false;
+        } else {
+            p->drawImage(xPos, yPos + jumpYPos, imgPunch->getImage(punchCount % 4));
+        }
+
     } else if (crouching) {
         p->drawImage(xPos, yPos, crouch->getImage(0));
     } else {
         p->drawImage(xPos, yPos + jumpYPos, stand->getImage(imageSequence % 4));
     }
-
 }
 
 int Character::getX() {
@@ -95,6 +104,13 @@ void Character::moveLeft(bool value) {
 
 void Character::setCrouch(bool value) {
     crouching = value;
+}
+
+void Character::punch() {
+    if(!punching && !jumping && !jumpingRight && !jumpingLeft) {
+        punching = true;
+        punchCount = 0;
+    }
 }
 
 void Character::jumpUp(bool value) {

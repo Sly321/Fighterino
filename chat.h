@@ -11,13 +11,10 @@ class Chat : public QWidget
 
 public:
     explicit Chat(QWidget *parent = 0);
-    void singnal();
-    void showOnlyChat();
-    void hideOnlyChat();
-
 
 signals:
     void setCurrent(int a);
+    void setFocusTo(int a);
 
 private:
     QLineEdit *line;
@@ -26,7 +23,9 @@ private:
     QWidget *parent;
 
 public slots:
-
+    void signal();
+    void showOnlyChat();
+    void hideOnlyChat();
 };
 
 #endif // CHAT_H

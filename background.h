@@ -3,18 +3,18 @@
 
 #include <QObject>
 #include <QPainter>
+#include <QtWidgets>
 
 class Background : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Background(QObject *parent = 0);
+    explicit Background(int _option, QObject *parent = 0);
 
 private:
     QImage bg;
     QImage bg2;
-
 
 signals:
 

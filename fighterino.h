@@ -6,6 +6,7 @@
 #include "choosemenu.h"
 #include "chat.h"
 #include "definitions.h"
+#include "choosebackground.h"
 
 #include <QStackedWidget>
 #include <QtWidgets>
@@ -29,15 +30,19 @@ private:
     StartMenu *startmenu;
     Chat *chat;
     ChooseMenu *chooseMenu;
-
+    ChooseBackground *chooseBg;
+    int gameChar;
+    int gameBg;
 
 private slots:
     void setChooseMenu(int a);
+    void setBackground(int a);
+    void setCharacter(int a);
+    void setFocusTo(int a);
 
 protected:
     void keyPressEvent(QKeyEvent *e);
-    void keyReleaseEvent(QKeyEvent *e);
-    void paintEvent(QPaintEvent *e);
+    void resizeEvent(QResizeEvent *event);
 
 };
 

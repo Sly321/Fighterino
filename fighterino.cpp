@@ -5,16 +5,21 @@ Fighterino::Fighterino(QWidget *parent)
     this->setWindowTitle("Fighterino");
     this->setMinimumSize(QSize(800, 600));
 
+    gameChar = 1;
+    gameBg = 1;
+
     windows = new QStackedWidget(this);
     startmenu = new StartMenu(this);
     drawWidget = new Draw(this);
     chooseMenu = new ChooseMenu(this);
+    chooseBg = new ChooseBackground(this);
     QWidget *test2 = new QWidget();
 
     windows->addWidget(startmenu);
     windows->addWidget(test2);
     windows->addWidget(drawWidget);
     windows->addWidget(chooseMenu);
+    windows->addWidget(chooseBg);
     windows->setGeometry(QRect(0,0,800,600));
 
     QVBoxLayout *wdg1 = new QVBoxLayout;
@@ -26,155 +31,22 @@ Fighterino::Fighterino(QWidget *parent)
     mainLayout->addSpacing(400);
     mainLayout->addWidget(chat);
     this->setLayout(mainLayout);
-    this->setFixedSize(800,600);
+    //this->setFixedSize(800,600);
 
+    connect(drawWidget, SIGNAL(chatSignal()), chat, SLOT(signal()));
+    connect(drawWidget, SIGNAL(showOnlyChat()), chat, SLOT(showOnlyChat()));
+    connect(drawWidget, SIGNAL(hideOnlyChat()), chat, SLOT(hideOnlyChat()));
     connect(chat, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
+    connect(chat, SIGNAL(setFocusTo(int)), this, SLOT(setFocusTo(int)));
     connect(startmenu, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
     connect(chooseMenu, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
+    connect(chooseMenu, SIGNAL(setCharacter(int)), this, SLOT(setCharacter(int)));
+    connect(chooseBg, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
+    connect(chooseBg, SIGNAL(setBackground(int)), this, SLOT(setBackground(int)));
 }
 
 void Fighterino::keyPressEvent(QKeyEvent *e) {
     switch (e->key()) {
-
-        /* Numeric Keys */
-    case Qt::Key_0:
-        qDebug() << "keyPressEvent: 0";
-        break;
-    case Qt::Key_1:
-        qDebug() << "keyPressEvent: 1";
-        windows->setCurrentIndex(0);
-        break;
-    case Qt::Key_2:
-        qDebug() << "keyPressEvent: 2";
-        windows->setCurrentIndex(1);
-        break;
-    case Qt::Key_3:
-        qDebug() << "keyPressEvent: 3";
-        windows->setCurrentIndex(2);
-        drawWidget->setFocus();
-        qDebug() << "Focus switched to Window 3";
-        break;
-    case Qt::Key_4:
-        qDebug() << "keyPressEvent: 4";
-        break;
-    case Qt::Key_5:
-        qDebug() << "keyPressEvent: 5";
-        break;
-    case Qt::Key_6:
-        qDebug() << "keyPressEvent: 6";
-        break;
-    case Qt::Key_7:
-        qDebug() << "keyPressEvent: 7";
-        break;
-    case Qt::Key_8:
-        qDebug() << "keyPressEvent: 8";
-        break;
-    case Qt::Key_9:
-        qDebug() << "keyPressEvent: 9";
-        break;
-
-        /* Arrow Keys */
-    case Qt::Key_Left:
-        qDebug() << "keyPressEvent: left";
-        break;
-    case Qt::Key_Right:
-        qDebug() << "keyPressEvent: right";
-        break;
-    case Qt::Key_Down:
-        qDebug() << "keyPressEvent: down";
-        break;
-    case Qt::Key_Up:
-        qDebug() << "keyPressEvent: up";
-        break;
-
-        /* Alphabetic Keys */
-    case Qt::Key_A:
-        qDebug() << "keyPressEvent: A";
-        break;
-    case Qt::Key_B:
-        qDebug() << "keyPressEvent: B";
-        break;
-    case Qt::Key_C:
-        qDebug() << "keyPressEvent: C";
-        drawWidget->e_animation();
-        break;
-    case Qt::Key_D:
-        qDebug() << "keyPressEvent: D";
-        break;
-    case Qt::Key_E:
-        qDebug() << "keyPressEvent: E";
-        break;
-    case Qt::Key_F:
-        qDebug() << "keyPressEvent: F";
-        startmenu->Anim();
-        break;
-    case Qt::Key_G:
-        qDebug() << "keyPressEvent: G";
-        break;
-    case Qt::Key_H:
-        qDebug() << "keyPressEvent: H";
-        break;
-    case Qt::Key_I:
-        qDebug() << "keyPressEvent: I";
-        break;
-    case Qt::Key_J:
-        qDebug() << "keyPressEvent: J";
-        break;
-    case Qt::Key_K:
-        qDebug() << "keyPressEvent: K";
-        break;
-    case Qt::Key_L:
-        qDebug() << "keyPressEvent: L";
-        break;
-    case Qt::Key_M:
-        qDebug() << "keyPressEvent: M";
-        break;
-    case Qt::Key_N:
-        qDebug() << "keyPressEvent: N";
-        break;
-    case Qt::Key_O:
-        qDebug() << "keyPressEvent: O";
-        break;
-    case Qt::Key_P:
-        qDebug() << "keyPressEvent: P";
-        break;
-    case Qt::Key_Q:
-        qDebug() << "keyPressEvent: Q";
-        break;
-    case Qt::Key_R:
-        qDebug() << "keyPressEvent: R";
-        break;
-    case Qt::Key_S:
-        qDebug() << "keyPressEvent: S";
-        break;
-    case Qt::Key_T:
-        qDebug() << "keyPressEvent: T";
-        break;
-    case Qt::Key_U:
-        qDebug() << "keyPressEvent: U";
-        break;
-    case Qt::Key_V:
-        qDebug() << "keyPressEvent: V";
-        break;
-    case Qt::Key_W:
-        qDebug() << "keyPressEvent: W";
-        break;
-    case Qt::Key_X:
-        qDebug() << "keyPressEvent: X";
-        drawWidget->f_animation();
-        break;
-    case Qt::Key_Y:
-        qDebug() << "keyPressEvent: Y";
-        chat->showOnlyChat();
-        break;
-    case Qt::Key_Z:
-        qDebug() << "keyPressEvent: Z";
-        break;
-
-        /* General Keys */
-    case Qt::Key_Space:
-        qDebug() << "keyPressEvent: space";
-        break;
     case Qt::Key_Escape:
         qDebug() << "keyPressEvent: esc";
         QMessageBox::StandardButton reply;
@@ -183,25 +55,8 @@ void Fighterino::keyPressEvent(QKeyEvent *e) {
             qApp->quit();
         }
         break;
-    case Qt::Key_Return:
-        qDebug() << "keyPressEvent: enter";
-        chat->singnal();
-        break;
     default:
         QWidget::keyPressEvent(e);
-    }
-}
-
-void Fighterino::paintEvent(QPaintEvent *e) {
-    //qDebug() << "paintEvent in qkeycollide.cpp";
-}
-
-void Fighterino::keyReleaseEvent(QKeyEvent *e) {
-    switch (e->key()) {
-    case Qt::Key_Y:
-        qDebug() << "keyReleaseEvent: Y";
-            chat->hideOnlyChat();
-        break;
     }
 }
 
@@ -218,11 +73,50 @@ void Fighterino::setChooseMenu(int selected) {
         break;
     case STAGE_WINDOW:
         windows->setCurrentIndex(STAGE_WINDOW);
+        drawWidget->load(gameChar, gameBg);
         drawWidget->setFocus();
         break;
     case CHAMP_SELECT:
         windows->setCurrentIndex(CHAMP_SELECT);
         chooseMenu->setFocus();
         break;
+    case BG_SELECT:
+        windows->setCurrentIndex(BG_SELECT);
+        chooseBg->setFocus();
+        break;
     }
+}
+
+void Fighterino::setFocusTo(int selected) {
+    switch (selected) {
+    case START_MENU:
+        this->setFocus();
+        break;
+    case OPTIONS_MENU:
+        this->setFocus();
+        break;
+    case STAGE_WINDOW:
+        drawWidget->setFocus();
+        break;
+    case CHAMP_SELECT:
+        chooseMenu->setFocus();
+        break;
+    case BG_SELECT:
+        chooseBg->setFocus();
+        break;
+    }
+}
+
+void Fighterino::setCharacter(int selected) {
+    gameChar = selected;
+}
+
+void Fighterino::setBackground(int selected) {
+    gameBg = selected;
+}
+
+void Fighterino::resizeEvent(QResizeEvent *event)
+{
+    //fitInView();
+    QWidget::resizeEvent(event);
 }

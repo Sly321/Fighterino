@@ -1,7 +1,19 @@
 #include "background.h"
 
-Background::Background(QObject *parent) : QObject(parent)
+Background::Background(int _option, QObject *parent) : QObject(parent)
 {
+    switch(_option) {
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    }
+
+
+    /* 800 x 530 */
+
     //cleanHills.load(":/images/background/hills_clean.png");
     //water.load(":/images/background/water.png");
     //forrest.load(":/images/background/forrest_clean.png");
@@ -30,7 +42,7 @@ Background::Background(QObject *parent) : QObject(parent)
 
 void Background::drawBackground(QPainter *p) {
     p->setPen(QPen(Qt::white));
-    p->setBrush(QBrush(Qt::black));
+    p->setBrush(QBrush(Qt::red));
 
     p->drawRect(0,0,800,800);
     p->drawText(QRect(0,0,800,800), "FILLED", QTextOption(Qt::AlignCenter));
