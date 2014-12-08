@@ -12,14 +12,19 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     punching = false;
 
     punchCount = 0;
-    life = 15;
-    mana = 75;
+    life = 150;
+    mana = 150;
     option = _option;
+
     timer = new QTimer();
     timer->setInterval(120);
     connect(timer, SIGNAL(timeout()), this, SLOT(count()));
-
     timer->start();
+
+    secTimer = new QTimer();
+    secTimer->setInterval(1000);
+    connect(secTimer, SIGNAL(timeout()), this, SLOT(second()));
+    secTimer->start();
 
     xPos = 50;
     yPos = 300;
@@ -33,7 +38,6 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
         crouch = new Sprite(QImage(":/character/template/crouch.png"));
         imgPunch = new Sprite(QImage(":/character/template/punching.png"));
         shadow.load(":/character/misc/shadow.png");
-
         break;
     default:
         break;
@@ -59,18 +63,17 @@ void Character::drawChar(QPainter *p) {
         p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
     } else if (walkingLeft) {
         p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
-    } else if (punching) {
+    } else if (punching && punchCount < 40) {
         punchCount++;
-        if(punchCount >= 40) {
-            punching = false;
-        } else {
-            p->drawImage(xPos, yPos + jumpYPos, imgPunch->getImage(punchCount % 4));
-        }
-
+        p->drawImage(xPos, yPos + jumpYPos, imgPunch->getImage(imageSequence % 4));
     } else if (crouching) {
         p->drawImage(xPos, yPos, crouch->getImage(0));
     } else {
         p->drawImage(xPos, yPos + jumpYPos, stand->getImage(imageSequence % 4));
+    }
+    if (punchCount >= 40) {
+        punching = false;
+        punchCount = 0;
     }
 }
 
@@ -107,12 +110,21 @@ void Character::setCrouch(bool value) {
 }
 
 void Character::punch() {
-    if(!punching && !jumping && !jumpingRight && !jumpingLeft) {
+    if(!punching && !jumping && !jumpingRight && !jumpingLeft && mana >= 15) {
         punching = true;
         punchCount = 0;
+        imageSequence = 0;
+        mana = mana - 15;
     }
 }
 
+/**
+ * @brief Character::jumpUp
+ *
+ *
+ *
+ * @param value
+ */
 void Character::jumpUp(bool value) {
     if(!jumping && !jumpingRight && !jumpingLeft) {
         if (walkingRight) {
@@ -126,12 +138,7 @@ void Character::jumpUp(bool value) {
             jumpingUp = true;
         }
     }
-
 }
-
-// integrate moveLeftDone etc.
-
-
 
 /**Calculates the position of the Caracter, Nicht anfassen blicke selber manchmal nicht durch.
  *
@@ -160,26 +167,35 @@ void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abf
         if (jumpingUp) {
             jumpYPos -= 4;
             jumpingUp = (jumpYPos > -100);
-            xPos += 6;
+            xPos += (xPos < 720 ?  6 : 0);
         } else {
             jumpYPos += 4;
             jumpingRight = !(jumpYPos == 0);
-            xPos += 6;
+            xPos += (xPos < 720 ?  6 : 0);
         }
     } else if(jumpingLeft) {
         if (jumpingUp) {
             jumpYPos -= 4;
             jumpingUp = (jumpYPos > -100);
-            xPos -= 6;
+            xPos -= (xPos > 0 ?  6 : 0);
         } else {
             jumpYPos += 4;
             jumpingLeft = !(jumpYPos == 0);
-            xPos -= 6;
+            xPos -= (xPos > 0 ?  6 : 0);
         }
     } else if(walkingRight) {
-        xPos += 2;
+        xPos += (xPos < 720 ?  2 : 0);
     } else if (walkingLeft) {
-        xPos -= 2;
+        xPos -= (xPos > 0 ?  2 : 0);
+    }
+}
+
+void Character::second() {
+    if (mana < 150) {
+        mana++;
+    }
+    if (life < 150) {
+        life++;
     }
 }
 

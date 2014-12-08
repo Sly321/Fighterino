@@ -2,49 +2,69 @@
 
 Background::Background(int _option, QObject *parent) : QObject(parent)
 {
-    switch(_option) {
+    option = _option;
+    switch(option) {
     case 1:
+        bg.load(":/images/background/forrest_clean.png");
+        bg2.load(":/images/background/forrest.png");
+        bg3.load(":/images/background/water.png");
+        bg4.load(":/images/background/hills_clean.png");
         break;
     case 2:
         break;
     case 3:
         break;
     }
-
-
-    /* 800 x 530 */
-
-    //cleanHills.load(":/images/background/hills_clean.png");
-    //water.load(":/images/background/water.png");
-    //forrest.load(":/images/background/forrest_clean.png");
-    //hills.load(":/images/background/forrest.png");
-
-    /*
-    textPainter.drawImage(0, 0, forrest); //253 × 162
-    textPainter.drawImage(253, 0, forrest);
-    textPainter.drawImage(506, 0, forrest);
-    textPainter.drawImage(759, 0, forrest);
-    textPainter.drawImage(0, 272, hills); //190 × 186
-    textPainter.drawImage(190, 272, hills);
-    textPainter.drawImage(380, 272, hills);
-    textPainter.drawImage(570, 272, hills);
-    textPainter.drawImage(760, 272, hills);
-    textPainter.drawImage(0, 440, water); //129 × 57
-    textPainter.drawImage(129, 440, water);
-    textPainter.drawImage(258, 440, water);
-    textPainter.drawImage(387, 440, water);
-    textPainter.drawImage(516, 440, water);
-    textPainter.drawImage(645, 440, water);
-    textPainter.drawImage(774, 440, water);
-    textPainter.drawImage(100, 300, cleanHills);
-    */
 }
 
+/**Zeichnet den Hintergrund
+ *
+ * @brief Background::drawBackground
+ * @param p Painter zum zeichnen wird übergeben
+ */
 void Background::drawBackground(QPainter *p) {
-    p->setPen(QPen(Qt::white));
-    p->setBrush(QBrush(Qt::red));
-
+    p->setPen(QPen(Qt::black));
+    p->setBrush(QBrush(Qt::darkGreen));
     p->drawRect(0,0,800,800);
-    p->drawText(QRect(0,0,800,800), "FILLED", QTextOption(Qt::AlignCenter));
-   // UI und BG extra Klassen
+
+    switch(option) {
+    case 1:
+        drawTiles(bg, 70, p, true);
+        drawTiles(bg, 120, p);
+        drawTiles(bg, 170, p, true);
+        drawTiles(bg, 210, p);
+        drawTiles(bg2, 385, p); //
+        drawTiles(bg3, 543, p); // 57y
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    }
+}
+
+/**Mit der Methode wird ein Image eingebunden und dann an der
+ * als parameter übergebenen Y Position von X=0 bis X=800 füllen
+ * ausgegeben.
+ *
+ * @brief Background::drawTiles
+ * @param img Das ggf. mehrfach zu zeichnende Image
+ * @param y Y Position des Images
+ * @param p Painter zum zeichnen wird übergeben
+ * @param versetzt true wenn die images um 50 pixel versetzt sein soll
+ *                 benutzt bei wiederholenden für nicht so eine Eintönigkeit.
+ */
+void Background::drawTiles(QImage img, int y, QPainter *p, bool versetzt) {
+    int x = img.width();
+    if (!versetzt) {
+        int anzahl = 800 / x;
+        for (int i = 0; i <= anzahl; i++) {
+            p->drawImage(i * x, y, img);
+        }
+    } else {
+        int anzahl = 850 / x;
+        for (int i = 0; i <= anzahl; i++) {
+            p->drawImage(-50 + (i * x), y, img);
+        }
+    }
 }

@@ -18,7 +18,6 @@ StartMenu::StartMenu(QWidget *parent) : QWidget(parent), ui(new Ui::StartMenu)
 
     animation->setEasingCurve(QEasingCurve::OutBounce);
     animation->setDuration(1000);
-    //animation->setLoopCount();
 }
 
 StartMenu::~StartMenu()
@@ -51,14 +50,17 @@ void StartMenu::paintEvent(QPaintEvent *e) {
     }
 }
 
-
-void StartMenu::on_pushButton_6_clicked()
-{
-    qDebug() << "Emit setCurrent(3) from startmenu.cpp";
-    emit setCurrent(3);
-}
-
 void StartMenu::on_pushButton_3_clicked()
 {
     parent->close();
+}
+
+void StartMenu::on_pushButton_clicked()
+{
+    emit setCurrent(3);
+}
+
+void StartMenu::on_pushButton_5_clicked()
+{
+    emit setCurrent(3);
 }

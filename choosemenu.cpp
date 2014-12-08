@@ -173,10 +173,10 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 void ChooseMenu::paintEvent(QPaintEvent *e) {
     QSize rectSize(100, 100);
     QPainter painter(this);
-    painter.drawImage(245,145, icon1);
+    painter.drawImage(245,145, faceTemplate);
     painter.drawImage(350,145, icon2);
     painter.drawImage(455, 145, icon3);
-    painter.drawImage(245, 250, faceTemplate);
+    painter.drawImage(245, 250, icon1);
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
             int posX = 245 + (100 * x) + (5 * x);

@@ -44,6 +44,7 @@ private:
     Sprite *imgPunch;
 
     QTimer *timer;
+    QTimer *secTimer;
 
     int life;
     int mana;
@@ -60,6 +61,7 @@ public slots:
 private slots:
     void count();
     void calculate();
+    void second();
 
 };
 

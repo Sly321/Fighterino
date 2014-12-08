@@ -2,7 +2,7 @@
 
 ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
 {
-    auswahl = 0;
+    auswahl = 1;
     rectChoose = new QPushButton(this);
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
 
@@ -17,7 +17,7 @@ ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
     sright = new QState(machine);
     sright->assignProperty(rectChoose, "geometry", QRect(455, 250, 100, 100));
 
-    machine->setInitialState(mid);
+    machine->setInitialState(sleft);
 
     animation = new QPropertyAnimation(rectChoose, "geometry");
     animation->setDuration(300);    // ANIMATIONS DURATION
