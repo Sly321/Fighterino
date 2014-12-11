@@ -10,11 +10,11 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     pushButtonBack = new QPushButton("Back", this);
     rectChoose = new QPushButton(this);
 
-    faceTemplate.load(":/sprites/template/face.bmp");
-    faceTemplate = faceTemplate.scaled(100,100, Qt::KeepAspectRatio);
+    icon1.load(":/sprites/template/face.bmp");
+    icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
 
-    icon1.load(":/images/icons/icon.png");
     icon2.load(":/images/icons/icon2.gif");
+
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
 
     QRect *rectofbla = new QRect(25,25,25,25);
@@ -173,10 +173,10 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 void ChooseMenu::paintEvent(QPaintEvent *e) {
     QSize rectSize(100, 100);
     QPainter painter(this);
-    painter.drawImage(245,145, faceTemplate);
-    painter.drawImage(350,145, icon2);
-    painter.drawImage(455, 145, icon3);
-    painter.drawImage(245, 250, icon1);
+    painter.drawImage(245,145, icon1);
+    //painter.drawImage(350,145, icon2);
+    //painter.drawImage(455, 145, icon3);
+    //painter.drawImage(245, 250, icon1);
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
             int posX = 245 + (100 * x) + (5 * x);
@@ -188,7 +188,7 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     QPen pen(QBrush(Qt::green), 2);
     painter.setPen(pen);
     qDebug() << "Painting now";
-    painter.drawText(QRect(245, 460, 310, 100), "Dies " + selectedString, QTextOption(Qt::AlignCenter));
+    painter.drawText(QRect(245, 460, 310, 100), "Auswahl " + QString::number(auswahl) + "\nName: " + selectedString, QTextOption(Qt::AlignCenter));
     painter.setFont(QFont("Arial", 60, -1, false));
     painter.setBrush(Qt::red);
     painter.setPen(Qt::red);
@@ -228,7 +228,7 @@ void ChooseMenu::backToStartmenu() {
 }
 
 void ChooseMenu::selectedTopleft() {
-    selectedString = "Topleft";
+    selectedString = "Template";
     auswahl = 1;
     this->update();
 }

@@ -6,6 +6,9 @@ ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
     rectChoose = new QPushButton(this);
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
 
+    icon1.load(":/images/background/hills_clean.png");
+    icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
+
     machine = new QStateMachine;
 
     sleft = new QState(machine);
@@ -50,6 +53,7 @@ ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
 void ChooseBackground::paintEvent(QPaintEvent *e) {
     QSize rectSize(100, 100);
     QPainter painter(this);
+    painter.drawImage(245, 250, icon1);
     for (int x = 0; x < 3; x++) {
             int posX = 245 + (100 * x) + (5 * x);
             int posY = 145 + (100) + (5);
@@ -59,8 +63,7 @@ void ChooseBackground::paintEvent(QPaintEvent *e) {
 
     QPen pen(QBrush(Qt::green), 2);
     painter.setPen(pen);
-    qDebug() << "Painting now";
-    painter.drawText(QRect(245, 460, 310, 100), "Dies " + selectedString, QTextOption(Qt::AlignCenter));
+    painter.drawText(QRect(245, 460, 310, 100), "Auswahl " + QString::number(auswahl) + "\nName: " + selectedString, QTextOption(Qt::AlignCenter));
 
     painter.setFont(QFont("Arial", 60, -1, false));
     painter.setBrush(Qt::red);
@@ -104,7 +107,7 @@ void ChooseBackground::forwardGame() {
 }
 
 void ChooseBackground::selectedLeft() {
-    selectedString = "Left";
+    selectedString = "Forrest";
     auswahl = 1;
     this->update();
 }

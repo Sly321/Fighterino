@@ -211,9 +211,11 @@ void Character::jumpUp(bool value) {
     }
 }
 
-/**Calculates the position of the Caracter, Nicht anfassen blicke selber manchmal nicht durch.
- *
+/**
  * @brief Character::calculate
+ *
+ * Berechnet die Position des Characteres anhand seiner aktuellen
+ * Position und des Status des Charakteres.
  */
 void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abfrage
 
