@@ -44,4 +44,11 @@
         <file>walk_ahri.png</file>
         <file>stand_ahri.png</file>
     </qresource>
+    <qresource prefix="/character/ryu">
+        <file>punching_ryu.png</file>
+        <file>jump_ryu.png</file>
+        <file>crouch_ryu.png</file>
+        <file>walk_ryu.png</file>
+        <file>stand_ryu.png</file>
+    </qresource>
 </RCC>
