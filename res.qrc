@@ -16,6 +16,9 @@
     </qresource>
     <qresource prefix="/sprites/template">
         <file>face.bmp</file>
+        <file>asuma.bmp</file>
+        <file>ryu.bmp</file>
+        <file>vega.bmp</file>
     </qresource>
     <qresource prefix="/character/template">
         <file>walk.png</file>
@@ -26,5 +29,12 @@
     </qresource>
     <qresource prefix="/character/misc">
         <file>shadow.png</file>
+    </qresource>
+    <qresource prefix="/character/asuma">
+        <file>punching_asuma.png</file>
+        <file>jump_asuma.png</file>
+        <file>crouch_asuma.png</file>
+        <file>stand_asuma.png</file>
+        <file>walk_asuma.png</file>
     </qresource>
 </RCC>

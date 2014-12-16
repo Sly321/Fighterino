@@ -59,11 +59,11 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
         /* HIER NEUE BILDER Z.B. // Das hier ist ein template und kann benutzt werden */
 
         /* Von hier ab neue Pfade angeben, einfach zu der Ressourcedatei hinzufügen (Auf präfix achten) */
-        stand = new Sprite(QImage(":/character/"));
-        walk = new Sprite(QImage(":/character/"));
-        jump = new Sprite(QImage(":/character/"));
-        crouch = new Sprite(QImage(":/character/"));
-        imgPunch = new Sprite(QImage(":/character/"));
+        stand = new Sprite(QImage(":/character/asuma/stand_asuma.png"));
+        walk = new Sprite(QImage(":/character/asuma/walk_asuma.png"));
+        jump = new Sprite(QImage(":/character/asuma/jump_asuma.png"));
+        crouch = new Sprite(QImage(":/character/asuma/crouch_asuma.png"));
+        imgPunch = new Sprite(QImage(":/character/asuma/punching_asuma.png"));
         /* Fertig ! */
         shadow.load(":/character/misc/shadow.png"); // Brauch nicht verändert werden
         break;

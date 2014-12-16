@@ -12,8 +12,12 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 
     icon1.load(":/sprites/template/face.bmp");
     icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
-
-    icon2.load(":/images/icons/icon2.gif");
+    icon2.load(":/sprites/template/asuma.bmp");
+    icon2 = icon2.scaled(100,100, Qt::KeepAspectRatio);
+    icon4.load(":/sprites/template/ryu.bmp");
+    icon4 = icon4.scaled(100,100, Qt::KeepAspectRatio);
+    icon5.load(":/sprites/template/vega.bmp");
+    icon5 = icon5.scaled(100,100, Qt::KeepAspectRatio);
 
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
 
@@ -174,8 +178,9 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     QSize rectSize(100, 100);
     QPainter painter(this);
     painter.drawImage(245,145, icon1);
-    //painter.drawImage(350,145, icon2);
-    //painter.drawImage(455, 145, icon3);
+    painter.drawImage(350,145, icon2);
+    painter.drawImage(455,145, icon4);
+    painter.drawImage(245,250, icon5);
     //painter.drawImage(245, 250, icon1);
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
@@ -228,19 +233,19 @@ void ChooseMenu::backToStartmenu() {
 }
 
 void ChooseMenu::selectedTopleft() {
-    selectedString = "Template";
+    selectedString = "Asuma";
     auswahl = 1;
     this->update();
 }
 
 void ChooseMenu::selectedTop() {
-    selectedString = "Top";
+    selectedString = "Ryu";
     auswahl = 2;
     this->update();
 }
 
 void ChooseMenu::selectedTopright() {
-    selectedString = "Topright";
+    selectedString = "Vega";
     auswahl = 3;
     this->update();
 }
