@@ -28,7 +28,7 @@ public slots:
 private:
     Character *character;
     Background *background;
-    UIOverlay *interface;
+    UIOverlay *UIinterface;
 
     QRect animRect;
     bool showFps;

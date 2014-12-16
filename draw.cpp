@@ -44,7 +44,7 @@ void Draw::paintEvent(QPaintEvent *e) {
     QPainter textPainter(this);
 
     background->drawBackground(&textPainter);
-    interface->drawInterface(&textPainter, character);
+    UIinterface->drawInterface(&textPainter, character);
     character->drawChar(&textPainter);
 
     i++; // FPS COUNTER
@@ -65,7 +65,7 @@ void Draw::paintEvent(QPaintEvent *e) {
 int Draw::fps() {
     fpsInt = i;
     i = 0;
-
+    return fpsInt;
 }
 
 /**
@@ -174,5 +174,5 @@ void Draw::keyReleaseEvent(QKeyEvent *e) {
 void Draw::load(int selChar, int selBackg) {
     character = new Character(selChar);
     background = new Background(selBackg);
-    interface = new UIOverlay();
+    UIinterface = new UIOverlay();
 }
