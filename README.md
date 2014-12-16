@@ -7,6 +7,14 @@ A little Jump'n'Fight game, filled with open source little fighter graphics. For
 
 ## History
 
+#### Version 0.1.5
+
+Fixed Jumpingleft of all characters.
+
+Deleted some unnecessary and unused variables.
+
+Added Ahri as Character.
+
 #### Version 0.1.4
 
 New Character Added (1 and 4 can be used now).

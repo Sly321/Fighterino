@@ -56,7 +56,7 @@ signals:
 public slots:
     void moveRight(bool value);
     void moveLeft(bool value);
-    void jumpUp(bool value);
+    void jumpUp();
     void setCrouch(bool value);
     void punch();
 

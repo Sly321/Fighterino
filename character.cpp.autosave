@@ -64,12 +64,6 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
         shadow.load(":/character/misc/shadow.png"); // Brauch nicht verändert werden
         break;
     case 2:
-        stand = new Sprite(QImage(":/character/ryu/stand_ryu.png"));
-        walk = new Sprite(QImage(":/character/ryu/walk_ryu.png"));
-        jump = new Sprite(QImage(":/character/ryu/jump_ryu.png"));
-        crouch = new Sprite(QImage(":/character/ryu/crouch_ryu.png"));
-        imgPunch = new Sprite(QImage(":/character/ryu/punching_ryu.png"));
-        shadow.load(":/character/misc/shadow.png");
         break;
     case 3:
         stand = new Sprite(QImage(":/character/ahri/stand_ahri.png"));
@@ -242,7 +236,7 @@ void Character::punch() {
  *
  * @param value
  */
-void Character::jumpUp(bool value) {
+void Character::jumpUp() {
     if(!jumping && !jumpingRight && !jumpingLeft) {
         if (walkingRight) {
             jumpingRight = true;
