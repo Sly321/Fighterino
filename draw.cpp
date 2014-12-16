@@ -130,7 +130,7 @@ void Draw::keyPressEvent(QKeyEvent *e) {
         break;
     case Qt::Key_Space:
         qDebug() << "keyPressEvent: Space in Draw";
-        character->jumpUp(true);
+        character->jumpUp();
         break;
     case Qt::Key_Return:
         emit chatSignal();

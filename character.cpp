@@ -242,7 +242,7 @@ void Character::punch() {
  *
  * @param value
  */
-void Character::jumpUp(bool value) {
+void Character::jumpUp() {
     if(!jumping && !jumpingRight && !jumpingLeft) {
         if (walkingRight) {
             jumpingRight = true;
