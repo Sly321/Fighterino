@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/images/background">
         <file>hills_clean.png</file>
-        <file>forrest.png</file>
         <file>water.png</file>
         <file>forrest_clean.png</file>
+        <file>forrest.png</file>
     </qresource>
     <qresource prefix="/images/icons">
         <file>newgame.jpg</file>
