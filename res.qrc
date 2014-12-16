@@ -18,7 +18,7 @@
         <file>face.bmp</file>
         <file>asuma.bmp</file>
         <file>ryu.bmp</file>
-        <file>vega.bmp</file>
+        <file>ahri.bmp</file>
     </qresource>
     <qresource prefix="/character/template">
         <file>walk.png</file>
@@ -36,5 +36,12 @@
         <file>crouch_asuma.png</file>
         <file>stand_asuma.png</file>
         <file>walk_asuma.png</file>
+    </qresource>
+    <qresource prefix="/character/ahri">
+        <file>jump_ahri.png</file>
+        <file>punching_ahri.png</file>
+        <file>crouch_ahri.png</file>
+        <file>walk_ahri.png</file>
+        <file>stand_ahri.png</file>
     </qresource>
 </RCC>

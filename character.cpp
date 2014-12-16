@@ -66,6 +66,12 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     case 2:
         break;
     case 3:
+        stand = new Sprite(QImage(":/character/ahri/stand_ahri.png"));
+        walk = new Sprite(QImage(":/character/ahri/walk_ahri.png"));
+        jump = new Sprite(QImage(":/character/ahri/jump_ahri.png"));
+        crouch = new Sprite(QImage(":/character/ahri/crouch_ahri.png"));
+        imgPunch = new Sprite(QImage(":/character/ahri/punching_ahri.png"));
+        shadow.load(":/character/misc/shadow.png");
         break;
     case 4:
         stand = new Sprite(QImage(":/character/template/stand.png"));

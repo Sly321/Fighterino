@@ -14,7 +14,7 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
     icon2.load(":/characters/icons/ryu.bmp");
     icon2 = icon2.scaled(100,100, Qt::KeepAspectRatio);
-    icon3.load(":/characters/icons/vega.bmp");
+    icon3.load(":/characters/icons/ahri.bmp");
     icon3 = icon3.scaled(100,100, Qt::KeepAspectRatio);
     icon4.load(":/characters/icons/face.bmp");
     icon4 = icon4.scaled(100,100, Qt::KeepAspectRatio);
@@ -240,7 +240,7 @@ void ChooseMenu::selectedTop() {
 }
 
 void ChooseMenu::selectedTopright() {
-    selectedString = "Vega";
+    selectedString = "Ahri";
     auswahl = 3;
     this->update();
 }
