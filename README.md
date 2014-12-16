@@ -3,7 +3,7 @@ Fighterino
 
 A little Jump'n'Fight game, filled with open source little fighter graphics. For a school project.
 
-### [Highschool Website]("http://www.htw-berlin.de/")
+### [Highschool Website](http://www.htw-berlin.de/)
 
 ## History
 
