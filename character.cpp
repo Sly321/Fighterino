@@ -24,8 +24,12 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     jumping = false;
     jumpingUp = false;
     jumpingRight = false;
+    jumpingLeft = false;
     crouching = false;
     punching = false;
+    lookingLeft = false;
+    lookingRight = true;
+    imageSequence = 0;
 
     punchCount = 0;
     life = 150;
@@ -104,7 +108,10 @@ void Character::drawChar(QPainter *p) {
     } else if (crouching) {
         p->drawImage(xPos, yPos, crouch->getImage(0));
     } else {
-        p->drawImage(xPos, yPos + jumpYPos, stand->getImage(imageSequence % 4));
+        if (lookingRight)
+            p->drawImage(xPos, yPos + jumpYPos, stand->getImage(imageSequence % 4));
+        else
+            p->drawImage(xPos, yPos + jumpYPos, stand->getImageMirrored(imageSequence % 4));
     }
     if (punchCount >= 40) {
         punching = false;
@@ -157,15 +164,23 @@ int Character::getMana() {
 }
 
 void Character::count() {
+
     imageSequence++;
+    if(imageSequence < 0) {
+        imageSequence = 0;
+    }
 }
 
 void Character::moveRight(bool value) {
     walkingRight = value;
+    lookingRight = true;
+    lookingLeft = false;
 }
 
 void Character::moveLeft(bool value) {
     walkingLeft = value;
+    lookingLeft = true;
+    lookingRight = false;
 }
 
 void Character::setCrouch(bool value) {
@@ -202,6 +217,7 @@ void Character::jumpUp(bool value) {
             jumpingRight = true;
             jumpingUp = true;
         } else if (walkingLeft) {
+            qDebug() << "JumpingLeft TRUE";
             jumpingLeft = true;
             jumpingUp = true;
         } else /* if (standing) */ {
@@ -214,8 +230,7 @@ void Character::jumpUp(bool value) {
 /**
  * @brief Character::calculate
  *
- * Berechnet die Position des Characteres anhand seiner aktuellen
- * Position und des Status des Charakteres.
+ * Berechnet die Position
  */
 void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abfrage
 
@@ -271,5 +286,3 @@ void Character::second() {
         life++;
     }
 }
-
-

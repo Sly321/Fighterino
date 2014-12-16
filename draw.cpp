@@ -25,7 +25,11 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
     timerUpdate = new QTimer(this);
     connect(timerUpdate, SIGNAL(timeout()), this, SLOT(update()));
     /* Das sind 60 FPS auf Mac, Besser schreibe statt 20 -> 16 rein für Windows. */
-    timerUpdate->start(20);
+    if (getOSName() == "windows") {
+        timerUpdate->start(15);
+    } else {
+        timerUpdate->start(20);
+    }
 
     /* Das sind die Sekunden, sie werden benutzt um die FPS auszurechnen. */
     seconds = new QTimer(this);
@@ -175,4 +179,34 @@ void Draw::load(int selChar, int selBackg) {
     character = new Character(selChar);
     background = new Background(selBackg);
     UIinterface = new UIOverlay();
+}
+
+/**
+ * @brief GetOSName
+ *
+ * Checked Umgebumgsvariablen aus um das OS zu verifizieren.
+ *
+ * @return Das momentane OS als QString.
+ */
+QString Draw::getOSName()
+{
+    #if defined(Q_OS_ANDROID)
+        return QLatin1String("android");
+    #elif defined(Q_OS_BLACKBERRY)
+        return QLatin1String("blackberry");
+    #elif defined(Q_OS_IOS)
+        return QLatin1String("ios");
+    #elif defined(Q_OS_MAC)
+        return QLatin1String("osx");
+    #elif defined(Q_OS_WINCE)
+        return QLatin1String("wince");
+    #elif defined(Q_OS_WIN)
+        return QLatin1String("windows");
+    #elif defined(Q_OS_LINUX)
+        return QLatin1String("linux");
+    #elif defined(Q_OS_UNIX)
+        return QLatin1String("unix");
+    #else
+        return QLatin1String("unknown");
+    #endif
 }

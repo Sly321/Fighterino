@@ -28,6 +28,8 @@ private:
     bool jumpingLeft;
     bool crouching;
     bool punching;
+    bool lookingLeft;
+    bool lookingRight;
 
     int option;
     int xPos;

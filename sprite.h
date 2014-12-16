@@ -9,7 +9,8 @@ public:
     Sprite(QImage bild);
     QImage getImage();
     QImage getImage(int sequence);
-    QImage getImage(int x, int y, int sequence);
+    QImage getImageMirrored(int sequence);
+    QImage getImage(int x, int y, int sequence, bool mirrored = false);
 
 private:
     QImage bild;

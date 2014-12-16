@@ -2,6 +2,7 @@
 #define DRAW_H
 
 #include <QtWidgets>
+#include <QSysInfo>
 #include "character.h"
 #include "drawobject.h"
 #include "background.h"
@@ -41,6 +42,7 @@ private:
     QPropertyAnimation *animation;
     QWidget *parentWindow;
     DrawObject *bigBang;
+    QString getOSName();
 
 protected:
     void paintEvent(QPaintEvent *e);
