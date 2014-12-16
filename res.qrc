@@ -14,7 +14,7 @@
         <file>stand.png</file>
         <file>bigbang.bmp</file>
     </qresource>
-    <qresource prefix="/sprites/template">
+    <qresource prefix="/characters/icons">
         <file>face.bmp</file>
         <file>asuma.bmp</file>
         <file>ryu.bmp</file>

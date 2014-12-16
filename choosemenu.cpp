@@ -10,20 +10,16 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     pushButtonBack = new QPushButton("Back", this);
     rectChoose = new QPushButton(this);
 
-    icon1.load(":/sprites/template/face.bmp");
+    icon1.load(":/characters/icons/asuma.bmp");
     icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
-    icon2.load(":/sprites/template/asuma.bmp");
+    icon2.load(":/characters/icons/ryu.bmp");
     icon2 = icon2.scaled(100,100, Qt::KeepAspectRatio);
-    icon4.load(":/sprites/template/ryu.bmp");
+    icon3.load(":/characters/icons/vega.bmp");
+    icon3 = icon3.scaled(100,100, Qt::KeepAspectRatio);
+    icon4.load(":/characters/icons/face.bmp");
     icon4 = icon4.scaled(100,100, Qt::KeepAspectRatio);
-    icon5.load(":/sprites/template/vega.bmp");
-    icon5 = icon5.scaled(100,100, Qt::KeepAspectRatio);
 
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
-
-    QRect *rectofbla = new QRect(25,25,25,25);
-    size_t offset = rectofbla->x() * icon1.depth() / 8 + rectofbla->y() * icon1.bytesPerLine();
-    icon3 = QImage(icon1.bits() + offset, rectofbla->width(), rectofbla->height(), icon1.bytesPerLine(), icon1.format());
 
     machine = new QStateMachine;
 
@@ -179,9 +175,8 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     QPainter painter(this);
     painter.drawImage(245,145, icon1);
     painter.drawImage(350,145, icon2);
-    painter.drawImage(455,145, icon4);
-    painter.drawImage(245,250, icon5);
-    //painter.drawImage(245, 250, icon1);
+    painter.drawImage(455,145, icon3);
+    painter.drawImage(245,250, icon4);
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
             int posX = 245 + (100 * x) + (5 * x);
@@ -251,7 +246,7 @@ void ChooseMenu::selectedTopright() {
 }
 
 void ChooseMenu::selectedMidleft() {
-    selectedString = "Midleft";
+    selectedString = "Template";
     auswahl = 4;
     this->update();
 }

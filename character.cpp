@@ -52,14 +52,6 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
 
     switch(option) {
     case 1:
-        stand = new Sprite(QImage(":/character/template/stand.png"));
-        walk = new Sprite(QImage(":/character/template/walk.png"));
-        jump = new Sprite(QImage(":/character/template/jump.png"));
-        crouch = new Sprite(QImage(":/character/template/crouch.png"));
-        imgPunch = new Sprite(QImage(":/character/template/punching.png"));
-        shadow.load(":/character/misc/shadow.png");
-        break;
-    case 2:
         /* HIER NEUE BILDER Z.B. // Das hier ist ein template und kann benutzt werden */
 
         /* Von hier ab neue Pfade angeben, einfach zu der Ressourcedatei hinzufügen (Auf präfix achten) */
@@ -70,6 +62,18 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
         imgPunch = new Sprite(QImage(":/character/asuma/punching_asuma.png"));
         /* Fertig ! */
         shadow.load(":/character/misc/shadow.png"); // Brauch nicht verändert werden
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    case 4:
+        stand = new Sprite(QImage(":/character/template/stand.png"));
+        walk = new Sprite(QImage(":/character/template/walk.png"));
+        jump = new Sprite(QImage(":/character/template/jump.png"));
+        crouch = new Sprite(QImage(":/character/template/crouch.png"));
+        imgPunch = new Sprite(QImage(":/character/template/punching.png"));
+        shadow.load(":/character/misc/shadow.png");
         break;
     default:
         break;
@@ -97,21 +101,30 @@ void Character::drawChar(QPainter *p) {
         // Logische Abfrage, wenn er hochspringt dann nimm das 2. Bild, wenn er runterspringt das 3.
         p->drawImage(xPos, yPos + jumpYPos, jump->getImage(jumpingUp ? 1 : 2));
     } else if (jumpingLeft) {
-        p->drawImage(xPos, yPos + jumpYPos, jump->getImage(jumpingUp ? 2 : 1));
+        p->drawImage(xPos, yPos + jumpYPos, jump->getImageMirrored(jumpingUp ? 2 : 1));
     } else if (walkingRight) { //walking right nach jump
         p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
     } else if (walkingLeft) {
-        p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
+        p->drawImage(xPos, yPos + jumpYPos, walk->getImageMirrored(imageSequence % 6));
     } else if (punching && punchCount < 40) {
         punchCount++;
-        p->drawImage(xPos, yPos + jumpYPos, imgPunch->getImage(imageSequence % 4));
+        if (lookingRight) {
+            p->drawImage(xPos, yPos + jumpYPos, imgPunch->getImage(imageSequence % 4));
+        } else {
+            p->drawImage(xPos, yPos + jumpYPos, imgPunch->getImageMirrored(imageSequence % 4));
+        }
     } else if (crouching) {
-        p->drawImage(xPos, yPos, crouch->getImage(0));
+        if (lookingRight) {
+            p->drawImage(xPos, yPos, crouch->getImage(0));
+        } else {
+            p->drawImage(xPos, yPos, crouch->getImageMirrored(0));
+        }
     } else {
-        if (lookingRight)
+        if (lookingRight) {
             p->drawImage(xPos, yPos + jumpYPos, stand->getImage(imageSequence % 4));
-        else
+        } else {
             p->drawImage(xPos, yPos + jumpYPos, stand->getImageMirrored(imageSequence % 4));
+        }
     }
     if (punchCount >= 40) {
         punching = false;

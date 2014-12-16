@@ -12,6 +12,7 @@ public:
 private:
     int auswahl;
     QString selectedString;
+    QImage icon0;
     QImage icon1;
     QImage icon2;
     QImage icon3;
