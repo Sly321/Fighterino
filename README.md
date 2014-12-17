@@ -7,6 +7,30 @@ A little Jump'n'Fight game, filled with open source little fighter graphics. For
 
 ## History
 
+#### Version 0.2
+
+3 Characters are available now-
+
+Character icons in the fight dialog.
+
+Included an enemy (no interactions right now).
+
+Added getName nad GetIcon to character class.
+
+Added escape from fight window, so you can go to the Startmenu now.
+
+Added WinningScreen.
+
+Added Lifelosing when punching (This is at the moment global, will be fixed soon).
+
+#### Version 0.1.5
+
+Fixed Jumpingleft of all characters.
+
+Deleted some unnecessary and unused variables.
+
+Added Ahri as Character.
+
 #### Version 0.1.4
 
 New Character Added (1 and 4 can be used now).

@@ -11,12 +11,14 @@ class Character : public QObject
     Q_OBJECT
 
 public:
-    explicit Character(int _option, QObject *parent = 0);
-    void drawChar(QPainter *p);
+    explicit Character(int _option = 1, bool enemy = false, QObject *parent = 0);
+    void drawChar(QPainter *p, Character *e = NULL);
     int getX();
     int getY();
     int getLife();
     int getMana();
+    QImage getIcon();
+    QString getName();
 
 private:
     bool walkingLeft;
@@ -51,14 +53,21 @@ private:
     int life;
     int mana;
 
+    /* Global Stuff */
+    QImage characterIcon;
+    QString characterName;
+
 signals:
+    void death();
 
 public slots:
     void moveRight(bool value);
     void moveLeft(bool value);
-    void jumpUp(bool value);
+    void jumpUp();
     void setCrouch(bool value);
     void punch();
+    void reduceLife(int redu);
+    void setLife(int value);
 
 private slots:
     void count();

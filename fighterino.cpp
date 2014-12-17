@@ -43,6 +43,7 @@ Fighterino::Fighterino(QWidget *parent)
     connect(chooseMenu, SIGNAL(setCharacter(int)), this, SLOT(setCharacter(int)));
     connect(chooseBg, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
     connect(chooseBg, SIGNAL(setBackground(int)), this, SLOT(setBackground(int)));
+    connect(drawWidget, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
 }
 
 void Fighterino::keyPressEvent(QKeyEvent *e) {

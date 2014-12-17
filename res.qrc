@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/images/background">
         <file>hills_clean.png</file>
-        <file>forrest.png</file>
         <file>water.png</file>
         <file>forrest_clean.png</file>
+        <file>forrest.png</file>
     </qresource>
     <qresource prefix="/images/icons">
         <file>newgame.jpg</file>
@@ -18,7 +18,7 @@
         <file>face.bmp</file>
         <file>asuma.bmp</file>
         <file>ryu.bmp</file>
-        <file>vega.bmp</file>
+        <file>ahri.bmp</file>
     </qresource>
     <qresource prefix="/character/template">
         <file>walk.png</file>
@@ -36,5 +36,19 @@
         <file>crouch_asuma.png</file>
         <file>stand_asuma.png</file>
         <file>walk_asuma.png</file>
+    </qresource>
+    <qresource prefix="/character/ahri">
+        <file>jump_ahri.png</file>
+        <file>punching_ahri.png</file>
+        <file>crouch_ahri.png</file>
+        <file>walk_ahri.png</file>
+        <file>stand_ahri.png</file>
+    </qresource>
+    <qresource prefix="/character/ryu">
+        <file>punching_ryu.png</file>
+        <file>jump_ryu.png</file>
+        <file>crouch_ryu.png</file>
+        <file>walk_ryu.png</file>
+        <file>stand_ryu.png</file>
     </qresource>
 </RCC>

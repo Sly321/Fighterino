@@ -16,7 +16,7 @@
  * @param _option
  * @param parent
  */
-Character::Character(int _option, QObject *parent) : QObject(parent)
+Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
 {
     walkingLeft = false;
     walkingRight = false;
@@ -27,8 +27,8 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     jumpingLeft = false;
     crouching = false;
     punching = false;
-    lookingLeft = false;
-    lookingRight = true;
+    lookingLeft = enemy;
+    lookingRight = !enemy;
     imageSequence = 0;
 
     punchCount = 0;
@@ -46,28 +46,45 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
     connect(secTimer, SIGNAL(timeout()), this, SLOT(second()));
     secTimer->start();
 
-    xPos = 50;
+    xPos = (enemy ? 650 : 50);
     yPos = 300;
     jumpYPos = 0;
 
+
     switch(option) {
     case 1:
-        /* HIER NEUE BILDER Z.B. // Das hier ist ein template und kann benutzt werden */
-
-        /* Von hier ab neue Pfade angeben, einfach zu der Ressourcedatei hinzufügen (Auf präfix achten) */
+        characterName = "Asuma";
+        characterIcon = QImage(":/characters/icons/asuma.bmp");
         stand = new Sprite(QImage(":/character/asuma/stand_asuma.png"));
         walk = new Sprite(QImage(":/character/asuma/walk_asuma.png"));
         jump = new Sprite(QImage(":/character/asuma/jump_asuma.png"));
         crouch = new Sprite(QImage(":/character/asuma/crouch_asuma.png"));
         imgPunch = new Sprite(QImage(":/character/asuma/punching_asuma.png"));
-        /* Fertig ! */
         shadow.load(":/character/misc/shadow.png"); // Brauch nicht verändert werden
         break;
     case 2:
+        characterName = "Ryu";
+        characterIcon = QImage(":/characters/icons/ryu.bmp");
+        stand = new Sprite(QImage(":/character/ryu/stand_ryu.png"));
+        walk = new Sprite(QImage(":/character/ryu/walk_ryu.png"));
+        jump = new Sprite(QImage(":/character/ryu/jump_ryu.png"));
+        crouch = new Sprite(QImage(":/character/ryu/crouch_ryu.png"));
+        imgPunch = new Sprite(QImage(":/character/ryu/punching_ryu.png"));
+        shadow.load(":/character/misc/shadow.png");
         break;
     case 3:
+        characterName = "Ahri";
+        characterIcon = QImage(":/characters/icons/ahri.bmp");
+        stand = new Sprite(QImage(":/character/ahri/stand_ahri.png"));
+        walk = new Sprite(QImage(":/character/ahri/walk_ahri.png"));
+        jump = new Sprite(QImage(":/character/ahri/jump_ahri.png"));
+        crouch = new Sprite(QImage(":/character/ahri/crouch_ahri.png"));
+        imgPunch = new Sprite(QImage(":/character/ahri/punching_ahri.png"));
+        shadow.load(":/character/misc/shadow.png");
         break;
     case 4:
+        characterName = "Template";
+        characterIcon = QImage(":/characters/icons/face.bmp");
         stand = new Sprite(QImage(":/character/template/stand.png"));
         walk = new Sprite(QImage(":/character/template/walk.png"));
         jump = new Sprite(QImage(":/character/template/jump.png"));
@@ -87,7 +104,7 @@ Character::Character(int _option, QObject *parent) : QObject(parent)
  *
  * @param p
  */
-void Character::drawChar(QPainter *p) {
+void Character::drawChar(QPainter *p, Character *e) {
     calculate();
 
     //1. Stelle, sonst steht der Schatten auf ihm.
@@ -101,7 +118,7 @@ void Character::drawChar(QPainter *p) {
         // Logische Abfrage, wenn er hochspringt dann nimm das 2. Bild, wenn er runterspringt das 3.
         p->drawImage(xPos, yPos + jumpYPos, jump->getImage(jumpingUp ? 1 : 2));
     } else if (jumpingLeft) {
-        p->drawImage(xPos, yPos + jumpYPos, jump->getImageMirrored(jumpingUp ? 2 : 1));
+        p->drawImage(xPos, yPos + jumpYPos, jump->getImageMirrored(jumpingUp ? 1 : 2));
     } else if (walkingRight) { //walking right nach jump
         p->drawImage(xPos, yPos + jumpYPos, walk->getImage(imageSequence % 6));
     } else if (walkingLeft) {
@@ -129,6 +146,9 @@ void Character::drawChar(QPainter *p) {
     if (punchCount >= 40) {
         punching = false;
         punchCount = 0;
+    } else if (punching){
+        e->getX();
+        e->reduceLife(1);
     }
 }
 
@@ -166,6 +186,26 @@ int Character::getLife() {
 }
 
 /**
+ * @brief Character::setLife
+ * @param value
+ */
+void Character::setLife(int value) {
+    life = value;
+}
+
+/**
+ * @brief Character::reduceLife
+ * @param red
+ */
+void Character::reduceLife(int redu) {
+    life -= redu;
+    if(life <= 0) {
+        life = 10;
+        emit death();
+    }
+}
+
+/**
  * @brief Character::getMana
  *
  * Gibt das momentane Mana des Characteres zurück.
@@ -176,6 +216,12 @@ int Character::getMana() {
     return mana;
 }
 
+/**
+ * @brief Character::count
+ *
+ * Zählst die eine Bildzähler höher.
+ *
+ */
 void Character::count() {
 
     imageSequence++;
@@ -224,13 +270,12 @@ void Character::punch() {
  *
  * @param value
  */
-void Character::jumpUp(bool value) {
+void Character::jumpUp() {
     if(!jumping && !jumpingRight && !jumpingLeft) {
         if (walkingRight) {
             jumpingRight = true;
             jumpingUp = true;
         } else if (walkingLeft) {
-            qDebug() << "JumpingLeft TRUE";
             jumpingLeft = true;
             jumpingUp = true;
         } else /* if (standing) */ {
@@ -291,6 +336,12 @@ void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abf
     }
 }
 
+/**
+ * @brief Character::second
+ *
+ * Mana and Liferegg.
+ *
+ */
 void Character::second() {
     if (mana < 150) {
         mana++;
@@ -299,3 +350,20 @@ void Character::second() {
         life++;
     }
 }
+
+/**
+ * @brief Character::getIcon
+ * @return Returns the Character Icon.
+ */
+QImage Character::getIcon() {
+    return characterIcon;
+}
+
+/**
+ * @brief Character::getName
+ * @return Den Namen des Charakters.
+ */
+QString Character::getName() {
+    return characterName;
+}
+
