@@ -13,7 +13,7 @@ public:
 signals:
 
 public slots:
-    void drawInterface(QPainter *p, Character *c);
+    void drawInterface(QPainter *p, Character *c, Character *e);
 
 };
 

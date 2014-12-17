@@ -11,6 +11,9 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
 {
     parentWindow = parent;
 
+    win = false;
+    winChar = "";
+
     /* Bools initialization */
     showFps = true;
 
@@ -47,16 +50,27 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
 void Draw::paintEvent(QPaintEvent *e) {
     QPainter textPainter(this);
 
-    background->drawBackground(&textPainter);
-    UIinterface->drawInterface(&textPainter, character);
-    character->drawChar(&textPainter);
+    if(!win) {
+        background->drawBackground(&textPainter);
+        UIinterface->drawInterface(&textPainter, character, enemy);
+        character->drawChar(&textPainter, enemy);
+        enemy->drawChar(&textPainter, character);
+    } else {
+        textPainter.setPen(QPen(Qt::red));
+        textPainter.setBrush(QBrush(Qt::yellow));
+        textPainter.setFont(QFont("Arial", 60, -1, false));
+        textPainter.drawImage(QRect(350,100,100,100), winIcon.scaled(100,100));
+        textPainter.drawText(QRect(0,0,800,600), "Spieler " + winChar + " gewann!", QTextOption(Qt::AlignCenter));
+        textPainter.setFont(QFont("Arial", 12, -1, false));
+        textPainter.drawText(QRect(0,500,800,100), "(Escape drücken um ins Startmenu zu kommen.)", QTextOption(Qt::AlignCenter));
+    }
 
     i++; // FPS COUNTER
 
     /* FPS */
-    textPainter.setPen(QPen(Qt::red));
-    textPainter.setBrush(QBrush(Qt::yellow));
-    if(showFps) { textPainter.drawText(QRect(700,0,80,20), "FPS: " + QString::number(fpsInt)); }
+    //textPainter.setPen(QPen(Qt::red));
+    //textPainter.setBrush(QBrush(Qt::yellow));
+    //if(showFps) { textPainter.drawText(QRect(700,0,80,20), "FPS: " + QString::number(fpsInt)); }
 }
 
 /**
@@ -112,9 +126,7 @@ void Draw::keyPressEvent(QKeyEvent *e) {
         character->punch();
         break;
     case Qt::Key_Escape:
-        qDebug() << "keyPressEvent: Escape in Draw";
-        parentWindow->setFocus();
-        qDebug() << "Focus switched to ParentWidget";
+        emit setCurrent(0);
         break;
     case Qt::Key_D:
         qDebug() << "keyPressEvent: D in Draw";
@@ -177,8 +189,14 @@ void Draw::keyReleaseEvent(QKeyEvent *e) {
  */
 void Draw::load(int selChar, int selBackg) {
     character = new Character(selChar);
+    enemy = new Character(1, true);
     background = new Background(selBackg);
     UIinterface = new UIOverlay();
+    win = false;
+    winChar = "";
+    qDebug() << "NEW DRAW";
+    connect(enemy, SIGNAL(death()), this, SLOT(winC()));
+    connect(character, SIGNAL(death()), this, SLOT(winE()));
 }
 
 /**
@@ -209,4 +227,26 @@ QString Draw::getOSName()
     #else
         return QLatin1String("unknown");
     #endif
+}
+
+void Draw::winC() {/*
+    QMessageBox win;
+    win.setText("Character " + enemy->getName() + "hat gewonnen!/nKlick Ok um zum Startmenu zu kommen.");
+    win.setStandardButtons(QMessageBox::Ok);
+    win.setDefaultButton(QMessageBox::Ok);
+    win.exec();*/
+    winChar = character->getName();
+    winIcon = character->getIcon();
+    win = true;
+}
+
+void Draw::winE() {/*
+    QMessageBox win;
+    win.setText("Character " + character->getName() + "hat gewonnen!/nKlick Ok um zum Startmenu zu kommen.");
+    win.setStandardButtons(QMessageBox::Ok);
+    win.setDefaultButton(QMessageBox::Ok);
+    win.exec();*/
+    winChar = enemy->getName();
+    winIcon = enemy->getIcon();
+    win = true;
 }

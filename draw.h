@@ -22,17 +22,24 @@ signals:
     void chatSignal();
     void showOnlyChat();
     void hideOnlyChat();
+    void setCurrent(int);
 
 public slots:
     int fps();
+    void winC();
+    void winE();
 
 private:
     Character *character;
+    Character *enemy;
     Background *background;
     UIOverlay *UIinterface;
 
     QRect animRect;
     bool showFps;
+    bool win;
+    QString winChar;
+    QImage winIcon;
     int high;
     int width;
     int fpsInt;

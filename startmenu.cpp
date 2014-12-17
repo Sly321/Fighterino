@@ -18,6 +18,8 @@ StartMenu::StartMenu(QWidget *parent) : QWidget(parent), ui(new Ui::StartMenu)
 
     animation->setEasingCurve(QEasingCurve::OutBounce);
     animation->setDuration(1000);
+
+    ui->pushButton->setFocus();
 }
 
 StartMenu::~StartMenu()
@@ -35,7 +37,7 @@ void StartMenu::paintEvent(QPaintEvent *e) {
     painter->setBrush(Qt::red);
     painter->setPen(Qt::green);
     painter->setFont(QFont("Arial", 60, -1, false));
-
+    ui->pushButton->setFocus();
     painter->setBrush(brush);
     painter->setPen(Qt::NoPen);
     painter->drawRect(title);
