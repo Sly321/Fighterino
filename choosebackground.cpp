@@ -2,13 +2,14 @@
 
 ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
 {
-    auswahl = 1;
+    auswahl = 0;
     rectChoose = new QPushButton(this);
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
 
-    icon1.load(":/images/background/hills_clean.png");
+    icon1.load(":/images/background/forrest_icon.png");
     icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
-
+    icon2.load(":/images/background_bc/bc_icon.png");
+    icon2 = icon2.scaled(100,100, Qt::KeepAspectRatio);
     machine = new QStateMachine;
 
     sleft = new QState(machine);
@@ -54,6 +55,8 @@ void ChooseBackground::paintEvent(QPaintEvent *e) {
     QSize rectSize(100, 100);
     QPainter painter(this);
     painter.drawImage(245, 250, icon1);
+    painter.drawImage(350, 250, icon2);
+    //painter.drawImage(455, 145, icon3);
     for (int x = 0; x < 3; x++) {
             int posX = 245 + (100 * x) + (5 * x);
             int posY = 145 + (100) + (5);
