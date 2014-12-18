@@ -18,6 +18,9 @@ private:
     QImage bg2;
     QImage bg3;
     QImage bg4;
+    QImage bg5;
+    QImage bg6;
+    QImage bg7;
     void drawTiles(QImage img, int y, QPainter *p, bool versetzt = false);
 
 signals:

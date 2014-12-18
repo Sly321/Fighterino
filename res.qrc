@@ -61,4 +61,13 @@
         <file>bc_icon.png</file>
         <file>final.png</file>
     </qresource>
+    <qresource prefix="/images/background_wall">
+        <file>hill1.png</file>
+        <file>hill2.png</file>
+        <file>road1.png</file>
+        <file>road2.png</file>
+        <file>road3.bmp</file>
+        <file>wallbackground.png</file>
+        <file>sky.bmp</file>
+    </qresource>
 </RCC>
