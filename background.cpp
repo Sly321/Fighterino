@@ -11,6 +11,10 @@ Background::Background(int _option, QObject *parent) : QObject(parent)
         bg4.load(":/images/background/hills_clean.png");
         break;
     case 2:
+        bg.load(":/images/background_bc/bc2_test.png");
+        bg2.load(":/images/background_bc/final.png");
+        bg3.load(":/images/background_bc/bc4_test.png");
+        bg4.load(":/images/background_bc/bc5_test.png");
         break;
     case 3:
         break;
@@ -37,6 +41,12 @@ void Background::drawBackground(QPainter *p) {
         drawTiles(bg3, 543, p); // 57y
         break;
     case 2:
+        //drawTiles(bg, 70, p, true);
+        drawTiles(bg2, 70, p);
+        drawTiles(bg3, 302, p); //
+        drawTiles(bg4, 337, p);
+        drawTiles(bg3, 508, p);
+        drawTiles(bg4, 543, p);// 57y
         break;
     case 3:
         break;

@@ -4,6 +4,7 @@
         <file>water.png</file>
         <file>forrest_clean.png</file>
         <file>forrest.png</file>
+        <file>forrest_icon.png</file>
     </qresource>
     <qresource prefix="/images/icons">
         <file>newgame.jpg</file>
@@ -50,5 +51,14 @@
         <file>crouch_ryu.png</file>
         <file>walk_ryu.png</file>
         <file>stand_ryu.png</file>
+    </qresource>
+    <qresource prefix="/images/background_bc">
+        <file>bc1_test.png</file>
+        <file>bc2_test.png</file>
+        <file>bc3_test.png</file>
+        <file>bc4_test.png</file>
+        <file>bc5_test.png</file>
+        <file>bc_icon.png</file>
+        <file>final.png</file>
     </qresource>
 </RCC>
