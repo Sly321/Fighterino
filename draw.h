@@ -3,6 +3,7 @@
 
 #include <QtWidgets>
 #include <QSysInfo>
+#include <QtMultimedia/QSound>
 #include "character.h"
 #include "drawobject.h"
 #include "background.h"
@@ -28,6 +29,7 @@ public slots:
     int fps();
     void winC();
     void winE();
+    void kiActionTrue();
 
 private:
     Character *character;
@@ -38,6 +40,9 @@ private:
     QRect animRect;
     bool showFps;
     bool win;
+    bool ki;
+    bool actionKI;
+    int whichActionKI;
     QString winChar;
     QImage winIcon;
     int high;
@@ -46,6 +51,7 @@ private:
     int i;
     QTimer *timerUpdate;
     QTimer *seconds;
+    QTimer *kiActions;
     QPropertyAnimation *animation;
     QWidget *parentWindow;
     DrawObject *bigBang;

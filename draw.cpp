@@ -12,13 +12,11 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
     parentWindow = parent;
 
     win = false;
+    ki = false;
     winChar = "";
 
     /* Bools initialization */
     showFps = true;
-
-    /* Objects to draw */
-    bigBang = new DrawObject(":/sprites/bigbang.bmp", 320, 320);
 
     /* Int initialization, Fps wird später die Fps errechnen und i wird der Zähler der Fps pro Sekunde sein. */
     fpsInt = 0;
@@ -66,6 +64,16 @@ void Draw::paintEvent(QPaintEvent *e) {
     }
 
     i++; // FPS COUNTER
+
+    if (ki) {
+
+
+        enemy->moveRight(true);
+
+
+
+    }
+
 
     /* FPS */
     //textPainter.setPen(QPen(Qt::red));
@@ -197,6 +205,13 @@ void Draw::load(int selChar, int selBackg) {
     qDebug() << "NEW DRAW";
     connect(enemy, SIGNAL(death()), this, SLOT(winC()));
     connect(character, SIGNAL(death()), this, SLOT(winE()));
+    ki = true;
+    if(ki) {
+        kiActions = new QTimer(this);
+        kiActions->setInterval(3000);
+        connect(kiActions, SIGNAL(timeout()), this, SLOT(kiActionTrue()));
+        kiActions->start();
+    }
 }
 
 /**
@@ -235,6 +250,7 @@ void Draw::winC() {/*
     win.setStandardButtons(QMessageBox::Ok);
     win.setDefaultButton(QMessageBox::Ok);
     win.exec();*/
+    QSound::play(":/fanfare.wav");
     winChar = character->getName();
     winIcon = character->getIcon();
     win = true;
@@ -246,7 +262,12 @@ void Draw::winE() {/*
     win.setStandardButtons(QMessageBox::Ok);
     win.setDefaultButton(QMessageBox::Ok);
     win.exec();*/
+    QSound::play(":/fanfare.wav");
     winChar = enemy->getName();
     winIcon = enemy->getIcon();
     win = true;
+}
+
+void Draw::kiActionTrue() {
+    actionKI = true;
 }

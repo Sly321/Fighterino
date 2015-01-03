@@ -6,10 +6,15 @@
         <file>forrest.png</file>
         <file>forrest_icon.png</file>
     </qresource>
-    <qresource prefix="/images/icons">
+    <qresource prefix="/">
         <file>newgame.jpg</file>
         <file>icon.png</file>
         <file>icon2.gif</file>
+        <file>welcome.wav</file>
+        <file>click.wav</file>
+        <file>punch.wav</file>
+        <file>woosh.wav</file>
+        <file>fanfare.wav</file>
     </qresource>
     <qresource prefix="/sprites">
         <file>stand.png</file>

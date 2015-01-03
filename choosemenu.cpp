@@ -25,31 +25,16 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 
     /* States */
     topleft = new QState(machine);
-    topleft->assignProperty(rectChoose, "geometry", QRect(245, 145, 100, 100));
+    topleft->assignProperty(rectChoose, "geometry", QRect(290, 145, 100, 100));
 
     top = new QState(machine);
-    top->assignProperty(rectChoose, "geometry", QRect(350, 145, 100, 100));
-
-    topright = new QState(machine);
-    topright->assignProperty(rectChoose, "geometry", QRect(455, 145, 100, 100));
+    top->assignProperty(rectChoose, "geometry", QRect(400, 145, 100, 100));
 
     midleft = new QState(machine);
-    midleft->assignProperty(rectChoose, "geometry", QRect(245, 250, 100, 100));
+    midleft->assignProperty(rectChoose, "geometry", QRect(290, 255, 100, 100));
 
     mid = new QState(machine);
-    mid->assignProperty(rectChoose, "geometry", QRect(350, 250, 100, 100));
-
-    midright = new QState(machine);
-    midright->assignProperty(rectChoose, "geometry", QRect(455, 250, 100, 100));
-
-    botleft = new QState(machine);
-    botleft->assignProperty(rectChoose, "geometry", QRect(245, 355, 100, 100));
-
-    bot = new QState(machine);
-    bot->assignProperty(rectChoose, "geometry", QRect(350, 355, 100, 100));
-
-    botright = new QState(machine);
-    botright->assignProperty(rectChoose, "geometry", QRect(455, 355, 100, 100));
+    mid->assignProperty(rectChoose, "geometry", QRect(400, 255, 100, 100));
 
     /* Set First State */
     machine->setInitialState(topleft);
@@ -71,21 +56,9 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     tl = top->addTransition(this, SIGNAL(left()), topleft);
     tl->addAnimation(animation);
 
-    /* Top Right */
-    tri = top->addTransition(this, SIGNAL(right()), topright);
-    tri->addAnimation(animation);
-
     /* Top Down */
     td = top->addTransition(this, SIGNAL(down()), mid);
     td->addAnimation(animation);
-
-    /* Topright Left */
-    trl = topright->addTransition(this, SIGNAL(left()), top);
-    trl->addAnimation(animation);
-
-    /* Topright Down */
-    trd = topright->addTransition(this, SIGNAL(down()), midright);
-    trd->addAnimation(animation);
 
     /* Midleft Up */
     mlu = midleft->addTransition(this, SIGNAL(up()), topleft);
@@ -95,10 +68,6 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     mlr = midleft->addTransition(this, SIGNAL(right()), mid);
     mlr->addAnimation(animation);
 
-    /* Midleft Down */
-    mld = midleft->addTransition(this, SIGNAL(down()), botleft);
-    mld->addAnimation(animation);
-
     /* Mid Left */
     ml = mid->addTransition(this, SIGNAL(left()), midleft);
     ml->addAnimation(animation);
@@ -107,80 +76,28 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     mu = mid->addTransition(this, SIGNAL(up()), top);
     mu->addAnimation(animation);
 
-    /* Mid Right */
-    mr = mid->addTransition(this, SIGNAL(right()), midright);
-    mr->addAnimation(animation);
-
-    /* Mid Down */
-    md = mid->addTransition(this, SIGNAL(down()), bot);
-    md->addAnimation(animation);
-
-    /* Midright Up */
-    mru = midright->addTransition(this, SIGNAL(up()), topright);
-    mru->addAnimation(animation);
-
-    /* Midright Left */
-    mrl = midright->addTransition(this, SIGNAL(left()), mid);
-    mrl->addAnimation(animation);
-
-    /* Midright Down */
-    mrd = midright->addTransition(this, SIGNAL(down()), botright);
-    mrd->addAnimation(animation);
-
-    /* Botleft Up */
-    blu = botleft->addTransition(this, SIGNAL(up()), midleft);
-    blu->addAnimation(animation);
-
-    /* Botleft Right */
-    blr = botleft->addTransition(this, SIGNAL(right()), bot);
-    blr->addAnimation(animation);
-
-    /* Bot Left */
-    bl = bot->addTransition(this, SIGNAL(left()), botleft);
-    bl->addAnimation(animation);
-
-    /* Bot Up */
-    bu = bot->addTransition(this, SIGNAL(up()), mid);
-    bu->addAnimation(animation);
-
-    /* Bot Right */
-    br = bot->addTransition(this, SIGNAL(right()), botright);
-    br->addAnimation(animation);
-
-    /* Botright Left */
-    brl = botright->addTransition(this, SIGNAL(left()), bot);
-    brl->addAnimation(animation);
-
-    /* Botright Up */
-    bru = botright->addTransition(this, SIGNAL(up()), midright);
-    bru->addAnimation(animation);
-
     machine->start();
 
     connect(pushButtonBack, SIGNAL(clicked()), this, SLOT(backToStartmenu()));
 
     connect(topleft, SIGNAL(entered()), this, SLOT(selectedTopleft()));
     connect(top, SIGNAL(entered()), this, SLOT(selectedTop()));
-    connect(topright, SIGNAL(entered()), this, SLOT(selectedTopright()));
     connect(midleft, SIGNAL(entered()), this, SLOT(selectedMidleft()));
     connect(mid, SIGNAL(entered()), this, SLOT(selectedMid()));
-    connect(midright, SIGNAL(entered()), this, SLOT(selectedMidright()));
-    connect(botleft, SIGNAL(entered()), this, SLOT(selectedBotleft()));
-    connect(bot, SIGNAL(entered()), this, SLOT(selectedBot()));
-    connect(botright, SIGNAL(entered()), this, SLOT(selectedBotright()));
 }
 
 void ChooseMenu::paintEvent(QPaintEvent *e) {
     QSize rectSize(100, 100);
     QPainter painter(this);
-    painter.drawImage(245,145, icon1);
-    painter.drawImage(350,145, icon2);
-    painter.drawImage(455,145, icon3);
-    painter.drawImage(245,250, icon4);
-    for (int x = 0; x < 3; x++) {
-        for (int y = 0; y < 3; y++) {
-            int posX = 245 + (100 * x) + (5 * x);
-            int posY = 145 + (100 * y) + (5 * y);
+    painter.drawImage(290,145, icon1);
+    painter.drawImage(400,145, icon2);
+    painter.drawImage(290,255, icon3);
+
+    painter.drawImage(400,255, icon4);
+    for (int x = 0; x < 2; x++) {
+        for (int y = 0; y < 2; y++) {
+            int posX = 290 + (100 * x) + (10 * x);
+            int posY = 145 + (100 * y) + (10 * y);
             QRect rect(QPoint(posX, posY), rectSize);
             painter.drawRect(rect);
         }
@@ -198,15 +115,19 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
 void ChooseMenu::keyPressEvent(QKeyEvent *e) {
     switch(e->key()) {
     case Qt::Key_Left:
+        QSound::play(":/click.wav");
         emit left();
         break;
     case Qt::Key_Right:
+        QSound::play(":/click.wav");
         emit right();
         break;
     case Qt::Key_Down:
+        QSound::play(":/click.wav");
         emit down();
         break;
     case Qt::Key_Up:
+        QSound::play(":/click.wav");
         emit up();
         break;
     case Qt::Key_Return:
@@ -239,45 +160,14 @@ void ChooseMenu::selectedTop() {
     this->update();
 }
 
-void ChooseMenu::selectedTopright() {
+void ChooseMenu::selectedMidleft() {
     selectedString = "Ahri";
     auswahl = 3;
     this->update();
 }
 
-void ChooseMenu::selectedMidleft() {
+void ChooseMenu::selectedMid() {
     selectedString = "Template";
     auswahl = 4;
     this->update();
 }
-
-void ChooseMenu::selectedMid() {
-    selectedString = "Mid";
-    auswahl = 5;
-    this->update();
-}
-
-void ChooseMenu::selectedMidright() {
-    selectedString = "Midright";
-    auswahl = 6;
-    this->update();
-}
-
-void ChooseMenu::selectedBotleft() {
-    selectedString = "Botleft";
-    auswahl = 7;
-    this->update();
-}
-
-void ChooseMenu::selectedBot() {
-    selectedString = "Bot";
-    auswahl = 8;
-    this->update();
-}
-
-void ChooseMenu::selectedBotright() {
-    selectedString = "Botright";
-    auswahl = 9;
-    this->update();
-}
-

@@ -18,7 +18,7 @@ StartMenu::StartMenu(QWidget *parent) : QWidget(parent), ui(new Ui::StartMenu)
 
     animation->setEasingCurve(QEasingCurve::OutBounce);
     animation->setDuration(1000);
-
+    QSound::play(":/welcome.wav");
 }
 
 StartMenu::~StartMenu()
@@ -46,7 +46,7 @@ void StartMenu::paintEvent(QPaintEvent *e) {
     if (countAnimation == 100) {
         animation->start();
     } else if (countAnimation < 100) {
-        painter->drawText(QRect(250,100,300,100), "" + QString::number(100 - countAnimation), QTextOption(Qt::AlignCenter))  ;
+        painter->drawText(QRect(250,100,300,100), "" + QString::number(100 - countAnimation), QTextOption(Qt::AlignCenter));
     }
 }
 

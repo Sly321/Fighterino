@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include <QtWidgets>
+#include <QtMultimedia/QSound>
 #include "sprite.h"
 
 class Character : public QObject

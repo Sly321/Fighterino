@@ -50,7 +50,6 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
     yPos = 300;
     jumpYPos = 0;
 
-
     switch(option) {
     case 1:
         characterName = "Asuma";
@@ -147,8 +146,11 @@ void Character::drawChar(QPainter *p, Character *e) {
         punching = false;
         punchCount = 0;
     } else if (punching){
-        e->getX();
-        e->reduceLife(1);
+        if(lookingRight && (e->getX() - this->getX()) < 50 && (e->getX() - this->getX()) > 0) {
+            e->reduceLife(1);
+        } else if(lookingLeft && (this->getX() - e->getX()) < 50 && (this->getX() - e->getX()) > 0) {
+            e->reduceLife(1);
+        }
     }
 }
 
@@ -223,7 +225,6 @@ int Character::getMana() {
  *
  */
 void Character::count() {
-
     imageSequence++;
     if(imageSequence < 0) {
         imageSequence = 0;
@@ -231,15 +232,19 @@ void Character::count() {
 }
 
 void Character::moveRight(bool value) {
-    walkingRight = value;
-    lookingRight = true;
-    lookingLeft = false;
+    if(!punching) {
+        walkingRight = value;
+        lookingRight = true;
+        lookingLeft = false;
+    }
 }
 
 void Character::moveLeft(bool value) {
-    walkingLeft = value;
-    lookingLeft = true;
-    lookingRight = false;
+    if(!punching) {
+        walkingLeft = value;
+        lookingLeft = true;
+        lookingRight = false;
+    }
 }
 
 void Character::setCrouch(bool value) {
@@ -259,6 +264,7 @@ void Character::punch() {
         punchCount = 0;
         imageSequence = 0;
         mana = mana - 15;
+        QSound::play(":/punch.wav");
     }
 }
 
@@ -275,12 +281,15 @@ void Character::jumpUp() {
         if (walkingRight) {
             jumpingRight = true;
             jumpingUp = true;
+            QSound::play(":/woosh.wav");
         } else if (walkingLeft) {
             jumpingLeft = true;
             jumpingUp = true;
+            QSound::play(":/woosh.wav");
         } else /* if (standing) */ {
             jumping = true;
             jumpingUp = true;
+            QSound::play(":/woosh.wav");
         }
     }
 }
