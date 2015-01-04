@@ -10,6 +10,8 @@ ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
     icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
     icon2.load(":/images/background_bc/bc_icon.png");
     icon2 = icon2.scaled(100,100, Qt::KeepAspectRatio);
+    icon3.load(":/images/background_wall/wall_icon.png");
+    icon3 = icon3.scaled(100,100, Qt::KeepAspectRatio);
     machine = new QStateMachine;
 
     sleft = new QState(machine);
@@ -56,7 +58,7 @@ void ChooseBackground::paintEvent(QPaintEvent *e) {
     QPainter painter(this);
     painter.drawImage(245, 250, icon1);
     painter.drawImage(350, 250, icon2);
-    //painter.drawImage(455, 145, icon3);
+    painter.drawImage(455, 252, icon3);
     for (int x = 0; x < 3; x++) {
             int posX = 245 + (100 * x) + (5 * x);
             int posY = 145 + (100) + (5);
@@ -116,13 +118,13 @@ void ChooseBackground::selectedLeft() {
 }
 
 void ChooseBackground::selectedMid() {
-    selectedString = "Mid";
+    selectedString = "Canyon";
     auswahl = 2;
     this->update();
 }
 
 void ChooseBackground::selectedRight() {
-    selectedString = "Right";
+    selectedString = "Big Wall";
     auswahl = 3;
     this->update();
 }

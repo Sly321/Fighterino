@@ -32,6 +32,7 @@ private:
     QSignalTransition *rl;
     QImage icon1;
     QImage icon2;
+    QImage icon3;
 
 signals:
     void setCurrent(int);

@@ -82,13 +82,13 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         shadow.load(":/character/misc/shadow.png");
         break;
     case 4:
-        characterName = "Template";
-        characterIcon = QImage(":/characters/icons/face.bmp");
-        stand = new Sprite(QImage(":/character/template/stand.png"));
-        walk = new Sprite(QImage(":/character/template/walk.png"));
-        jump = new Sprite(QImage(":/character/template/jump.png"));
-        crouch = new Sprite(QImage(":/character/template/crouch.png"));
-        imgPunch = new Sprite(QImage(":/character/template/punching.png"));
+        characterName = "Chenpo";
+        characterIcon = QImage(":/characters/icons/chenpo.bmp");
+        stand = new Sprite(QImage(":/character/chenpo/stand_chenpo.png"));
+        walk = new Sprite(QImage(":/character/chenpo/walk_chenpo.png"));
+        jump = new Sprite(QImage(":/character/chenpo/jump_chenpo.png"));
+        crouch = new Sprite(QImage(":/character/chenpo/crouch_chenpo.png"));
+        imgPunch = new Sprite(QImage(":/character/chenpo/punching_chenpo.png"));
         shadow.load(":/character/misc/shadow.png");
         break;
     default:

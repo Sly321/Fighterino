@@ -16,7 +16,7 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     icon2 = icon2.scaled(100,100, Qt::KeepAspectRatio);
     icon3.load(":/characters/icons/ahri.bmp");
     icon3 = icon3.scaled(100,100, Qt::KeepAspectRatio);
-    icon4.load(":/characters/icons/face.bmp");
+    icon4.load(":/characters/icons/chenpo.bmp");
     icon4 = icon4.scaled(100,100, Qt::KeepAspectRatio);
 
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
@@ -167,7 +167,7 @@ void ChooseMenu::selectedMidleft() {
 }
 
 void ChooseMenu::selectedMid() {
-    selectedString = "Template";
+    selectedString = "Chenpo";
     auswahl = 4;
     this->update();
 }
