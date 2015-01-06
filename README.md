@@ -25,6 +25,8 @@ Added a STUNNED bool for Characters that gets hitted.
 
 Added a temporary Stun picture.
 
+Enemy KI is punching!
+
 #### Version 0.2.2
 
 Added Sounds to the Startscreen, Character Menu and Fightscreen.
