@@ -18,7 +18,6 @@ StartMenu::StartMenu(QWidget *parent) : QWidget(parent), ui(new Ui::StartMenu)
 
     animation->setEasingCurve(QEasingCurve::OutBounce);
     animation->setDuration(1000);
-    QSound::play(":/welcome.wav");
 }
 
 StartMenu::~StartMenu()
@@ -32,6 +31,9 @@ void StartMenu::Anim() {
 
 void StartMenu::paintEvent(QPaintEvent *e) {
     QPainter *painter = new QPainter(this);
+    painter->setBrush(Qt::white);
+    painter->setPen(Qt::white);
+    painter->drawRect(0,0,800,600);
     QBrush brush(Qt::yellow, Qt::DiagCrossPattern);
     painter->setBrush(Qt::red);
     painter->setPen(Qt::green);
@@ -40,13 +42,12 @@ void StartMenu::paintEvent(QPaintEvent *e) {
     painter->setPen(Qt::NoPen);
     painter->drawRect(title);
     painter->setPen(Qt::cyan);
-    painter->drawText(title, "Überschrift", QTextOption(Qt::AlignCenter));
+    painter->drawImage(title, QImage(":/start.png"));
 
     countAnimation++;
     if (countAnimation == 100) {
         animation->start();
-    } else if (countAnimation < 100) {
-        painter->drawText(QRect(250,100,300,100), "" + QString::number(100 - countAnimation), QTextOption(Qt::AlignCenter));
+        QSound::play(":/welcome.wav");
     }
 }
 
@@ -57,10 +58,12 @@ void StartMenu::on_pushButton_3_clicked()
 
 void StartMenu::on_pushButton_clicked()
 {
+    // Player vs KI
     emit setCurrent(3);
 }
 
 void StartMenu::on_pushButton_5_clicked()
 {
-    emit setCurrent(3);
+    // Player vs Player
+    emit setCurrent(5);
 }

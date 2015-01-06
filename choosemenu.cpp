@@ -6,6 +6,8 @@
 ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 {
     parentWindow = parent;
+    pvp = false;
+    player2pick = false;
     auswahl = 0;
     pushButtonBack = new QPushButton("Back", this);
     rectChoose = new QPushButton(this);
@@ -79,7 +81,6 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     machine->start();
 
     connect(pushButtonBack, SIGNAL(clicked()), this, SLOT(backToStartmenu()));
-
     connect(topleft, SIGNAL(entered()), this, SLOT(selectedTopleft()));
     connect(top, SIGNAL(entered()), this, SLOT(selectedTop()));
     connect(midleft, SIGNAL(entered()), this, SLOT(selectedMidleft()));
@@ -92,7 +93,6 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     painter.drawImage(290,145, icon1);
     painter.drawImage(400,145, icon2);
     painter.drawImage(290,255, icon3);
-
     painter.drawImage(400,255, icon4);
     for (int x = 0; x < 2; x++) {
         for (int y = 0; y < 2; y++) {
@@ -104,12 +104,28 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     }
     QPen pen(QBrush(Qt::green), 2);
     painter.setPen(pen);
-    qDebug() << "Painting now";
-    painter.drawText(QRect(245, 460, 310, 100), "Auswahl " + QString::number(auswahl) + "\nName: " + selectedString, QTextOption(Qt::AlignCenter));
+    qDebug() << "Painting Choosemenu";
+
+    if(!pvp) {
+        painter.drawText(QRect(245, 460, 310, 100), "Auswahl \nName: " + selectedString, QTextOption(Qt::AlignCenter));
+    } else if (pvp && !player2pick) {
+        painter.drawText(QRect(245, 460, 310, 100), "Spieler 1 \nName: " + selectedString, QTextOption(Qt::AlignCenter));
+    } else if (pvp && player2pick) {
+        painter.drawText(QRect(245, 460, 310, 80), "Spieler 1 \nName: " + selectedString, QTextOption(Qt::AlignCenter));
+        painter.drawText(QRect(245, 500, 310, 80), "Spieler 2 \nName: " + selectedStringp2, QTextOption(Qt::AlignCenter));
+    }
+
     painter.setFont(QFont("Arial", 60, -1, false));
     painter.setBrush(Qt::red);
     painter.setPen(Qt::red);
-    painter.drawText(QRect(0,0,800,200), "Charakterauswahl", QTextOption(Qt::AlignCenter));
+    if(!pvp) {
+        painter.drawText(QRect(0,0,800,200), "Charakterauswahl", QTextOption(Qt::AlignCenter));
+    } else if (!player2pick){
+        painter.drawText(QRect(0,0,800,200), "Spieler 1", QTextOption(Qt::AlignCenter));
+    } else if (player2pick) {
+        painter.drawText(QRect(0,0,800,200), "Spieler 2", QTextOption(Qt::AlignCenter));
+    }
+
 }
 
 void ChooseMenu::keyPressEvent(QKeyEvent *e) {
@@ -131,10 +147,29 @@ void ChooseMenu::keyPressEvent(QKeyEvent *e) {
         emit up();
         break;
     case Qt::Key_Return:
-        forwardChoosebg();
+        if(!pvp) {
+            this->destroy();
+            forwardChoosebg();
+        } else if (pvp && !player2pick) {
+        } else if (pvp && player2pick) {
+            forwardPvp();
+        }
         break;
     case Qt::Key_Escape:
         backToStartmenu();
+        break;
+    }
+}
+
+void ChooseMenu::keyReleaseEvent(QKeyEvent *e) {
+    switch(e->key()) {
+    case Qt::Key_Return:
+        if (pvp && !player2pick) {
+            player2pick = true;
+            auswahlp2 = auswahl;
+            selectedStringp2 = selectedString;
+            this->update();
+        }
         break;
     }
 }
@@ -144,30 +179,63 @@ void ChooseMenu::forwardChoosebg() {
     emit setCurrent(4);
 }
 
+void ChooseMenu::forwardPvp() {
+    emit setCharacter(auswahl);
+    emit setCharacter2(auswahlp2);
+    emit setCurrent(4);
+}
+
 void ChooseMenu::backToStartmenu() {
     emit setCurrent(0);
 }
 
 void ChooseMenu::selectedTopleft() {
-    selectedString = "Asuma";
-    auswahl = 1;
+    if (!player2pick) {
+        auswahl = 1;
+        selectedString = "Asuma";
+    } else {
+        auswahlp2 = 1;
+        selectedStringp2 = "Asuma";
+    }
     this->update();
 }
 
 void ChooseMenu::selectedTop() {
-    selectedString = "Ryu";
-    auswahl = 2;
+    if (!player2pick) {
+        auswahl = 2;
+        selectedString = "Ryu";
+    } else {
+        auswahlp2 = 2;
+        selectedStringp2 = "Ryu";
+    }
     this->update();
 }
 
 void ChooseMenu::selectedMidleft() {
-    selectedString = "Ahri";
-    auswahl = 3;
+    if (!player2pick) {
+        selectedString = "Ahri";
+        auswahl = 3;
+    } else {
+        selectedStringp2 = "Ahri";
+        auswahlp2 = 3;
+    }
     this->update();
 }
 
 void ChooseMenu::selectedMid() {
-    selectedString = "Chenpo";
-    auswahl = 4;
+    if (!player2pick) {
+        auswahl = 4;
+        selectedString = "Chenpo";
+    } else {
+        auswahlp2 = 4;
+        selectedStringp2 = "Chenpo";
+    }
     this->update();
+}
+
+void ChooseMenu::setPlayerVsPlayer(bool value) {
+    pvp = value;
+    player2pick = false;
+    auswahlp2 = 1;
+    selectedStringp2 = "";
 }

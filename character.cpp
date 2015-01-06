@@ -18,6 +18,7 @@
  */
 Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
 {
+    stunned = false;
     walkingLeft = false;
     walkingRight = false;
     standing = false;
@@ -59,6 +60,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/asuma/jump_asuma.png"));
         crouch = new Sprite(QImage(":/character/asuma/crouch_asuma.png"));
         imgPunch = new Sprite(QImage(":/character/asuma/punching_asuma.png"));
+        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
         shadow.load(":/character/misc/shadow.png"); // Brauch nicht verändert werden
         break;
     case 2:
@@ -69,6 +71,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/ryu/jump_ryu.png"));
         crouch = new Sprite(QImage(":/character/ryu/crouch_ryu.png"));
         imgPunch = new Sprite(QImage(":/character/ryu/punching_ryu.png"));
+        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
         shadow.load(":/character/misc/shadow.png");
         break;
     case 3:
@@ -79,6 +82,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/ahri/jump_ahri.png"));
         crouch = new Sprite(QImage(":/character/ahri/crouch_ahri.png"));
         imgPunch = new Sprite(QImage(":/character/ahri/punching_ahri.png"));
+        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
         shadow.load(":/character/misc/shadow.png");
         break;
     case 4:
@@ -89,6 +93,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/chenpo/jump_chenpo.png"));
         crouch = new Sprite(QImage(":/character/chenpo/crouch_chenpo.png"));
         imgPunch = new Sprite(QImage(":/character/chenpo/punching_chenpo.png"));
+        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
         shadow.load(":/character/misc/shadow.png");
         break;
     default:
@@ -109,9 +114,18 @@ void Character::drawChar(QPainter *p, Character *e) {
     //1. Stelle, sonst steht der Schatten auf ihm.
     p->drawImage(xPos + 25, yPos + 75, shadow);
 
-    if (standing) {
-        ;
+    if (stunned) {
+        if (lookingRight) {
+            p->drawImage(xPos, yPos + jumpYPos, imgStun->getImage(0));
+        } else {
+            p->drawImage(xPos, yPos + jumpYPos, imgStun->getImageMirrored(0));
+        }
     } else if (jumping) {
+        if (lookingRight) {
+            p->drawImage(xPos, yPos + jumpYPos, jump->getImage(0));
+        } else {
+            p->drawImage(xPos, yPos + jumpYPos, jump->getImageMirrored(0));
+        }
         p->drawImage(xPos, yPos + jumpYPos, jump->getImage(0));
     } else if (jumpingRight) {
         // Logische Abfrage, wenn er hochspringt dann nimm das 2. Bild, wenn er runterspringt das 3.
@@ -145,6 +159,7 @@ void Character::drawChar(QPainter *p, Character *e) {
     if (punchCount >= 40) {
         punching = false;
         punchCount = 0;
+        e->setStunned(false);
     } else if (punching){
         if(lookingRight && (e->getX() - this->getX()) < 50 && (e->getX() - this->getX()) > 0) {
             e->reduceLife(1);
@@ -201,10 +216,15 @@ void Character::setLife(int value) {
  */
 void Character::reduceLife(int redu) {
     life -= redu;
+    stunned = true;
     if(life <= 0) {
         life = 10;
         emit death();
     }
+}
+
+void Character::setStunned(bool value) {
+    stunned = value;
 }
 
 /**
@@ -259,12 +279,14 @@ void Character::setCrouch(bool value) {
  * Falls alles korrekt ist darf der Charakter zuschlagen.
  */
 void Character::punch() {
-    if(!punching && !jumping && !jumpingRight && !jumpingLeft && mana >= 15) {
+    if(!stunned && !punching && !jumping && !jumpingRight && !jumpingLeft && mana >= 15) {
         punching = true;
         punchCount = 0;
         imageSequence = 0;
         mana = mana - 15;
         QSound::play(":/punch.wav");
+        walkingLeft = false;
+        walkingRight = false;
     }
 }
 
@@ -302,7 +324,7 @@ void Character::jumpUp() {
 void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abfrage
 
     /* Falls der Character steht, tue nichts */
-    if(standing) { // dauerfalse inc
+    if(stunned) { // dauerfalse inc
         ;
 
     /* Platzhalter für etwaige Fähigkeiten */
@@ -376,3 +398,18 @@ QString Character::getName() {
     return characterName;
 }
 
+bool Character::enemyIsLeft(Character *enemy) {
+    if(enemy->getX() < this->getX()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool Character::enemyIsRight(Character *enemy) {
+    if(enemy->getX() > this->getX()) {
+        return true;
+    } else {
+        return false;
+    }
+}

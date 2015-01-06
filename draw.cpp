@@ -14,6 +14,7 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
     win = false;
     ki = false;
     winChar = "";
+    whichActionKI = 0;
 
     /* Bools initialization */
     showFps = true;
@@ -31,6 +32,7 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
     } else {
         timerUpdate->start(20);
     }
+    qsrand((uint)timerUpdate);
 
     /* Das sind die Sekunden, sie werden benutzt um die FPS auszurechnen. */
     seconds = new QTimer(this);
@@ -66,10 +68,62 @@ void Draw::paintEvent(QPaintEvent *e) {
     i++; // FPS COUNTER
 
     if (ki) {
+        if (actionKI) {
 
+            enemy->moveRight(false);
+            enemy->moveLeft(false);
 
-        enemy->moveRight(true);
+            whichActionKI = qrand() % ((5 + 1) - 0) + 0;
+            qDebug() << "KI Action: " + QString::number(whichActionKI);
 
+            switch(whichActionKI) {
+            case 0:
+                break;
+            case 1:
+                if (!(enemy->getX() > 600)) {
+                    enemy->moveRight(true);
+                } else {
+                    enemy->moveLeft(true);
+                }
+                break;
+            case 2:
+                if (!(enemy->getX() < 200)) {
+                    enemy->moveLeft(true);
+                } else {
+                    enemy->moveRight(true);
+                }
+                break;
+            case 3:
+                if (!(enemy->getX() > 600)) {
+                    enemy->moveRight(true);
+                    enemy->jumpUp();
+                } else {
+                    enemy->moveLeft(true);
+                    enemy->jumpUp();
+                }
+                break;
+            case 4:
+                if (!(enemy->getX() < 200)) {
+                    enemy->moveLeft(true);
+                    enemy->jumpUp();
+                } else {
+                    enemy->moveRight(true);
+                    enemy->jumpUp();
+                }
+                break;
+            case 5:
+                if (enemy->enemyIsLeft(character)) {
+                    enemy->moveLeft(true);
+                    enemy->punch();
+                } else if (enemy->enemyIsRight(character)) {
+                    enemy->moveRight(true);
+                    enemy->punch();
+                }
+                break;
+            }
+
+            actionKI = false;
+        }
 
 
     }
@@ -195,23 +249,28 @@ void Draw::keyReleaseEvent(QKeyEvent *e) {
  * @param selChar
  * @param selBackg
  */
-void Draw::load(int selChar, int selBackg) {
+void Draw::load(int selChar, int selBackg, int selChar2) {
     character = new Character(selChar);
-    enemy = new Character(1, true);
+
     background = new Background(selBackg);
     UIinterface = new UIOverlay();
     win = false;
     winChar = "";
     qDebug() << "NEW DRAW";
-    connect(enemy, SIGNAL(death()), this, SLOT(winC()));
-    connect(character, SIGNAL(death()), this, SLOT(winE()));
-    ki = true;
-    if(ki) {
+
+    if(selChar2 == 0) {
+        ki = true;
         kiActions = new QTimer(this);
-        kiActions->setInterval(3000);
+        kiActions->setInterval(1500);
         connect(kiActions, SIGNAL(timeout()), this, SLOT(kiActionTrue()));
         kiActions->start();
+        enemy = new Character(1, true);
+    } else {
+        ki = false;
+        enemy = new Character(selChar2, true);
     }
+    connect(enemy, SIGNAL(death()), this, SLOT(winC()));
+    connect(character, SIGNAL(death()), this, SLOT(winE()));
 }
 
 /**

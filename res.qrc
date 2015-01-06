@@ -15,6 +15,7 @@
         <file>punch.wav</file>
         <file>woosh.wav</file>
         <file>fanfare.wav</file>
+        <file>start.png</file>
     </qresource>
     <qresource prefix="/sprites">
         <file>stand.png</file>

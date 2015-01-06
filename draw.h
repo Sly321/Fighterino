@@ -17,7 +17,7 @@ public:
     explicit Draw(QWidget *parent = 0);
     void setFpsVisible(bool b);
     bool isFpsVisible();
-    void load(int character, int background);
+    void load(int selChar, int selBackg, int selChar2);
 
 signals:
     void chatSignal();
