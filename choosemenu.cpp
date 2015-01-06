@@ -1,8 +1,13 @@
 #include "choosemenu.h"
 
-#include <QtWidgets>
-
-
+/**
+ * @brief ChooseMenu::ChooseMenu
+ *
+ * Diese Klasse repräsentiert die Charakterauswahl, sie zeigt die Charaktere an und fängt die Tasten ab die der Benutzer eingibt.
+ * Wenn der Benutzer fertig ist werden die Daten weitergegeben und es wird zur Hauptklasse zurückgekehrt.
+ *
+ * @param parent The parent widget.
+ */
 ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 {
     parentWindow = parent;
@@ -11,7 +16,6 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     auswahl = 0;
     pushButtonBack = new QPushButton("Back", this);
     rectChoose = new QPushButton(this);
-
     icon1.load(":/characters/icons/asuma.bmp");
     icon1 = icon1.scaled(100,100, Qt::KeepAspectRatio);
     icon2.load(":/characters/icons/ryu.bmp");
@@ -20,11 +24,8 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     icon3 = icon3.scaled(100,100, Qt::KeepAspectRatio);
     icon4.load(":/characters/icons/chenpo.bmp");
     icon4 = icon4.scaled(100,100, Qt::KeepAspectRatio);
-
     rectChoose->setStyleSheet("QPushButton { background-color: rgba(255,255,255, 20%); border-width: 5px; border-color: darkCyan; border-style: groove;}");
-
     machine = new QStateMachine;
-
     /* States */
     topleft = new QState(machine);
     topleft->assignProperty(rectChoose, "geometry", QRect(290, 145, 100, 100));
@@ -87,7 +88,15 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     connect(mid, SIGNAL(entered()), this, SLOT(selectedMid()));
 }
 
+/**
+ * @brief ChooseMenu::paintEvent
+ *
+ * Zeichnet die Charaktere und das Auswahlgitter für den User.
+ *
+ * @param e Paintevent.
+ */
 void ChooseMenu::paintEvent(QPaintEvent *e) {
+    e->accept();
     QSize rectSize(100, 100);
     QPainter painter(this);
     painter.drawImage(290,145, icon1);
@@ -104,8 +113,6 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
     }
     QPen pen(QBrush(Qt::green), 2);
     painter.setPen(pen);
-    qDebug() << "Painting Choosemenu";
-
     if(!pvp) {
         painter.drawText(QRect(245, 460, 310, 100), "Auswahl \nName: " + selectedString, QTextOption(Qt::AlignCenter));
     } else if (pvp && !player2pick) {
@@ -114,7 +121,6 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
         painter.drawText(QRect(245, 460, 310, 80), "Spieler 1 \nName: " + selectedString, QTextOption(Qt::AlignCenter));
         painter.drawText(QRect(245, 500, 310, 80), "Spieler 2 \nName: " + selectedStringp2, QTextOption(Qt::AlignCenter));
     }
-
     painter.setFont(QFont("Arial", 60, -1, false));
     painter.setBrush(Qt::red);
     painter.setPen(Qt::red);
@@ -128,6 +134,13 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
 
 }
 
+/**
+ * @brief ChooseMenu::keyPressEvent
+ *
+ * Fängt Tastendrücken vom Benutzer ab und reagiert darauf entsprechend.
+ *
+ * @param e Keyevent.
+ */
 void ChooseMenu::keyPressEvent(QKeyEvent *e) {
     switch(e->key()) {
     case Qt::Key_Left:
@@ -161,6 +174,13 @@ void ChooseMenu::keyPressEvent(QKeyEvent *e) {
     }
 }
 
+/**
+ * @brief ChooseMenu::keyReleaseEvent
+ *
+ * Fängt das loslassen einer Taste des Users ab und reagiert entsprechend darauf.
+ *
+ * @param e
+ */
 void ChooseMenu::keyReleaseEvent(QKeyEvent *e) {
     switch(e->key()) {
     case Qt::Key_Return:
@@ -174,21 +194,45 @@ void ChooseMenu::keyReleaseEvent(QKeyEvent *e) {
     }
 }
 
+/**
+ * @brief ChooseMenu::forwardChoosebg
+ *
+ * Gibt den ausgewählten Character an die Hauptklasse und verweist zum nächsten Widget.
+ *
+ */
 void ChooseMenu::forwardChoosebg() {
     emit setCharacter(auswahl);
     emit setCurrent(4);
 }
 
+/**
+ * @brief ChooseMenu::forwardPvp
+ *
+ * Gibt die ausgewählten Charactere an die Hauptklasse und verweist zum nächsten Widget.
+ *
+ */
 void ChooseMenu::forwardPvp() {
     emit setCharacter(auswahl);
     emit setCharacter2(auswahlp2);
     emit setCurrent(4);
 }
 
+/**
+ * @brief ChooseMenu::backToStartmenu
+ *
+ * Sendet das Signal das das Startmenu wieder angezeigt werden soll.
+ *
+ */
 void ChooseMenu::backToStartmenu() {
     emit setCurrent(0);
 }
 
+/**
+ * @brief ChooseMenu::selectedTopleft
+ *
+ * Setzt die Variablen auf die Auswahl oben links.
+ *
+ */
 void ChooseMenu::selectedTopleft() {
     if (!player2pick) {
         auswahl = 1;
@@ -200,6 +244,12 @@ void ChooseMenu::selectedTopleft() {
     this->update();
 }
 
+/**
+ * @brief ChooseMenu::selectedTop
+ *
+ * Setzt die Variablen auf die Auswahl oben.
+ *
+ */
 void ChooseMenu::selectedTop() {
     if (!player2pick) {
         auswahl = 2;
@@ -211,6 +261,12 @@ void ChooseMenu::selectedTop() {
     this->update();
 }
 
+/**
+ * @brief ChooseMenu::selectedMidleft
+ *
+ * Setzt die Variablen auf die Auswahl mitte links.
+ *
+ */
 void ChooseMenu::selectedMidleft() {
     if (!player2pick) {
         selectedString = "Ahri";
@@ -222,6 +278,12 @@ void ChooseMenu::selectedMidleft() {
     this->update();
 }
 
+/**
+ * @brief ChooseMenu::selectedMid
+ *
+ * Setzt die Variablen auf die Auswahl mitte.
+ *
+ */
 void ChooseMenu::selectedMid() {
     if (!player2pick) {
         auswahl = 4;
@@ -233,6 +295,13 @@ void ChooseMenu::selectedMid() {
     this->update();
 }
 
+/**
+ * @brief ChooseMenu::setPlayerVsPlayer
+ *
+ * Setzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden.
+ *
+ * @param value
+ */
 void ChooseMenu::setPlayerVsPlayer(bool value) {
     pvp = value;
     player2pick = false;

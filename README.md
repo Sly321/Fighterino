@@ -17,6 +17,8 @@ chat.cpp
 
 choosebackground.cpp
 
+choosemenu.cpp
+
 #### Version 0.3.1
 
 Added new Controls, you can see them by typing /controls into the chat and pressing Y for seeing the Chat.
