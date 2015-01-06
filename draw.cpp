@@ -48,6 +48,7 @@ Draw::Draw(QWidget *parent) : QWidget(parent)
  * @param e
  */
 void Draw::paintEvent(QPaintEvent *e) {
+    e->accept();
     QPainter textPainter(this);
 
     if(!win) {
@@ -65,14 +66,12 @@ void Draw::paintEvent(QPaintEvent *e) {
         textPainter.drawText(QRect(0,500,800,100), "(Escape drücken um ins Startmenu zu kommen.)", QTextOption(Qt::AlignCenter));
     }
 
-    i++; // FPS COUNTER
+    i++;
 
     if (ki) {
         if (actionKI) {
-
             enemy->moveRight(false);
             enemy->moveLeft(false);
-
             whichActionKI = qrand() % ((5 + 1) - 0) + 0;
 
             if(enemy->enemyIsLeftRange(character) | enemy->enemyIsRightRange(character)) {
@@ -124,18 +123,9 @@ void Draw::paintEvent(QPaintEvent *e) {
                 }
                 break;
             }
-
             actionKI = false;
         }
-
-
     }
-
-
-    /* FPS */
-    //textPainter.setPen(QPen(Qt::red));
-    //textPainter.setBrush(QBrush(Qt::yellow));
-    //if(showFps) { textPainter.drawText(QRect(700,0,80,20), "FPS: " + QString::number(fpsInt)); }
 }
 
 /**
@@ -159,7 +149,6 @@ int Draw::fps() {
  * @param b
  */
 void Draw::setFpsVisible(bool b) {
-    qDebug() << "Fps visible: ";
     showFps = b;
 }
 
@@ -183,10 +172,6 @@ bool Draw::isFpsVisible() {
  */
 void Draw::keyPressEvent(QKeyEvent *e) {
     switch (e->key()) {
-        /* Numeric Keys */
-    case Qt::Key_0:
-
-        break;
     case Qt::Key_Q:
         character->punch();
         break;
@@ -290,13 +275,10 @@ void Draw::keyReleaseEvent(QKeyEvent *e) {
  */
 void Draw::load(int selChar, int selBackg, int selChar2) {
     character = new Character(selChar);
-
     background = new Background(selBackg);
     UIinterface = new UIOverlay();
     win = false;
     winChar = "";
-    qDebug() << "NEW DRAW";
-
     if(selChar2 == 0) {
         ki = true;
         kiActions = new QTimer(this);
@@ -342,30 +324,38 @@ QString Draw::getOSName()
     #endif
 }
 
-void Draw::winC() {/*
-    QMessageBox win;
-    win.setText("Character " + enemy->getName() + "hat gewonnen!/nKlick Ok um zum Startmenu zu kommen.");
-    win.setStandardButtons(QMessageBox::Ok);
-    win.setDefaultButton(QMessageBox::Ok);
-    win.exec();*/
+/**
+ * @brief Draw::winC
+ *
+ * Szenario Spieler 1.
+ *
+ */
+void Draw::winC() {
     QSound::play(":/fanfare.wav");
     winChar = character->getName();
     winIcon = character->getIcon();
     win = true;
 }
 
-void Draw::winE() {/*
-    QMessageBox win;
-    win.setText("Character " + character->getName() + "hat gewonnen!/nKlick Ok um zum Startmenu zu kommen.");
-    win.setStandardButtons(QMessageBox::Ok);
-    win.setDefaultButton(QMessageBox::Ok);
-    win.exec();*/
+/**
+ * @brief Draw::winE
+ *
+ * Szenario Spieler 2 / KI wins.
+ *
+ */
+void Draw::winE() {
     QSound::play(":/fanfare.wav");
     winChar = enemy->getName();
     winIcon = enemy->getIcon();
     win = true;
 }
 
+/**
+ * @brief Draw::kiActionTrue
+ *
+ * Setzt die KI Action true sodass die KI beim nächsten Zug wieder eine Aktion machen soll.
+ *
+ */
 void Draw::kiActionTrue() {
     actionKI = true;
 }

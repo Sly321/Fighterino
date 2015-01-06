@@ -298,7 +298,7 @@ void Character::punch() {
  * @param value
  */
 void Character::jumpUp() {
-    if(!jumping && !jumpingRight && !jumpingLeft) {
+    if(!jumping && !jumpingRight && !jumpingLeft && !punching) {
         if (walkingRight) {
             jumpingRight = true;
             jumpingUp = true;
