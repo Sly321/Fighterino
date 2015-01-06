@@ -24,6 +24,7 @@ public:
 private:
     bool walkingLeft;
     bool walkingRight;
+    bool stunned;
     bool standing;
     bool jumping;
     bool jumpingUp;
@@ -47,6 +48,7 @@ private:
     Sprite *jump;
     Sprite *crouch;
     Sprite *imgPunch;
+    Sprite *imgStun;
 
     QTimer *timer;
     QTimer *secTimer;
@@ -69,6 +71,11 @@ public slots:
     void punch();
     void reduceLife(int redu);
     void setLife(int value);
+    void setStunned(bool value);
+    bool enemyIsLeft(Character *enemy);
+    bool enemyIsRight(Character *enemy);
+    bool enemyIsLeftRange(Character *enemy);
+    bool enemyIsRightRange(Character *enemy);
 
 private slots:
     void count();

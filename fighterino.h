@@ -32,12 +32,14 @@ private:
     ChooseMenu *chooseMenu;
     ChooseBackground *chooseBg;
     int gameChar;
+    int character2;
     int gameBg;
 
 private slots:
     void setChooseMenu(int a);
     void setBackground(int a);
     void setCharacter(int a);
+    void setCharacter2(int a);
     void setFocusTo(int a);
 
 protected:

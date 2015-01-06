@@ -7,6 +7,7 @@ Fighterino::Fighterino(QWidget *parent)
 
     gameChar = 1;
     gameBg = 1;
+    character2 = 0;
 
     windows = new QStackedWidget(this);
     startmenu = new StartMenu(this);
@@ -41,6 +42,7 @@ Fighterino::Fighterino(QWidget *parent)
     connect(startmenu, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
     connect(chooseMenu, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
     connect(chooseMenu, SIGNAL(setCharacter(int)), this, SLOT(setCharacter(int)));
+    connect(chooseMenu, SIGNAL(setCharacter2(int)), this, SLOT(setCharacter2(int)));
     connect(chooseBg, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
     connect(chooseBg, SIGNAL(setBackground(int)), this, SLOT(setBackground(int)));
     connect(drawWidget, SIGNAL(setCurrent(int)), this, SLOT(setChooseMenu(int)));
@@ -62,7 +64,7 @@ void Fighterino::keyPressEvent(QKeyEvent *e) {
 }
 
 void Fighterino::setChooseMenu(int selected) {
-    qDebug() << "SLOT setChooseMenu() in Fighterino.cpp";
+    qDebug() << "SLOT setChooseMenu() in Fighterino.cpp Selected : " + QString::number(selected);
     switch (selected) {
     case START_MENU:
         windows->setCurrentIndex(START_MENU);
@@ -74,16 +76,25 @@ void Fighterino::setChooseMenu(int selected) {
         break;
     case STAGE_WINDOW:
         windows->setCurrentIndex(STAGE_WINDOW);
-        drawWidget->load(gameChar, gameBg);
+        drawWidget->load(gameChar, gameBg, character2);
         drawWidget->setFocus();
+        character2 = 0;
         break;
     case CHAMP_SELECT:
+        //chooseMenu = new ChooseMenu(this);
         windows->setCurrentIndex(CHAMP_SELECT);
+        chooseMenu->setPlayerVsPlayer(false);
         chooseMenu->setFocus();
         break;
     case BG_SELECT:
         windows->setCurrentIndex(BG_SELECT);
         chooseBg->setFocus();
+        break;
+    case 5:
+        windows->setCurrentIndex(CHAMP_SELECT);
+        chooseMenu->setPlayerVsPlayer(true);
+        chooseMenu->setFocus();
+        character2 = 1;
         break;
     }
 }
@@ -110,6 +121,11 @@ void Fighterino::setFocusTo(int selected) {
 
 void Fighterino::setCharacter(int selected) {
     gameChar = selected;
+}
+
+void Fighterino::setCharacter2(int selected) {
+    qDebug() << "char2 wurde" + QString::number(selected);
+    character2 = selected;
 }
 
 void Fighterino::setBackground(int selected) {

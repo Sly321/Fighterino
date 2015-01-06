@@ -7,6 +7,40 @@ A little Jump'n'Fight game, filled with open source little fighter graphics. For
 
 ## History
 
+#### Version 0.3.1
+
+Added new Controls, you can see them by typing /controls into the chat and pressing Y for seeing the Chat.
+
+Maked KI - Harder for Players.
+
+#### Version 0.3
+
+Added a 4th Character called Chenpo.
+
+Added a Icon for the 3rd Arena (Wall Arena).
+
+Adjusted Sound for Startscreen.
+
+Added Image for Startscreen (+OP+ WINDOWS PAINT +OP+).
+
+Implement KI for Player against KI.
+
+Implement 2 Player Character Menu for 2 Character Player Mode.
+
+Added a STUNNED bool for Characters that gets hitted. 
+
+Added a temporary Stun picture.
+
+Enemy KI is punching!
+
+#### Version 0.2.2
+
+Added Sounds to the Startscreen, Character Menu and Fightscreen.
+
+Adjusted the Screen for the Character Menu.
+
+Added indicators for range while Punching.
+
 #### Version 0.2
 
 3 Characters are available now-
@@ -50,7 +84,6 @@ The FPS will be changed now when OS is changing.
 Implemented mirror images for left and right stand animation.
 
 Did make the first menu button pressable for enter.
-
 
 #### Version 0.1.1
 > Not fully functional version.

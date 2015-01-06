@@ -9,10 +9,18 @@ class ChooseMenu : public QWidget
     Q_OBJECT
 public:
     explicit ChooseMenu(QWidget *parent = 0);
+    void setPlayerVsPlayer(bool value);
 
 private:
     int auswahl;
+    int auswahlp2;
+
+    bool pvp;
+    bool player2pick;
+
+
     QString selectedString;
+    QString selectedStringp2;
     QImage icon0;
     QImage icon1;
     QImage icon2;
@@ -51,6 +59,7 @@ private:
 signals:
     void setCurrent(int);
     void setCharacter(int);
+    void setCharacter2(int);
     void right();
     void down();
     void up();
@@ -61,6 +70,7 @@ public slots:
 private slots:
     void backToStartmenu();
     void forwardChoosebg();
+    void forwardPvp();
     void selectedTopleft();
     void selectedTop();
     void selectedMidleft();
@@ -69,6 +79,7 @@ private slots:
 protected:
     void paintEvent(QPaintEvent *e);
     void keyPressEvent(QKeyEvent *e);
+    void keyReleaseEvent(QKeyEvent *e);
 
 };
 
