@@ -7,6 +7,12 @@ A little Jump'n'Fight game, filled with open source little fighter graphics. For
 
 ## History
 
+#### Version 0.3.1
+
+Added new Controls, you can see them by typing /controls into the chat and pressing Y for seeing the Chat.
+
+Maked KI - Harder for Players.
+
 #### Version 0.3
 
 Added a 4th Character called Chenpo.

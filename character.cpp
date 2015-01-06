@@ -114,7 +114,7 @@ void Character::drawChar(QPainter *p, Character *e) {
     //1. Stelle, sonst steht der Schatten auf ihm.
     p->drawImage(xPos + 25, yPos + 75, shadow);
 
-    if (stunned) {
+    if (stunned && !punching) {
         if (lookingRight) {
             p->drawImage(xPos, yPos + jumpYPos, imgStun->getImage(0));
         } else {
@@ -126,7 +126,6 @@ void Character::drawChar(QPainter *p, Character *e) {
         } else {
             p->drawImage(xPos, yPos + jumpYPos, jump->getImageMirrored(0));
         }
-        p->drawImage(xPos, yPos + jumpYPos, jump->getImage(0));
     } else if (jumpingRight) {
         // Logische Abfrage, wenn er hochspringt dann nimm das 2. Bild, wenn er runterspringt das 3.
         p->drawImage(xPos, yPos + jumpYPos, jump->getImage(jumpingUp ? 1 : 2));
@@ -398,6 +397,14 @@ QString Character::getName() {
     return characterName;
 }
 
+/**
+ * @brief Character::enemyIsLeft
+ *
+ * Gibt aus ob sich der Gegner links befindet oder nicht.
+ *
+ * @param enemy
+ * @return
+ */
 bool Character::enemyIsLeft(Character *enemy) {
     if(enemy->getX() < this->getX()) {
         return true;
@@ -406,8 +413,48 @@ bool Character::enemyIsLeft(Character *enemy) {
     }
 }
 
+/**
+ * @brief Character::enemyIsRight
+ *
+ * Gibt aus ob sich der Gegner rechts befindet oder nicht.
+ *
+ * @param enemy
+ * @return
+ */
 bool Character::enemyIsRight(Character *enemy) {
     if(enemy->getX() > this->getX()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * @brief Character::enemyIsLeftRange
+ *
+ * Gibt aus ob der Gegner sich links befindet und in Schlagweite.
+ *
+ * @param enemy
+ * @return
+ */
+bool Character::enemyIsLeftRange(Character *enemy) {
+    if (enemyIsLeft(enemy) && (this->getX() - enemy->getX()) < 50 && (this->getX() - enemy->getX()) > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * @brief Character::enemyIsRightRange
+ *
+ * Gibt aus ob der Gegner sich rechts befindet und in Schlagweite.
+ *
+ * @param enemy
+ * @return
+ */
+bool Character::enemyIsRightRange(Character *enemy) {
+    if(enemyIsRight(enemy) && (enemy->getX() - this->getX()) < 50 && (enemy->getX() - this->getX()) > 0) {
         return true;
     } else {
         return false;

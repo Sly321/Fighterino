@@ -31,7 +31,7 @@ void Chat::hideChat() {
         /* Chat wird kleiner manchmal ?! */
 
         if (line->text() != "") {
-            chat->setText(chat->toPlainText() + "\n" + line->text());
+            chat->setText(chat->toPlainText() + "\n[Player]: " + line->text());
         }
         chat->verticalScrollBar()->setValue(chat->verticalScrollBar()->maximum());
 
@@ -50,6 +50,8 @@ void Chat::hideChat() {
             "This Console line supports: \n\n/1 - /3 : for switching window states\n/quit  : for closing the window\n/fps   : for showing the fps in the 3rd window\n/clearchat : for clearing the chat window");
         } else if (line->text() == "/clearchat") {
             chat->clear();
+        } else if (line->text() == "/controls") {
+            chat->setText(chat->toPlainText() + "\n" + "Spieler 1\nBewegen mit A und D\nSpringen mit W\nKriechen mit D\nSchlagen mit Q\n\nSpieler 2\nBewegen mit Pfeil Links und Rechts\nSpringen mit Pfeil Hoch\nKriechen mit Pfeil Runter\nSchlagen mit Shift");
         }
 
         line->clear();

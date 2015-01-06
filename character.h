@@ -74,6 +74,8 @@ public slots:
     void setStunned(bool value);
     bool enemyIsLeft(Character *enemy);
     bool enemyIsRight(Character *enemy);
+    bool enemyIsLeftRange(Character *enemy);
+    bool enemyIsRightRange(Character *enemy);
 
 private slots:
     void count();

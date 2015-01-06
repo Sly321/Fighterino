@@ -74,7 +74,10 @@ void Draw::paintEvent(QPaintEvent *e) {
             enemy->moveLeft(false);
 
             whichActionKI = qrand() % ((5 + 1) - 0) + 0;
-            qDebug() << "KI Action: " + QString::number(whichActionKI);
+
+            if(enemy->enemyIsLeftRange(character) | enemy->enemyIsRightRange(character)) {
+                whichActionKI = 5;
+            }
 
             switch(whichActionKI) {
             case 0:
@@ -184,27 +187,48 @@ void Draw::keyPressEvent(QKeyEvent *e) {
     case Qt::Key_0:
 
         break;
-    case Qt::Key_1:
+    case Qt::Key_Q:
         character->punch();
         break;
     case Qt::Key_Escape:
         emit setCurrent(0);
         break;
     case Qt::Key_D:
-        qDebug() << "keyPressEvent: D in Draw";
         character->moveRight(true);
         break;
     case Qt::Key_A:
-        qDebug() << "keyPressEvent: A in Draw";
         character->moveLeft(true);
         break;
     case Qt::Key_S:
-        qDebug() << "keyPressEvent: S in Draw";
         character->setCrouch(true);
         break;
-    case Qt::Key_Space:
-        qDebug() << "keyPressEvent: Space in Draw";
+    case Qt::Key_W:
         character->jumpUp();
+        break;
+    case Qt::Key_Shift:
+        if (!ki) {
+            enemy->punch();
+        }
+        break;
+    case Qt::Key_Left:
+        if (!ki) {
+            enemy->moveLeft(true);
+        }
+        break;
+    case Qt::Key_Right:
+        if (!ki) {
+            enemy->moveRight(true);
+        }
+        break;
+    case Qt::Key_Up:
+        if (!ki) {
+            enemy->jumpUp();
+        }
+        break;
+    case Qt::Key_Down:
+        if (!ki) {
+            enemy->setCrouch(true);
+        }
         break;
     case Qt::Key_Return:
         emit chatSignal();
@@ -237,6 +261,21 @@ void Draw::keyReleaseEvent(QKeyEvent *e) {
         break;
     case Qt::Key_Y:
         emit hideOnlyChat();
+        break;
+    case Qt::Key_Left:
+        if (!ki) {
+            enemy->moveLeft(false);
+        }
+        break;
+    case Qt::Key_Right:
+        if (!ki) {
+            enemy->moveRight(false);
+        }
+        break;
+    case Qt::Key_Down:
+        if (!ki) {
+            enemy->setCrouch(false);
+        }
         break;
     }
 }
