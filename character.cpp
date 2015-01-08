@@ -60,7 +60,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/asuma/jump_asuma.png"));
         crouch = new Sprite(QImage(":/character/asuma/crouch_asuma.png"));
         imgPunch = new Sprite(QImage(":/character/asuma/punching_asuma.png"));
-        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
+        imgStun =  new Sprite(QImage(":/character/asuma/stunn_asuma.png"));
         shadow.load(":/character/misc/shadow.png"); // Brauch nicht verändert werden
         break;
     case 2:
@@ -71,7 +71,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/ryu/jump_ryu.png"));
         crouch = new Sprite(QImage(":/character/ryu/crouch_ryu.png"));
         imgPunch = new Sprite(QImage(":/character/ryu/punching_ryu.png"));
-        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
+        imgStun =  new Sprite(QImage(":/character/ryu/stunn_ryu.png"));
         shadow.load(":/character/misc/shadow.png");
         break;
     case 3:
@@ -82,7 +82,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/ahri/jump_ahri.png"));
         crouch = new Sprite(QImage(":/character/ahri/crouch_ahri.png"));
         imgPunch = new Sprite(QImage(":/character/ahri/punching_ahri.png"));
-        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
+        imgStun =  new Sprite(QImage(":/character/ahri/stunn_ahri.png"));
         shadow.load(":/character/misc/shadow.png");
         break;
     case 4:
@@ -93,7 +93,7 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
         jump = new Sprite(QImage(":/character/chenpo/jump_chenpo.png"));
         crouch = new Sprite(QImage(":/character/chenpo/crouch_chenpo.png"));
         imgPunch = new Sprite(QImage(":/character/chenpo/punching_chenpo.png"));
-        imgStun =  new Sprite(QImage(":/character/template/crouch.png"));
+        imgStun =  new Sprite(QImage(":/character/chenpo/stunn_chenpo.png"));
         shadow.load(":/character/misc/shadow.png");
         break;
     default:

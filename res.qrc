@@ -44,6 +44,7 @@
         <file>crouch_asuma.png</file>
         <file>stand_asuma.png</file>
         <file>walk_asuma.png</file>
+        <file>stunn_asuma.png</file>
     </qresource>
     <qresource prefix="/character/ahri">
         <file>jump_ahri.png</file>
@@ -51,6 +52,7 @@
         <file>crouch_ahri.png</file>
         <file>walk_ahri.png</file>
         <file>stand_ahri.png</file>
+        <file>stunn_ahri.png</file>
     </qresource>
     <qresource prefix="/character/ryu">
         <file>punching_ryu.png</file>
@@ -58,6 +60,7 @@
         <file>crouch_ryu.png</file>
         <file>walk_ryu.png</file>
         <file>stand_ryu.png</file>
+        <file>stunn_ryu.png</file>
     </qresource>
     <qresource prefix="/images/background_bc">
         <file>bc1_test.png</file>
@@ -84,5 +87,6 @@
         <file>crouch_chenpo.png</file>
         <file>walk_chenpo.png</file>
         <file>stand_chenpo.png</file>
+        <file>stunn_chenpo.png</file>
     </qresource>
 </RCC>
