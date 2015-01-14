@@ -1,12 +1,5 @@
 #include "choosebackground.h"
 
-/**
- * @brief ChooseBackground::ChooseBackground
- *
- * Diese Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hintergrund für sein Spiel auswählen kann.
- *
- * @param parent The parent Widget.
- */
 ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
 {
     auswahl = 0;
@@ -47,13 +40,6 @@ ChooseBackground::ChooseBackground(QWidget *parent) : QWidget(parent)
     connect(sright, SIGNAL(entered()), this, SLOT(selectedRight()));
 }
 
-/**
- * @brief ChooseBackground::paintEvent
- *
- * Zeichnet 3 Icons und ein Auswahlrahmen mit welcher der User ein Hintergrund wählen kann.
- *
- * @param e Paintevent.
- */
 void ChooseBackground::paintEvent(QPaintEvent *e) {
     e->accept();
     QSize rectSize(100, 100);
@@ -76,13 +62,6 @@ void ChooseBackground::paintEvent(QPaintEvent *e) {
     painter.drawText(QRect(0,0,800,200), "Umgebungsauswahl", QTextOption(Qt::AlignCenter));
 }
 
-/**
- * @brief ChooseBackground::keyPressEvent
- *
- * Bekommt mit wenn eine Taste auf der Tastatur gedrückt wird und reagiert entprechend auf diese Tasten.
- *
- * @param e Das key Event.
- */
 void ChooseBackground::keyPressEvent(QKeyEvent *e) {
     switch(e->key()) {
     case Qt::Key_Left:
@@ -100,57 +79,27 @@ void ChooseBackground::keyPressEvent(QKeyEvent *e) {
     }
 }
 
-/**
- * @brief ChooseBackground::backToStartmenu
- *
- * Sendet ein Signal das von fighterino.cpp empfangen wird und das Startmenu anzeigen lässt.
- *
- */
 void ChooseBackground::backToStartmenu() {
     emit setCurrent(0);
 }
 
-/**
- * @brief ChooseBackground::forwardGame
- *
- * Sendet zwei Signale das von fighterino.cpp empfangen wird sodass das Spiel mit Parameter ausgeführt werden kann.
- *
- */
 void ChooseBackground::forwardGame() {
     emit setBackground(auswahl);
     emit setCurrent(2);
 }
 
-/**
- * @brief ChooseBackground::selectedLeft
- *
- * Empfängt den ausgewählten Hintergrund "Forrest".
- *
- */
 void ChooseBackground::selectedLeft() {
     selectedString = "Forrest";
     auswahl = 1;
     this->update();
 }
 
-/**
- * @brief ChooseBackground::selectedMid
- *
- * Empfängt den ausgewählten Hintergrund "Canyon".
- *
- */
 void ChooseBackground::selectedMid() {
     selectedString = "Canyon";
     auswahl = 2;
     this->update();
 }
 
-/**
- * @brief ChooseBackground::selectedRight
- *
- * Empfängt den ausgewählten Hintergrund "Big Wall".
- *
- */
 void ChooseBackground::selectedRight() {
     selectedString = "Big Wall";
     auswahl = 3;

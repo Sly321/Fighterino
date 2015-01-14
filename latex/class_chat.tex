@@ -1,5 +1,14 @@
 \hypertarget{class_chat}{}\section{Chat Class Reference}
 \label{class_chat}\index{Chat@{Chat}}
+
+
+\hyperlink{class_chat}{Chat} Klasse beschäftigt sich damit einen \hyperlink{class_chat}{Chat} anzuzeigen und ihn auszuwerten.  
+
+
+
+
+{\ttfamily \#include $<$chat.\+h$>$}
+
 Inheritance diagram for Chat\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,28 +19,27 @@ Inheritance diagram for Chat\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_chat_a7b94bde4d4e53034b558a0aa0b8b76eb}{signal} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_chat_a7b94bde4d4e53034b558a0aa0b8b76eb}{Chat\+::signal}. \end{DoxyCompactList}\item 
-\hypertarget{class_chat_aac15e09ec782dcee4a6f98492aa10633}{}void {\bfseries show\+Only\+Chat} ()\label{class_chat_aac15e09ec782dcee4a6f98492aa10633}
-
-\item 
-\hypertarget{class_chat_a7da9c4b3521928b4c85efce819a2e2d5}{}void {\bfseries hide\+Only\+Chat} ()\label{class_chat_a7da9c4b3521928b4c85efce819a2e2d5}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Signalisiert dem \hyperlink{class_chat}{Chat} das er versteckt oder angezeigt werden soll. \end{DoxyCompactList}\item 
+void \hyperlink{class_chat_aac15e09ec782dcee4a6f98492aa10633}{show\+Only\+Chat} ()
+\begin{DoxyCompactList}\small\item\em Zeigt nur den \hyperlink{class_chat}{Chat}. \end{DoxyCompactList}\item 
+void \hyperlink{class_chat_a7da9c4b3521928b4c85efce819a2e2d5}{hide\+Only\+Chat} ()
+\begin{DoxyCompactList}\small\item\em Versteckt nur den \hyperlink{class_chat}{Chat}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_chat_a49a01e63da7824bbd162d253a059fad8}{}void {\bfseries set\+Current} (int a)\label{class_chat_a49a01e63da7824bbd162d253a059fad8}
-
-\item 
-\hypertarget{class_chat_ac425c72f7a120ef313113083891a3966}{}void {\bfseries set\+Focus\+To} (int a)\label{class_chat_ac425c72f7a120ef313113083891a3966}
-
-\end{DoxyCompactItemize}
+void \hyperlink{class_chat_a49a01e63da7824bbd162d253a059fad8}{set\+Current} (int a)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein anderes Widget angezeigt werden soll. \end{DoxyCompactList}\item 
+void \hyperlink{class_chat_ac425c72f7a120ef313113083891a3966}{set\+Focus\+To} (int a)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein anderes Widget den Focus bekommen soll. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_chat_a83c846c142bde1a2a96dd17eb6544f6f}{Chat} (Q\+Widget $\ast$parent=0)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_chat_a83c846c142bde1a2a96dd17eb6544f6f}{Chat\+::\+Chat}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contructor der Klasse \hyperlink{class_chat}{Chat}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\hyperlink{class_chat}{Chat} Klasse beschäftigt sich damit einen \hyperlink{class_chat}{Chat} anzuzeigen und ihn auszuwerten. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_chat_a83c846c142bde1a2a96dd17eb6544f6f}{}\index{Chat@{Chat}!Chat@{Chat}}
@@ -43,19 +51,71 @@ void \hyperlink{class_chat_a7b94bde4d4e53034b558a0aa0b8b76eb}{signal} ()
 )\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_chat_a83c846c142bde1a2a96dd17eb6544f6f}
 
 
-\hyperlink{class_chat_a83c846c142bde1a2a96dd17eb6544f6f}{Chat\+::\+Chat}. 
+Contructor der Klasse \hyperlink{class_chat}{Chat}. 
 
-Diese Klasse beschäftigt sich damit einen \hyperlink{class_chat}{Chat} anzuzeigen und ihn auszuwerten.
-
-
+\hyperlink{class_chat}{Chat} Erstellt einige standardvariable für die Klasse. 
 \begin{DoxyParams}{Parameters}
-{\em parent} & The Parent widget. \\
+{\em parent} & Das parent Widget falls vorhanden. \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_chat_a7b94bde4d4e53034b558a0aa0b8b76eb}{}\index{Chat@{Chat}!signal@{signal}}
+\hypertarget{class_chat_a7da9c4b3521928b4c85efce819a2e2d5}{}\index{Chat@{Chat}!hide\+Only\+Chat@{hide\+Only\+Chat}}
+\index{hide\+Only\+Chat@{hide\+Only\+Chat}!Chat@{Chat}}
+\subsubsection[{hide\+Only\+Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Chat\+::hide\+Only\+Chat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_chat_a7da9c4b3521928b4c85efce819a2e2d5}
+
+
+Versteckt nur den \hyperlink{class_chat}{Chat}. 
+
+hide\+Only\+Chat \hypertarget{class_chat_a49a01e63da7824bbd162d253a059fad8}{}\index{Chat@{Chat}!set\+Current@{set\+Current}}
+\index{set\+Current@{set\+Current}!Chat@{Chat}}
+\subsubsection[{set\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Chat\+::set\+Current (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_chat_a49a01e63da7824bbd162d253a059fad8}
+
+
+Signalisiert der Main das ein anderes Widget angezeigt werden soll. 
+
+set\+Current 
+\begin{DoxyParams}{Parameters}
+{\em a} & Das Widget welches angezeigt werden soll. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_chat_ac425c72f7a120ef313113083891a3966}{}\index{Chat@{Chat}!set\+Focus\+To@{set\+Focus\+To}}
+\index{set\+Focus\+To@{set\+Focus\+To}!Chat@{Chat}}
+\subsubsection[{set\+Focus\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Chat\+::set\+Focus\+To (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_chat_ac425c72f7a120ef313113083891a3966}
+
+
+Signalisiert der Main das ein anderes Widget den Focus bekommen soll. 
+
+set\+Focus\+To 
+\begin{DoxyParams}{Parameters}
+{\em a} & Das widget welches den Focus bekommen soll. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_chat_aac15e09ec782dcee4a6f98492aa10633}{}\index{Chat@{Chat}!show\+Only\+Chat@{show\+Only\+Chat}}
+\index{show\+Only\+Chat@{show\+Only\+Chat}!Chat@{Chat}}
+\subsubsection[{show\+Only\+Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Chat\+::show\+Only\+Chat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_chat_aac15e09ec782dcee4a6f98492aa10633}
+
+
+Zeigt nur den \hyperlink{class_chat}{Chat}. 
+
+show\+Only\+Chat \hypertarget{class_chat_a7b94bde4d4e53034b558a0aa0b8b76eb}{}\index{Chat@{Chat}!signal@{signal}}
 \index{signal@{signal}!Chat@{Chat}}
 \subsubsection[{signal}]{\setlength{\rightskip}{0pt plus 5cm}void Chat\+::signal (
 \begin{DoxyParamCaption}
@@ -64,9 +124,9 @@ Diese Klasse beschäftigt sich damit einen \hyperlink{class_chat}{Chat} anzuzeig
 )\hspace{0.3cm}{\ttfamily [slot]}}\label{class_chat_a7b94bde4d4e53034b558a0aa0b8b76eb}
 
 
-\hyperlink{class_chat_a7b94bde4d4e53034b558a0aa0b8b76eb}{Chat\+::signal}. 
+Signalisiert dem \hyperlink{class_chat}{Chat} das er versteckt oder angezeigt werden soll. 
 
-\hyperlink{class_chat}{Chat} bekommt ein Signal und wird darauf reagieren, je nachdem ob der \hyperlink{class_chat}{Chat} angezeigt ist oder nicht wird er versteckt oder angezeigt, 
+signal 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

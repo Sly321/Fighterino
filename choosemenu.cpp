@@ -3,8 +3,7 @@
 /**
  * @brief ChooseMenu::ChooseMenu
  *
- * Diese Klasse repräsentiert die Charakterauswahl, sie zeigt die Charaktere an und fängt die Tasten ab die der Benutzer eingibt.
- * Wenn der Benutzer fertig ist werden die Daten weitergegeben und es wird zur Hauptklasse zurückgekehrt.
+ *
  *
  * @param parent The parent widget.
  */
@@ -88,13 +87,6 @@ ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
     connect(mid, SIGNAL(entered()), this, SLOT(selectedMid()));
 }
 
-/**
- * @brief ChooseMenu::paintEvent
- *
- * Zeichnet die Charaktere und das Auswahlgitter für den User.
- *
- * @param e Paintevent.
- */
 void ChooseMenu::paintEvent(QPaintEvent *e) {
     e->accept();
     QSize rectSize(100, 100);

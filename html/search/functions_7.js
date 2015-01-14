@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jumpup',['jumpUp',['../class_character.html#a2257c559f50f1e78eea8d49dbe12af49',1,'Character']]]
+  ['isfpsvisible',['isFpsVisible',['../class_draw.html#a70803e861847ba4d1fce021502eb9d2b',1,'Draw']]]
 ];

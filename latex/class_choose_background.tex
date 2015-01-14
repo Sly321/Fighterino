@@ -1,5 +1,14 @@
 \hypertarget{class_choose_background}{}\section{Choose\+Background Class Reference}
 \label{class_choose_background}\index{Choose\+Background@{Choose\+Background}}
+
+
+choose\+Background Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hintergrund für sein Spiel auswählen kann.  
+
+
+
+
+{\ttfamily \#include $<$choosebackground.\+h$>$}
+
 Inheritance diagram for Choose\+Background\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,40 +18,42 @@ Inheritance diagram for Choose\+Background\+:\begin{figure}[H]
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_choose_background_a134632704516ff01d21147a6f7238b8f}{selected\+Left} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_background_a134632704516ff01d21147a6f7238b8f}{Choose\+Background\+::selected\+Left}. \end{DoxyCompactList}\item 
-void \hyperlink{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}{selected\+Mid} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}{Choose\+Background\+::selected\+Mid}. \end{DoxyCompactList}\item 
-void \hyperlink{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}{selected\+Right} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}{Choose\+Background\+::selected\+Right}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hypertarget{class_choose_background_a134632704516ff01d21147a6f7238b8f}{}void \hyperlink{class_choose_background_a134632704516ff01d21147a6f7238b8f}{selected\+Left} ()\label{class_choose_background_a134632704516ff01d21147a6f7238b8f}
+
+\begin{DoxyCompactList}\small\item\em Wird angetriggert wenn das linke Icon selektiert wurde. \end{DoxyCompactList}\item 
+\hypertarget{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}{}void \hyperlink{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}{selected\+Mid} ()\label{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}
+
+\begin{DoxyCompactList}\small\item\em Wird angetriggert wenn das mittige Icon selektiert wurde. \end{DoxyCompactList}\item 
+\hypertarget{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}{}void \hyperlink{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}{selected\+Right} ()\label{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}
+
+\begin{DoxyCompactList}\small\item\em Wird angetriggert wenn das rechte Icon selektiert wurde. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_choose_background_afe5384a4f9751980654331f16f9880d6}{}void {\bfseries set\+Current} (int)\label{class_choose_background_afe5384a4f9751980654331f16f9880d6}
-
-\item 
-\hypertarget{class_choose_background_a97f62dc7c7f8c0311bcb4d9de40f8961}{}void {\bfseries set\+Background} (int)\label{class_choose_background_a97f62dc7c7f8c0311bcb4d9de40f8961}
-
-\item 
-\hypertarget{class_choose_background_a60e09b439c577557e659a7c8cd17ef95}{}void {\bfseries right} ()\label{class_choose_background_a60e09b439c577557e659a7c8cd17ef95}
-
-\item 
-\hypertarget{class_choose_background_ad94244d54915e86b87745df492dab6e6}{}void {\bfseries left} ()\label{class_choose_background_ad94244d54915e86b87745df492dab6e6}
-
-\end{DoxyCompactItemize}
+void \hyperlink{class_choose_background_afe5384a4f9751980654331f16f9880d6}{set\+Current} (int)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein anderes Widget angezeigt werden soll. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_background_a97f62dc7c7f8c0311bcb4d9de40f8961}{set\+Background} (int)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein background ausgewählt wurde. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_background_a60e09b439c577557e659a7c8cd17ef95}{right} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Anweder nach rechts gegangen ist. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_background_ad94244d54915e86b87745df492dab6e6}{left} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Anweder nach links gegangen ist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_choose_background_ab7ee660174665e9bc68eb183817ca099}{Choose\+Background} (Q\+Widget $\ast$parent=0)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_background_ab7ee660174665e9bc68eb183817ca099}{Choose\+Background\+::\+Choose\+Background}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contructor der choose\+Background Klasse. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_choose_background_a380e9e5f617b252967ac18726ad391d4}{paint\+Event} (Q\+Paint\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_background_a380e9e5f617b252967ac18726ad391d4}{Choose\+Background\+::paint\+Event}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Zeichnet elemente für die Klasse. \end{DoxyCompactList}\item 
 void \hyperlink{class_choose_background_a76473476547b89b1bd7712caafec5068}{key\+Press\+Event} (Q\+Key\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_background_a76473476547b89b1bd7712caafec5068}{Choose\+Background\+::key\+Press\+Event}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Registriert die Tastenschläge des Benutzers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+choose\+Background Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hintergrund für sein Spiel auswählen kann. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_choose_background_ab7ee660174665e9bc68eb183817ca099}{}\index{Choose\+Background@{Choose\+Background}!Choose\+Background@{Choose\+Background}}
@@ -54,13 +65,11 @@ void \hyperlink{class_choose_background_a76473476547b89b1bd7712caafec5068}{key\+
 )\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_choose_background_ab7ee660174665e9bc68eb183817ca099}
 
 
-\hyperlink{class_choose_background_ab7ee660174665e9bc68eb183817ca099}{Choose\+Background\+::\+Choose\+Background}. 
+Contructor der choose\+Background Klasse. 
 
-Diese Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hintergrund für sein Spiel auswählen kann.
-
-
+\hyperlink{class_choose_background}{Choose\+Background} Erstellt die nötigen Image dateien und initialisiert die Einstellungen für das Auswahlmenü. 
 \begin{DoxyParams}{Parameters}
-{\em parent} & The parent Widget. \\
+{\em parent} & Das parent Widget falls vorhanden. \\
 \hline
 \end{DoxyParams}
 
@@ -75,16 +84,25 @@ Diese Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hinter
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_choose_background_a76473476547b89b1bd7712caafec5068}
 
 
-\hyperlink{class_choose_background_a76473476547b89b1bd7712caafec5068}{Choose\+Background\+::key\+Press\+Event}. 
+Registriert die Tastenschläge des Benutzers. 
 
-Bekommt mit wenn eine Taste auf der Tastatur gedrückt wird und reagiert entprechend auf diese Tasten.
-
-
+key\+Press\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & Das key Event. \\
+{\em e} & Die Taste welche gedrückt wird. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_choose_background_a380e9e5f617b252967ac18726ad391d4}{}\index{Choose\+Background@{Choose\+Background}!paint\+Event@{paint\+Event}}
+\hypertarget{class_choose_background_ad94244d54915e86b87745df492dab6e6}{}\index{Choose\+Background@{Choose\+Background}!left@{left}}
+\index{left@{left}!Choose\+Background@{Choose\+Background}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_background_ad94244d54915e86b87745df492dab6e6}
+
+
+Signalisiert das der Anweder nach links gegangen ist. 
+
+left \hypertarget{class_choose_background_a380e9e5f617b252967ac18726ad391d4}{}\index{Choose\+Background@{Choose\+Background}!paint\+Event@{paint\+Event}}
 \index{paint\+Event@{paint\+Event}!Choose\+Background@{Choose\+Background}}
 \subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::paint\+Event (
 \begin{DoxyParamCaption}
@@ -93,49 +111,57 @@ Bekommt mit wenn eine Taste auf der Tastatur gedrückt wird und reagiert entprec
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_choose_background_a380e9e5f617b252967ac18726ad391d4}
 
 
-\hyperlink{class_choose_background_a380e9e5f617b252967ac18726ad391d4}{Choose\+Background\+::paint\+Event}. 
+Zeichnet elemente für die Klasse. 
 
-Zeichnet 3 Icons und ein Auswahlrahmen mit welcher der User ein Hintergrund wählen kann.
-
-
+paint\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & Paintevent. \\
+{\em e} & Das paint\+Event. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_choose_background_a134632704516ff01d21147a6f7238b8f}{}\index{Choose\+Background@{Choose\+Background}!selected\+Left@{selected\+Left}}
-\index{selected\+Left@{selected\+Left}!Choose\+Background@{Choose\+Background}}
-\subsubsection[{selected\+Left}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::selected\+Left (
+\hypertarget{class_choose_background_a60e09b439c577557e659a7c8cd17ef95}{}\index{Choose\+Background@{Choose\+Background}!right@{right}}
+\index{right@{right}!Choose\+Background@{Choose\+Background}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::right (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_choose_background_a134632704516ff01d21147a6f7238b8f}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_background_a60e09b439c577557e659a7c8cd17ef95}
 
 
-\hyperlink{class_choose_background_a134632704516ff01d21147a6f7238b8f}{Choose\+Background\+::selected\+Left}. 
+Signalisiert das der Anweder nach rechts gegangen ist. 
 
-Empfängt den ausgewählten Hintergrund \char`\"{}\+Forrest\char`\"{}. \hypertarget{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}{}\index{Choose\+Background@{Choose\+Background}!selected\+Mid@{selected\+Mid}}
-\index{selected\+Mid@{selected\+Mid}!Choose\+Background@{Choose\+Background}}
-\subsubsection[{selected\+Mid}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::selected\+Mid (
+right \hypertarget{class_choose_background_a97f62dc7c7f8c0311bcb4d9de40f8961}{}\index{Choose\+Background@{Choose\+Background}!set\+Background@{set\+Background}}
+\index{set\+Background@{set\+Background}!Choose\+Background@{Choose\+Background}}
+\subsubsection[{set\+Background}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::set\+Background (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_background_a97f62dc7c7f8c0311bcb4d9de40f8961}
 
 
-\hyperlink{class_choose_background_a9fa9d22a3cfd437307117bb32036b731}{Choose\+Background\+::selected\+Mid}. 
+Signalisiert der Main das ein background ausgewählt wurde. 
 
-Empfängt den ausgewählten Hintergrund \char`\"{}\+Canyon\char`\"{}. \hypertarget{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}{}\index{Choose\+Background@{Choose\+Background}!selected\+Right@{selected\+Right}}
-\index{selected\+Right@{selected\+Right}!Choose\+Background@{Choose\+Background}}
-\subsubsection[{selected\+Right}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::selected\+Right (
+set\+Background 
+\begin{DoxyParams}{Parameters}
+{\em Der} & background der ausgewählt wurde. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_choose_background_afe5384a4f9751980654331f16f9880d6}{}\index{Choose\+Background@{Choose\+Background}!set\+Current@{set\+Current}}
+\index{set\+Current@{set\+Current}!Choose\+Background@{Choose\+Background}}
+\subsubsection[{set\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Background\+::set\+Current (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_background_afe5384a4f9751980654331f16f9880d6}
 
 
-\hyperlink{class_choose_background_afc6ef25b1b6e1ed1e9842be71542a092}{Choose\+Background\+::selected\+Right}. 
+Signalisiert der Main das ein anderes Widget angezeigt werden soll. 
 
-Empfängt den ausgewählten Hintergrund \char`\"{}\+Big Wall\char`\"{}. 
+set\+Current 
+\begin{DoxyParams}{Parameters}
+{\em Das} & Widget welches angezeigt werden soll. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

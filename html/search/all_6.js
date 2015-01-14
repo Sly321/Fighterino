@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isfpsvisible',['isFpsVisible',['../class_draw.html#a70803e861847ba4d1fce021502eb9d2b',1,'Draw']]]
+  ['hideonlychat',['hideOnlyChat',['../class_chat.html#a7da9c4b3521928b4c85efce819a2e2d5',1,'Chat']]]
 ];

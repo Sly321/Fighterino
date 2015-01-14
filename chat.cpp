@@ -1,12 +1,5 @@
 #include "chat.h"
 
-/**
- * @brief Chat::Chat
- *
- * Diese Klasse beschäftigt sich damit einen Chat anzuzeigen und ihn auszuwerten.
- *
- * @param parent The Parent widget.
- */
 Chat::Chat(QWidget *parent) : QWidget(parent)
 {
     line = new QLineEdit;
@@ -26,13 +19,6 @@ Chat::Chat(QWidget *parent) : QWidget(parent)
     this->parent = parent;
 }
 
-/**
- * @brief Chat::hideChat
- *
- * Versteckt den Chat und wertet das geschriebene auf mögliche Befehle aus.
- * Falls ein Befehl getätigt wurde wird die entprechende Aktion ausgeführt.
- *
- */
 void Chat::hideChat() {
     if (line->isVisible()) {
         if (line->text() != "") {
@@ -56,13 +42,6 @@ void Chat::hideChat() {
     }
 }
 
-/**
- * @brief Chat::signal
- *
- * Chat bekommt ein Signal und wird darauf reagieren, je nachdem ob der Chat angezeigt
- * ist oder nicht wird er versteckt oder angezeigt,
- *
- */
 void Chat::signal() {
     if(line->isVisible()) {
         hideChat();

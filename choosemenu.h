@@ -1,3 +1,10 @@
+//! chooseMenu Klasse repräsentiert die Charakterauswahl.
+/*!
+ * chooseMenu Klasse repräsentiert die Charakterauswahl, sie zeigt die Charaktere an und
+ * fängt die Tasten ab die der Benutzer eingibt. Wenn der Benutzer fertig ist werden die
+ * Daten weitergegeben und es wird zur Hauptklasse zurückgekehrt.
+ */
+
 #ifndef CHOOSEMENU_H
 #define CHOOSEMENU_H
 
@@ -14,11 +21,8 @@ public:
 private:
     int auswahl;
     int auswahlp2;
-
     bool pvp;
     bool player2pick;
-
-
     QString selectedString;
     QString selectedStringp2;
     QImage icon0;
@@ -27,24 +31,14 @@ private:
     QImage icon3;
     QImage icon4;
     QImage icon5;
-
-
     QWidget *parentWindow;
     QPushButton *pushButtonBack;
-
-    /* Animation */
     QPropertyAnimation *animation;
-
-    /* State Machine */
     QStateMachine *machine;
-
-    /* States / Positions */
     QState *topleft;
     QState *top;
     QState *midleft;
     QState *mid;
-
-    /* Transitions */
     QSignalTransition *tld; /* Topleft Down  */
     QSignalTransition *tlr; /* Topleft Right */
     QSignalTransition *tl;  /* Top Left      */
@@ -53,7 +47,6 @@ private:
     QSignalTransition *mlr; /* Midleft Right */
     QSignalTransition *ml;  /* Mid Left      */
     QSignalTransition *mu;  /* Mid Up        */
-
     QPushButton *rectChoose;
 
 signals:
@@ -65,8 +58,6 @@ signals:
     void up();
     void left();
 
-public slots:
-
 private slots:
     void backToStartmenu();
     void forwardChoosebg();
@@ -77,8 +68,25 @@ private slots:
     void selectedMid();
 
 protected:
+    //! Zeichnet die Charaktere und das Auswahlgitter für den User.
+    /*!
+     * \brief paintEvent
+     * \param e Das paintEvent.
+     */
     void paintEvent(QPaintEvent *e);
+
+    //! Registriert die Tastenschläge des Benutzers.
+    /*!
+     * \brief keyPressEvent
+     * \param e Die Taste welche gedrückt wird.
+     */
     void keyPressEvent(QKeyEvent *e);
+
+    //! Registriert wenn der Benutzer die Taste loslässt.
+    /*!
+     * \brief keyPressEvent
+     * \param e Die Taste welche losgelassen wurde.
+     */
     void keyReleaseEvent(QKeyEvent *e);
 
 };
