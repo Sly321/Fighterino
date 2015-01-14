@@ -28,11 +28,6 @@ Background::Background(int _option, QObject *parent) : QObject(parent)
     }
 }
 
-/**Zeichnet den Hintergrund
- *
- * @brief Background::drawBackground
- * @param p Painter zum zeichnen wird übergeben
- */
 void Background::drawBackground(QPainter *p) {
     p->setPen(QPen(Qt::black));
     p->setBrush(QBrush(Qt::darkGreen));
@@ -66,17 +61,6 @@ void Background::drawBackground(QPainter *p) {
     }
 }
 
-/**Mit der Methode wird ein Image eingebunden und dann an der
- * als parameter übergebenen Y Position von X=0 bis X=800 füllen
- * ausgegeben.
- *
- * @brief Background::drawTiles
- * @param img Das ggf. mehrfach zu zeichnende Image
- * @param y Y Position des Images
- * @param p Painter zum zeichnen wird übergeben
- * @param versetzt true wenn die images um 50 pixel versetzt sein soll
- *                 benutzt bei wiederholenden für nicht so eine Eintönigkeit.
- */
 void Background::drawTiles(QImage img, int y, QPainter *p, bool versetzt) {
     int x = img.width();
     if (!versetzt) {

@@ -1,0 +1,423 @@
+\hypertarget{class_character}{}\section{Character Class Reference}
+\label{class_character}\index{Character@{Character}}
+
+
+\hyperlink{class_character}{Character} Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig.  
+
+
+
+
+{\ttfamily \#include $<$character.\+h$>$}
+
+Inheritance diagram for Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_character}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_character_a732ddad97c8e4b271aac67ba1d7d3c98}{move\+Right} (bool value)
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Charakter nach rechts läuft oder nicht. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_adcc18bee13545c734c695dee06a9f094}{move\+Left} (bool value)
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Charakter nach links läuft oder nicht. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_a2257c559f50f1e78eea8d49dbe12af49}{jump\+Up} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Charakter springt. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_a8cfbb3e6ea62013a74f7b837054ee03f}{set\+Crouch} (bool value)
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Charakter sich duckt oder sich nicht duckt. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_a5745dbf38bf7b408f254408f898a2e46}{punch} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Charakter zuschlägt. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_aacbdc7590f8a9f6b295117a9675e2ab5}{reduce\+Life} (int redu)
+\begin{DoxyCompactList}\small\item\em Verringert das Leben des Charakteres. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_a6a3f9b96fd22d73660f458e52a2e04ba}{set\+Life} (int value)
+\begin{DoxyCompactList}\small\item\em Setzt das Leben eines Charakteres. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_a374c40a183c8c1795b10004a07b36fd7}{set\+Stunned} (bool value)
+\begin{DoxyCompactList}\small\item\em Setzt den Charakter auf stunned oder nicht. \end{DoxyCompactList}\item 
+bool \hyperlink{class_character_a2960bf6a336ffdfac0d19d0909ceb1dd}{enemy\+Is\+Left} (\hyperlink{class_character}{Character} $\ast$enemy)
+\begin{DoxyCompactList}\small\item\em Gibt an ob ein Gegner sich links von einem befindet. \end{DoxyCompactList}\item 
+bool \hyperlink{class_character_aea3908941f3be893dc1964b224e74825}{enemy\+Is\+Right} (\hyperlink{class_character}{Character} $\ast$enemy)
+\begin{DoxyCompactList}\small\item\em Gibt an ob ein Gegner sich rechts von einem befindet. \end{DoxyCompactList}\item 
+bool \hyperlink{class_character_aa4848867a1029966d670d5f492301308}{enemy\+Is\+Left\+Range} (\hyperlink{class_character}{Character} $\ast$enemy)
+\begin{DoxyCompactList}\small\item\em Gibt an ob ein Gegner sich links und in schlagweite von einem befindet. \end{DoxyCompactList}\item 
+bool \hyperlink{class_character_a6ae029174982ef952b074097789db3a4}{enemy\+Is\+Right\+Range} (\hyperlink{class_character}{Character} $\ast$enemy)
+\begin{DoxyCompactList}\small\item\em Gibt an ob ein Gegner sich rechts und in schlagweite von einem befindet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_character_a127f5ee58b01289418cf080a8328b6c7}{death} ()
+\begin{DoxyCompactList}\small\item\em Der Charakter stirbt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_character_aefeb2b4e6d072de60e7cacb4d2c81b7a}{Character} (int \+\_\+option=1, bool enemy=false, Q\+Object $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Construktor der Klasse \hyperlink{class_character}{Character}. \end{DoxyCompactList}\item 
+void \hyperlink{class_character_a876cf4bd6f6241810cb3f6072e8205ed}{draw\+Char} (Q\+Painter $\ast$p, \hyperlink{class_character}{Character} $\ast$e=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Zeichnet den Charakter. \end{DoxyCompactList}\item 
+int \hyperlink{class_character_a4b4280b04c7b8839ffb46bb3be4cb490}{get\+X} ()
+\begin{DoxyCompactList}\small\item\em Gibt den aktuellen X-\/\+Wert zurück den der Charakter hat. \end{DoxyCompactList}\item 
+int \hyperlink{class_character_a28c072ac846a33336cc7c5fb869c4cd8}{get\+Y} ()
+\begin{DoxyCompactList}\small\item\em Gibt den aktuellen Y-\/\+Wert zurück den der Charakter hat. \end{DoxyCompactList}\item 
+int \hyperlink{class_character_a1e00eede43aa9b436b0cbd2127ab251a}{get\+Life} ()
+\begin{DoxyCompactList}\small\item\em Gibt das aktuelle Leben des Charakteres zurück. \end{DoxyCompactList}\item 
+int \hyperlink{class_character_a047f58799c51258670497cda68ca4b8c}{get\+Mana} ()
+\begin{DoxyCompactList}\small\item\em Gibt das aktuelle Mana des Charakteres zurück. \end{DoxyCompactList}\item 
+Q\+Image \hyperlink{class_character_abd97793fd7945f52850018713e7726e3}{get\+Icon} ()
+\begin{DoxyCompactList}\small\item\em Gibt das Icon zurück als Q\+Image welches den Charakter darstellt. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_character_a2c4dcc76fbba8481fba7e175378a4cd0}{get\+Name} ()
+\begin{DoxyCompactList}\small\item\em Gibt den Namen des aktuellen Charakteres zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_character}{Character} Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. 
+
+Diese Klasse ist vollständig für das Zeichnen und Bewegen des Charakters zuständig. Sie wird von Draw.\+cpp aufgerufen. Um neue Bilder einzufügen muss nur im Contructer ein Case hinzugefügt werden, z.\+B. Case 2. Nun kann dann im Auswahlmenu für Charaktere die 2 gewählt werden (Mitte oben) und die Bilder dieses Charakteres werden geladen. Achte darauf alle Bilder, und auch auf die richtige größe eingefügt zu haben. Sonst wird es nicht funktionieren. Shadow kann so geladen werden wie er ist, er wird für alle Charaktere benutzt. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_character_aefeb2b4e6d072de60e7cacb4d2c81b7a}{}\index{Character@{Character}!Character@{Character}}
+\index{Character@{Character}!Character@{Character}}
+\subsubsection[{Character}]{\setlength{\rightskip}{0pt plus 5cm}Character\+::\+Character (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+option = {\ttfamily 1}, }
+\item[{bool}]{enemy = {\ttfamily false}, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_character_aefeb2b4e6d072de60e7cacb4d2c81b7a}
+
+
+Construktor der Klasse \hyperlink{class_character}{Character}. 
+
+\hyperlink{class_character}{Character} 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+option} & Welcher Charakter ausgewählt wurde. \\
+\hline
+{\em enemy} & Ob ein Gegner existiert oder nicht (Computergegner). \\
+\hline
+{\em parent} & Das Parent Widget falls vorhanden. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_character_a127f5ee58b01289418cf080a8328b6c7}{}\index{Character@{Character}!death@{death}}
+\index{death@{death}!Character@{Character}}
+\subsubsection[{death}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::death (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_character_a127f5ee58b01289418cf080a8328b6c7}
+
+
+Der Charakter stirbt. 
+
+death Signalisiert den Tod des aktuellen Charakteres. \hypertarget{class_character_a876cf4bd6f6241810cb3f6072e8205ed}{}\index{Character@{Character}!draw\+Char@{draw\+Char}}
+\index{draw\+Char@{draw\+Char}!Character@{Character}}
+\subsubsection[{draw\+Char}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::draw\+Char (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{p, }
+\item[{{\bf Character} $\ast$}]{e = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_character_a876cf4bd6f6241810cb3f6072e8205ed}
+
+
+Zeichnet den Charakter. 
+
+draw\+Char 
+\begin{DoxyParams}{Parameters}
+{\em p} & Der Painter damit gezeichnet werden kann. \\
+\hline
+{\em e} & Der Gegner falls vorhanden. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_character_a2960bf6a336ffdfac0d19d0909ceb1dd}{}\index{Character@{Character}!enemy\+Is\+Left@{enemy\+Is\+Left}}
+\index{enemy\+Is\+Left@{enemy\+Is\+Left}!Character@{Character}}
+\subsubsection[{enemy\+Is\+Left}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Left (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{enemy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a2960bf6a336ffdfac0d19d0909ceb1dd}
+
+
+Gibt an ob ein Gegner sich links von einem befindet. 
+
+enemy\+Is\+Left 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & Variable der Klasse \hyperlink{class_character}{Character}, dies ist der Gegner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ Wenn der Gegner sich links befindet.~\newline
+False -\/ Wenn nicht. 
+\end{DoxyReturn}
+\hypertarget{class_character_aa4848867a1029966d670d5f492301308}{}\index{Character@{Character}!enemy\+Is\+Left\+Range@{enemy\+Is\+Left\+Range}}
+\index{enemy\+Is\+Left\+Range@{enemy\+Is\+Left\+Range}!Character@{Character}}
+\subsubsection[{enemy\+Is\+Left\+Range}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Left\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{enemy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_aa4848867a1029966d670d5f492301308}
+
+
+Gibt an ob ein Gegner sich links und in schlagweite von einem befindet. 
+
+enemy\+Is\+Left\+Range 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & Variable der Klasse \hyperlink{class_character}{Character}, dies ist der Gegner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ Wenn der Gegner sich links befindet und in schlagweite ist.~\newline
+False -\/ Wenn nicht. 
+\end{DoxyReturn}
+\hypertarget{class_character_aea3908941f3be893dc1964b224e74825}{}\index{Character@{Character}!enemy\+Is\+Right@{enemy\+Is\+Right}}
+\index{enemy\+Is\+Right@{enemy\+Is\+Right}!Character@{Character}}
+\subsubsection[{enemy\+Is\+Right}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Right (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{enemy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_aea3908941f3be893dc1964b224e74825}
+
+
+Gibt an ob ein Gegner sich rechts von einem befindet. 
+
+enemy\+Is\+Right 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & Variable der Klasse \hyperlink{class_character}{Character}, dies ist der Gegner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ Wenn der Gegner sich rechts befindet.~\newline
+False -\/ Wenn nicht. 
+\end{DoxyReturn}
+\hypertarget{class_character_a6ae029174982ef952b074097789db3a4}{}\index{Character@{Character}!enemy\+Is\+Right\+Range@{enemy\+Is\+Right\+Range}}
+\index{enemy\+Is\+Right\+Range@{enemy\+Is\+Right\+Range}!Character@{Character}}
+\subsubsection[{enemy\+Is\+Right\+Range}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Right\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{enemy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a6ae029174982ef952b074097789db3a4}
+
+
+Gibt an ob ein Gegner sich rechts und in schlagweite von einem befindet. 
+
+enemy\+Is\+Right\+Range 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & Variable der Klasse \hyperlink{class_character}{Character}, dies ist der Gegner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ Wenn der Gegner sich rechts befindet und in schlagweite ist.~\newline
+False -\/ Wenn nicht. 
+\end{DoxyReturn}
+\hypertarget{class_character_abd97793fd7945f52850018713e7726e3}{}\index{Character@{Character}!get\+Icon@{get\+Icon}}
+\index{get\+Icon@{get\+Icon}!Character@{Character}}
+\subsubsection[{get\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Character\+::get\+Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_character_abd97793fd7945f52850018713e7726e3}
+
+
+Gibt das Icon zurück als Q\+Image welches den Charakter darstellt. 
+
+get\+Icon \begin{DoxyReturn}{Returns}
+Icon von dem ausgewählten Charakter (Das Gesicht als Q\+Image). 
+\end{DoxyReturn}
+\hypertarget{class_character_a1e00eede43aa9b436b0cbd2127ab251a}{}\index{Character@{Character}!get\+Life@{get\+Life}}
+\index{get\+Life@{get\+Life}!Character@{Character}}
+\subsubsection[{get\+Life}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+Life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_character_a1e00eede43aa9b436b0cbd2127ab251a}
+
+
+Gibt das aktuelle Leben des Charakteres zurück. 
+
+get\+Life \begin{DoxyReturn}{Returns}
+Der aktuelle Lebens-\/\+Wert des Charakteres. 
+\end{DoxyReturn}
+\hypertarget{class_character_a047f58799c51258670497cda68ca4b8c}{}\index{Character@{Character}!get\+Mana@{get\+Mana}}
+\index{get\+Mana@{get\+Mana}!Character@{Character}}
+\subsubsection[{get\+Mana}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+Mana (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_character_a047f58799c51258670497cda68ca4b8c}
+
+
+Gibt das aktuelle Mana des Charakteres zurück. 
+
+get\+Mana \begin{DoxyReturn}{Returns}
+Der aktuelle Mana-\/\+Wert des Charakteres. 
+\end{DoxyReturn}
+\hypertarget{class_character_a2c4dcc76fbba8481fba7e175378a4cd0}{}\index{Character@{Character}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Character@{Character}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Character\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_character_a2c4dcc76fbba8481fba7e175378a4cd0}
+
+
+Gibt den Namen des aktuellen Charakteres zurück. 
+
+get\+Name \begin{DoxyReturn}{Returns}
+Name des aktuellen Charakteres. 
+\end{DoxyReturn}
+\hypertarget{class_character_a4b4280b04c7b8839ffb46bb3be4cb490}{}\index{Character@{Character}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Character@{Character}}
+\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_character_a4b4280b04c7b8839ffb46bb3be4cb490}
+
+
+Gibt den aktuellen X-\/\+Wert zurück den der Charakter hat. 
+
+get\+X \begin{DoxyReturn}{Returns}
+Die aktuelle X-\/\+Position. 
+\end{DoxyReturn}
+\hypertarget{class_character_a28c072ac846a33336cc7c5fb869c4cd8}{}\index{Character@{Character}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Character@{Character}}
+\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_character_a28c072ac846a33336cc7c5fb869c4cd8}
+
+
+Gibt den aktuellen Y-\/\+Wert zurück den der Charakter hat. 
+
+get\+Y \begin{DoxyReturn}{Returns}
+Die aktuelle Y-\/\+Position. 
+\end{DoxyReturn}
+\hypertarget{class_character_a2257c559f50f1e78eea8d49dbe12af49}{}\index{Character@{Character}!jump\+Up@{jump\+Up}}
+\index{jump\+Up@{jump\+Up}!Character@{Character}}
+\subsubsection[{jump\+Up}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::jump\+Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a2257c559f50f1e78eea8d49dbe12af49}
+
+
+Signalisiert das der Charakter springt. 
+
+jump\+Up \hypertarget{class_character_adcc18bee13545c734c695dee06a9f094}{}\index{Character@{Character}!move\+Left@{move\+Left}}
+\index{move\+Left@{move\+Left}!Character@{Character}}
+\subsubsection[{move\+Left}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::move\+Left (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_adcc18bee13545c734c695dee06a9f094}
+
+
+Signalisiert das der Charakter nach links läuft oder nicht. 
+
+move\+Left 
+\begin{DoxyParams}{Parameters}
+{\em value} & True -\/ läuft nach links.~\newline
+False -\/ läuft nicht nach links. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_character_a732ddad97c8e4b271aac67ba1d7d3c98}{}\index{Character@{Character}!move\+Right@{move\+Right}}
+\index{move\+Right@{move\+Right}!Character@{Character}}
+\subsubsection[{move\+Right}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::move\+Right (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a732ddad97c8e4b271aac67ba1d7d3c98}
+
+
+Signalisiert das der Charakter nach rechts läuft oder nicht. 
+
+move\+Right 
+\begin{DoxyParams}{Parameters}
+{\em value} & True -\/ läuft nach rechts.~\newline
+False -\/ läuft nicht nach rechts. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_character_a5745dbf38bf7b408f254408f898a2e46}{}\index{Character@{Character}!punch@{punch}}
+\index{punch@{punch}!Character@{Character}}
+\subsubsection[{punch}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::punch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a5745dbf38bf7b408f254408f898a2e46}
+
+
+Signalisiert das der Charakter zuschlägt. 
+
+punch \hypertarget{class_character_aacbdc7590f8a9f6b295117a9675e2ab5}{}\index{Character@{Character}!reduce\+Life@{reduce\+Life}}
+\index{reduce\+Life@{reduce\+Life}!Character@{Character}}
+\subsubsection[{reduce\+Life}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::reduce\+Life (
+\begin{DoxyParamCaption}
+\item[{int}]{redu}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_aacbdc7590f8a9f6b295117a9675e2ab5}
+
+
+Verringert das Leben des Charakteres. 
+
+reduce\+Life 
+\begin{DoxyParams}{Parameters}
+{\em redu} & Die Menge um wieviel es reduziert wird. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_character_a8cfbb3e6ea62013a74f7b837054ee03f}{}\index{Character@{Character}!set\+Crouch@{set\+Crouch}}
+\index{set\+Crouch@{set\+Crouch}!Character@{Character}}
+\subsubsection[{set\+Crouch}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::set\+Crouch (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a8cfbb3e6ea62013a74f7b837054ee03f}
+
+
+Signalisiert das der Charakter sich duckt oder sich nicht duckt. 
+
+set\+Crouch 
+\begin{DoxyParams}{Parameters}
+{\em value} & True -\/ der Charaktere duckt sich.~\newline
+False -\/ der Charaktere duckt sich nicht. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_character_a6a3f9b96fd22d73660f458e52a2e04ba}{}\index{Character@{Character}!set\+Life@{set\+Life}}
+\index{set\+Life@{set\+Life}!Character@{Character}}
+\subsubsection[{set\+Life}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::set\+Life (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a6a3f9b96fd22d73660f458e52a2e04ba}
+
+
+Setzt das Leben eines Charakteres. 
+
+set\+Life 
+\begin{DoxyParams}{Parameters}
+{\em value} & Die Menge des Lebens das gesetzt werden soll. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_character_a374c40a183c8c1795b10004a07b36fd7}{}\index{Character@{Character}!set\+Stunned@{set\+Stunned}}
+\index{set\+Stunned@{set\+Stunned}!Character@{Character}}
+\subsubsection[{set\+Stunned}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::set\+Stunned (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_character_a374c40a183c8c1795b10004a07b36fd7}
+
+
+Setzt den Charakter auf stunned oder nicht. 
+
+set\+Stunned 
+\begin{DoxyParams}{Parameters}
+{\em value} & True -\/ Charakter ist stunned.~\newline
+False -\/ Charakter ist nicht stunned. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+character.\+h\item 
+character.\+cpp\end{DoxyCompactItemize}

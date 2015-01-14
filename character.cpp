@@ -1,21 +1,5 @@
 #include "character.h"
 
-/**
- * @brief Character::Character
- *
- * Diese Klasse ist vollständig für das Zeichnen und Bewegen des
- * Charakters zuständig. Sie wird von Draw.cpp aufgerufen.
- * Um neue Bilder einzufügen muss nur im Contructer ein Case
- * hinzugefügt werden, z.B. Case 2. Nun kann dann im Auswahlmenu
- * für Charaktere die 2 gewählt werden (Mitte oben) und die Bilder
- * dieses Charakteres werden geladen. Achte darauf alle Bilder, und
- * auch auf die richtige größe eingefügt zu haben. Sonst wird es nicht
- * funktionieren. Shadow kann so geladen werden wie er ist, er wird
- * für alle Charaktere benutzt.
- *
- * @param _option
- * @param parent
- */
 Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
 {
     stunned = false;
@@ -101,13 +85,6 @@ Character::Character(int _option, bool enemy, QObject *parent) : QObject(parent)
     }
 }
 
-/**
- * @brief Character::drawChar
- *
- * Zeichnet den Charakter, je nach Zustand.
- *
- * @param p
- */
 void Character::drawChar(QPainter *p, Character *e) {
     calculate();
 
@@ -168,51 +145,22 @@ void Character::drawChar(QPainter *p, Character *e) {
     }
 }
 
-/**
- * @brief Character::getX
- *
- * Gibt die X Position des Charakteres zurück.
- *
- * @return
- */
 int Character::getX() {
     return xPos;
 }
 
-/**
- * @brief Character::getY
- *
- * Gitb die Y Position des Charakteres zurück.
- *
- * @return
- */
 int Character::getY() {
     return yPos;
 }
 
-/**
- * @brief Character::getLife
- *
- * Gibt das momentane Leben des Characteres zurück.
- *
- * @return
- */
 int Character::getLife() {
     return life;
 }
 
-/**
- * @brief Character::setLife
- * @param value
- */
 void Character::setLife(int value) {
     life = value;
 }
 
-/**
- * @brief Character::reduceLife
- * @param red
- */
 void Character::reduceLife(int redu) {
     life -= redu;
     stunned = true;
@@ -226,23 +174,10 @@ void Character::setStunned(bool value) {
     stunned = value;
 }
 
-/**
- * @brief Character::getMana
- *
- * Gibt das momentane Mana des Characteres zurück.
- *
- * @return
- */
 int Character::getMana() {
     return mana;
 }
 
-/**
- * @brief Character::count
- *
- * Zählst die eine Bildzähler höher.
- *
- */
 void Character::count() {
     imageSequence++;
     if(imageSequence < 0) {
@@ -270,13 +205,6 @@ void Character::setCrouch(bool value) {
     crouching = value;
 }
 
-/**
- * @brief Character::punch
- *
- * Wenn der User zuschlagen will wird Mana und jegliche andere
- * Zustände geprüft, welcher der Charakter haben könnte.
- * Falls alles korrekt ist darf der Charakter zuschlagen.
- */
 void Character::punch() {
     if(!stunned && !punching && !jumping && !jumpingRight && !jumpingLeft && mana >= 15) {
         punching = true;
@@ -289,14 +217,6 @@ void Character::punch() {
     }
 }
 
-/**
- * @brief Character::jumpUp
- *
- * Wenn der User die Angabe macht den Charakter springen zulassen,
- * wird hier geprüft ob das legitim ist.
- *
- * @param value
- */
 void Character::jumpUp() {
     if(!jumping && !jumpingRight && !jumpingLeft && !punching) {
         if (walkingRight) {
@@ -315,11 +235,6 @@ void Character::jumpUp() {
     }
 }
 
-/**
- * @brief Character::calculate
- *
- * Berechnet die Position
- */
 void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abfrage
 
     /* Falls der Character steht, tue nichts */
@@ -366,12 +281,6 @@ void Character::calculate() { //xPos + kriegt eine eigene Funktion damit die abf
     }
 }
 
-/**
- * @brief Character::second
- *
- * Mana and Liferegg.
- *
- */
 void Character::second() {
     if (mana < 150) {
         mana++;
@@ -381,30 +290,14 @@ void Character::second() {
     }
 }
 
-/**
- * @brief Character::getIcon
- * @return Returns the Character Icon.
- */
 QImage Character::getIcon() {
     return characterIcon;
 }
 
-/**
- * @brief Character::getName
- * @return Den Namen des Charakters.
- */
 QString Character::getName() {
     return characterName;
 }
 
-/**
- * @brief Character::enemyIsLeft
- *
- * Gibt aus ob sich der Gegner links befindet oder nicht.
- *
- * @param enemy
- * @return
- */
 bool Character::enemyIsLeft(Character *enemy) {
     if(enemy->getX() < this->getX()) {
         return true;
@@ -413,14 +306,6 @@ bool Character::enemyIsLeft(Character *enemy) {
     }
 }
 
-/**
- * @brief Character::enemyIsRight
- *
- * Gibt aus ob sich der Gegner rechts befindet oder nicht.
- *
- * @param enemy
- * @return
- */
 bool Character::enemyIsRight(Character *enemy) {
     if(enemy->getX() > this->getX()) {
         return true;
@@ -429,14 +314,6 @@ bool Character::enemyIsRight(Character *enemy) {
     }
 }
 
-/**
- * @brief Character::enemyIsLeftRange
- *
- * Gibt aus ob der Gegner sich links befindet und in Schlagweite.
- *
- * @param enemy
- * @return
- */
 bool Character::enemyIsLeftRange(Character *enemy) {
     if (enemyIsLeft(enemy) && (this->getX() - enemy->getX()) < 50 && (this->getX() - enemy->getX()) > 0) {
         return true;
@@ -445,14 +322,6 @@ bool Character::enemyIsLeftRange(Character *enemy) {
     }
 }
 
-/**
- * @brief Character::enemyIsRightRange
- *
- * Gibt aus ob der Gegner sich rechts befindet und in Schlagweite.
- *
- * @param enemy
- * @return
- */
 bool Character::enemyIsRightRange(Character *enemy) {
     if(enemyIsRight(enemy) && (enemy->getX() - this->getX()) < 50 && (enemy->getX() - this->getX()) > 0) {
         return true;
