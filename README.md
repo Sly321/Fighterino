@@ -7,6 +7,18 @@ A little Jump'n'Fight game, filled with open source little fighter graphics. For
 
 ## History
 
+#### Version 0.9
+
+Reinige die Dateien langsam und Dokumentiere
+
+Fertige sind:
+
+chat.cpp
+
+choosebackground.cpp
+
+choosemenu.cpp
+
 #### Version 0.3.1
 
 Added new Controls, you can see them by typing /controls into the chat and pressing Y for seeing the Chat.

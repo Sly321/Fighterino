@@ -70,6 +70,9 @@
        <property name="text">
         <string>Player vs Player</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -90,6 +93,9 @@
       <widget class="QPushButton" name="pushButton_3">
        <property name="text">
         <string>Quit</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
