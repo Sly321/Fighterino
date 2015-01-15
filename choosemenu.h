@@ -15,7 +15,17 @@ class ChooseMenu : public QWidget
 {
     Q_OBJECT
 public:
+    //! Contructor der chooseMenu Klasse.
+    /*!
+     * \brief ChooseMenu Erstellt die nötigen Image dateien und initialisiert die Einstellungen für das Auswahlmenü.
+     * \param parent Das parent Widget falls vorhanden.
+     */
     explicit ChooseMenu(QWidget *parent = 0);
+    //! Setzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden.
+    /*!
+     * \brief setPlayerVSPlayer
+     * \param value der Wert für den Modus.
+     */
     void setPlayerVsPlayer(bool value);
 
 private:
@@ -50,12 +60,43 @@ private:
     QPushButton *rectChoose;
 
 signals:
+    //! Signalisiert der Main das ein anderes Widget angezeigt werden soll.
+    /*!
+     * \brief setCurrent
+     * \param int Das Widget welches angezeigt werden soll.
+     */
     void setCurrent(int);
+    //! Signalisiert der Main das ein Charakter ausgewählt wurde.
+    /*!
+     * \brief setCharacter
+     * \param Der Character der ausgewählt wurde.
+     */
     void setCharacter(int);
+    //! Signalisiert der Main das ein 2.Charakter ausgewählt wurde.
+    /*!
+     * \brief setCharacter2
+     * \param Der 2.Character der ausgewählt wurde.
+     */
     void setCharacter2(int);
+    //! Signalisiert das der Anweder nach rechts gegangen ist.
+    /*!
+     * \brief right
+     */
     void right();
+    //! Signalisiert das der Anweder nach unten gegangen ist.
+    /*!
+     * \brief down
+     */
     void down();
+    //! Signalisiert das der Anweder nach oben gegangen ist.
+    /*!
+     * \brief right
+     */
     void up();
+    //! Signalisiert das der Anweder nach links gegangen ist.
+    /*!
+     * \brief left
+     */
     void left();
 
 private slots:
@@ -84,7 +125,7 @@ protected:
 
     //! Registriert wenn der Benutzer die Taste loslässt.
     /*!
-     * \brief keyPressEvent
+     * \brief keyReleaseEvent
      * \param e Die Taste welche losgelassen wurde.
      */
     void keyReleaseEvent(QKeyEvent *e);

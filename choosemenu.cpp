@@ -1,12 +1,5 @@
 #include "choosemenu.h"
 
-/**
- * @brief ChooseMenu::ChooseMenu
- *
- *
- *
- * @param parent The parent widget.
- */
 ChooseMenu::ChooseMenu(QWidget *parent) : QWidget(parent)
 {
     parentWindow = parent;
@@ -126,13 +119,6 @@ void ChooseMenu::paintEvent(QPaintEvent *e) {
 
 }
 
-/**
- * @brief ChooseMenu::keyPressEvent
- *
- * Fängt Tastendrücken vom Benutzer ab und reagiert darauf entsprechend.
- *
- * @param e Keyevent.
- */
 void ChooseMenu::keyPressEvent(QKeyEvent *e) {
     switch(e->key()) {
     case Qt::Key_Left:
@@ -166,13 +152,6 @@ void ChooseMenu::keyPressEvent(QKeyEvent *e) {
     }
 }
 
-/**
- * @brief ChooseMenu::keyReleaseEvent
- *
- * Fängt das loslassen einer Taste des Users ab und reagiert entsprechend darauf.
- *
- * @param e
- */
 void ChooseMenu::keyReleaseEvent(QKeyEvent *e) {
     switch(e->key()) {
     case Qt::Key_Return:
@@ -186,45 +165,21 @@ void ChooseMenu::keyReleaseEvent(QKeyEvent *e) {
     }
 }
 
-/**
- * @brief ChooseMenu::forwardChoosebg
- *
- * Gibt den ausgewählten Character an die Hauptklasse und verweist zum nächsten Widget.
- *
- */
 void ChooseMenu::forwardChoosebg() {
     emit setCharacter(auswahl);
     emit setCurrent(4);
 }
 
-/**
- * @brief ChooseMenu::forwardPvp
- *
- * Gibt die ausgewählten Charactere an die Hauptklasse und verweist zum nächsten Widget.
- *
- */
 void ChooseMenu::forwardPvp() {
     emit setCharacter(auswahl);
     emit setCharacter2(auswahlp2);
     emit setCurrent(4);
 }
 
-/**
- * @brief ChooseMenu::backToStartmenu
- *
- * Sendet das Signal das das Startmenu wieder angezeigt werden soll.
- *
- */
 void ChooseMenu::backToStartmenu() {
     emit setCurrent(0);
 }
 
-/**
- * @brief ChooseMenu::selectedTopleft
- *
- * Setzt die Variablen auf die Auswahl oben links.
- *
- */
 void ChooseMenu::selectedTopleft() {
     if (!player2pick) {
         auswahl = 1;
@@ -236,12 +191,6 @@ void ChooseMenu::selectedTopleft() {
     this->update();
 }
 
-/**
- * @brief ChooseMenu::selectedTop
- *
- * Setzt die Variablen auf die Auswahl oben.
- *
- */
 void ChooseMenu::selectedTop() {
     if (!player2pick) {
         auswahl = 2;
@@ -253,12 +202,6 @@ void ChooseMenu::selectedTop() {
     this->update();
 }
 
-/**
- * @brief ChooseMenu::selectedMidleft
- *
- * Setzt die Variablen auf die Auswahl mitte links.
- *
- */
 void ChooseMenu::selectedMidleft() {
     if (!player2pick) {
         selectedString = "Ahri";
@@ -270,12 +213,6 @@ void ChooseMenu::selectedMidleft() {
     this->update();
 }
 
-/**
- * @brief ChooseMenu::selectedMid
- *
- * Setzt die Variablen auf die Auswahl mitte.
- *
- */
 void ChooseMenu::selectedMid() {
     if (!player2pick) {
         auswahl = 4;
@@ -287,13 +224,6 @@ void ChooseMenu::selectedMid() {
     this->update();
 }
 
-/**
- * @brief ChooseMenu::setPlayerVsPlayer
- *
- * Setzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden.
- *
- * @param value
- */
 void ChooseMenu::setPlayerVsPlayer(bool value) {
     pvp = value;
     player2pick = false;

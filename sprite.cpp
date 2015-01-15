@@ -32,17 +32,7 @@ QImage Sprite::getImageMirrored(int sequence) {
     }
 }
 
-/**
- * @brief Sprite::getImage
- *
- * Diese Funtion bekommt ein sprite* image und nimmt die jeweilige
- *
- * @param x
- * @param y
- * @param sequence
- * @param mirrored
- * @return
- */
+
 QImage Sprite::getImage(int x, int y, int sequence, bool mirrored) {
     // 320 x 320
     int anzahlSpalten = this->x / x;

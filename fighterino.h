@@ -1,3 +1,9 @@
+//! Fighterino Klasse für die Menüs.
+/*!
+ *  Diese Klasse liefert die Widgets für die Menüs und
+ *  Auswahlmöglichkeiten.
+ */
+
 #ifndef FIGHTERINO_H
 #define FIGHTERINO_H
 
@@ -20,6 +26,11 @@ class Fighterino : public QWidget
     Q_OBJECT
 
 public:
+    //! der Fighterino Constructor.
+    /*!
+     * \brief Contructor der Klasse Fighterino.
+     * \param parent Übergibt falls vorhanden das parent-QWidget.
+     */
     explicit Fighterino(QWidget *parent = 0);
 
 private:
@@ -43,7 +54,17 @@ private slots:
     void setFocusTo(int a);
 
 protected:
+    //! Registriert die Tastenschläge des Benutzers.
+    /*!
+     * \brief keyPressEvent
+     * \param e Die Taste welche gedrückt wird.
+     */
     void keyPressEvent(QKeyEvent *e);
+    //! Erhält Widgets Größenveränderung-Ereignisse, die in dem Event-Parameter übergeben werden.
+    /*!
+     * \brief resizeEvent
+     * \param event Das ResizeEvent.
+     */
     void resizeEvent(QResizeEvent *event);
 
 };

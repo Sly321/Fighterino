@@ -73,7 +73,7 @@ public slots:
     void selectedRight();
 
 protected:
-    //! Zeichnet elemente für die Klasse.
+    //! Zeichnet Elemente für die Klasse.
     /*!
      * \brief paintEvent
      * \param e Das paintEvent.
