@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['death',['death',['../class_character.html#a127f5ee58b01289418cf080a8328b6c7',1,'Character']]],
-  ['draw',['Draw',['../class_draw.html',1,'Draw'],['../class_draw.html#a04439e9d5f430ebe2c1cf8216b542930',1,'Draw::Draw()']]],
-  ['drawbackground',['drawBackground',['../class_background.html#a57a08d996f7dd00395078adaf71cb223',1,'Background']]],
-  ['drawchar',['drawChar',['../class_character.html#a876cf4bd6f6241810cb3f6072e8205ed',1,'Character']]],
-  ['drawobject',['DrawObject',['../class_draw_object.html',1,'']]]
+  ['character',['Character',['../class_character.html',1,'Character'],['../class_character.html#aefeb2b4e6d072de60e7cacb4d2c81b7a',1,'Character::Character()']]],
+  ['chat',['Chat',['../class_chat.html',1,'Chat'],['../class_chat.html#a83c846c142bde1a2a96dd17eb6544f6f',1,'Chat::Chat()']]],
+  ['chatsignal',['chatSignal',['../class_draw.html#af9ed50b9ec6a3bae6a995a394e6c58e3',1,'Draw']]],
+  ['choosebackground',['ChooseBackground',['../class_choose_background.html',1,'ChooseBackground'],['../class_choose_background.html#ab7ee660174665e9bc68eb183817ca099',1,'ChooseBackground::ChooseBackground()']]],
+  ['choosemenu',['ChooseMenu',['../class_choose_menu.html',1,'ChooseMenu'],['../class_choose_menu.html#ad44e7c05565bcea6c75ba6ddde2f0c51',1,'ChooseMenu::ChooseMenu()']]]
 ];

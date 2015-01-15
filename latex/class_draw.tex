@@ -1,5 +1,14 @@
 \hypertarget{class_draw}{}\section{Draw Class Reference}
 \label{class_draw}\index{Draw@{Draw}}
+
+
+Die \hyperlink{class_draw}{Draw} Klasse (ruft die Klassen \hyperlink{class_character}{Character}, \hyperlink{class_background}{Background} und Ui\+Overlay auf).  
+
+
+
+
+{\ttfamily \#include $<$draw.\+h$>$}
+
 Inheritance diagram for Draw\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,50 +18,54 @@ Inheritance diagram for Draw\+:\begin{figure}[H]
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}{fps} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}{Draw\+::fps}. \end{DoxyCompactList}\item 
-void \hyperlink{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}{win\+C} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}{Draw\+::win\+C}. \end{DoxyCompactList}\item 
-void \hyperlink{class_draw_ac63e4e142c5a594016d51a80f7de5194}{win\+E} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_ac63e4e142c5a594016d51a80f7de5194}{Draw\+::win\+E}. \end{DoxyCompactList}\item 
+\hypertarget{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}{}int \hyperlink{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}{fps} ()\label{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}
+
+\begin{DoxyCompactList}\small\item\em Wird angetriggert wenn die fps angezeigt wird. \end{DoxyCompactList}\item 
+\hypertarget{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}{}void \hyperlink{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}{win\+C} ()\label{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}
+
+\begin{DoxyCompactList}\small\item\em Wird angetriggert wenn der erste Spieler gewinnt. \end{DoxyCompactList}\item 
+\hypertarget{class_draw_ac63e4e142c5a594016d51a80f7de5194}{}void \hyperlink{class_draw_ac63e4e142c5a594016d51a80f7de5194}{win\+E} ()\label{class_draw_ac63e4e142c5a594016d51a80f7de5194}
+
+\begin{DoxyCompactList}\small\item\em Wird angetriggert wenn der zweite Spieler/\+K\+I gewinnt. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}{ki\+Action\+True} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}{Draw\+::ki\+Action\+True}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Wird angetriggert wenn die K\+I wieder einen Zug machen soll. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_draw_af9ed50b9ec6a3bae6a995a394e6c58e3}{}void {\bfseries chat\+Signal} ()\label{class_draw_af9ed50b9ec6a3bae6a995a394e6c58e3}
-
-\item 
-\hypertarget{class_draw_ad2ba543f075871b08e4fb22bcfa00a7f}{}void {\bfseries show\+Only\+Chat} ()\label{class_draw_ad2ba543f075871b08e4fb22bcfa00a7f}
-
-\item 
-\hypertarget{class_draw_a799aeae3d852fe42b9521f6cef53c41e}{}void {\bfseries hide\+Only\+Chat} ()\label{class_draw_a799aeae3d852fe42b9521f6cef53c41e}
-
-\item 
-\hypertarget{class_draw_a8e1664e9a5bdb18ddfedfe8cbc7e9de3}{}void {\bfseries set\+Current} (int)\label{class_draw_a8e1664e9a5bdb18ddfedfe8cbc7e9de3}
-
-\end{DoxyCompactItemize}
+void \hyperlink{class_draw_af9ed50b9ec6a3bae6a995a394e6c58e3}{chat\+Signal} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert dem \hyperlink{class_chat}{Chat} das er versteckt oder angezeigt werden soll. \end{DoxyCompactList}\item 
+void \hyperlink{class_draw_ad2ba543f075871b08e4fb22bcfa00a7f}{show\+Only\+Chat} ()
+\begin{DoxyCompactList}\small\item\em Zeigt nur den \hyperlink{class_chat}{Chat}. \end{DoxyCompactList}\item 
+void \hyperlink{class_draw_a799aeae3d852fe42b9521f6cef53c41e}{hide\+Only\+Chat} ()
+\begin{DoxyCompactList}\small\item\em Versteckt nur den \hyperlink{class_chat}{Chat}. \end{DoxyCompactList}\item 
+void \hyperlink{class_draw_a8e1664e9a5bdb18ddfedfe8cbc7e9de3}{set\+Current} (int)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein anderes Widget angezeigt werden soll. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_draw_a04439e9d5f430ebe2c1cf8216b542930}{Draw} (Q\+Widget $\ast$parent=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor der Klasse \hyperlink{class_draw}{Draw}. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_a2db5297d01a7a230a1e5a504e22e4b1a}{set\+Fps\+Visible} (bool b)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a2db5297d01a7a230a1e5a504e22e4b1a}{Draw\+::set\+Fps\+Visible}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Setzt die Fps sichtbar. \end{DoxyCompactList}\item 
 bool \hyperlink{class_draw_a70803e861847ba4d1fce021502eb9d2b}{is\+Fps\+Visible} ()
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a70803e861847ba4d1fce021502eb9d2b}{Draw\+::is\+Fps\+Visible}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gibt an ob die Fps sichtbar sind. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_a14d84222a5d90e9061d5a46ccfae2539}{load} (int sel\+Char, int sel\+Backg, int sel\+Char2)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a14d84222a5d90e9061d5a46ccfae2539}{Draw\+::load}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ladet die gewählten Charaktere und den Hintergrund. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_draw_ae94babea5ece40d00e4c8e5e0b5506e7}{paint\+Event} (Q\+Paint\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_ae94babea5ece40d00e4c8e5e0b5506e7}{Draw\+::paint\+Event}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Zeichnet Elemente für die Klasse. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_a6d1346ffb671cc8e622700125b0dbc60}{key\+Press\+Event} (Q\+Key\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a6d1346ffb671cc8e622700125b0dbc60}{Draw\+::key\+Press\+Event}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Registriert die Tastenschläge des Benutzers. \end{DoxyCompactList}\item 
 void \hyperlink{class_draw_a9aff693268ed2232fbb4154617ea49cc}{key\+Release\+Event} (Q\+Key\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_draw_a9aff693268ed2232fbb4154617ea49cc}{Draw\+::key\+Release\+Event}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Registriert wenn der Benutzer die Taste loslässt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Die \hyperlink{class_draw}{Draw} Klasse (ruft die Klassen \hyperlink{class_character}{Character}, \hyperlink{class_background}{Background} und Ui\+Overlay auf). 
+
+Die Klasse \hyperlink{class_draw}{Draw} ruft die Klassen \hyperlink{class_character}{Character}, \hyperlink{class_background}{Background} und Ui\+Overlay auf. Diese sind für das Zeichnen im Spiel verantwortlich. \hyperlink{class_character}{Character} und \hyperlink{class_background}{Background} werden Zahlen übergeben welche für die jeweilige Auswahl stehen (\hyperlink{class_background}{Background} 1, 2, ... etc.). Die Ui\+Overlay Klasse brauch zum Zeichnen immer den \hyperlink{class_character}{Character} als object, damit Healthbar etc. korrekte Werte zeichnen. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_draw_a04439e9d5f430ebe2c1cf8216b542930}{}\index{Draw@{Draw}!Draw@{Draw}}
@@ -62,26 +75,41 @@ void \hyperlink{class_draw_a9aff693268ed2232fbb4154617ea49cc}{key\+Release\+Even
 \item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_draw_a04439e9d5f430ebe2c1cf8216b542930}
-Die Klasse \hyperlink{class_draw}{Draw} ruft die Klassen \hyperlink{class_character}{Character}, \hyperlink{class_background}{Background} und Ui\+Overlay auf. Diese sind für das Zeichnen im Spiel verantwortlich. \hyperlink{class_character}{Character} und \hyperlink{class_background}{Background} werden Zahlen übergeben welche für die jeweilige Auswahl stehen (\hyperlink{class_background}{Background} 1, 2, ... etc.). Die Ui\+Overlay Klasse brauch zum Zeichnen immer den \hyperlink{class_character}{Character} als object, damit Healthbar etc. korrekte Werte zeichnen. 
+
+
+Constructor der Klasse \hyperlink{class_draw}{Draw}. 
+
+Contructor der Klasse \hyperlink{class_draw}{Draw}. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Übergibt falls vorhanden das parent-\/\+Q\+Widget. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
-\hypertarget{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}{}\index{Draw@{Draw}!fps@{fps}}
-\index{fps@{fps}!Draw@{Draw}}
-\subsubsection[{fps}]{\setlength{\rightskip}{0pt plus 5cm}int Draw\+::fps (
+\hypertarget{class_draw_af9ed50b9ec6a3bae6a995a394e6c58e3}{}\index{Draw@{Draw}!chat\+Signal@{chat\+Signal}}
+\index{chat\+Signal@{chat\+Signal}!Draw@{Draw}}
+\subsubsection[{chat\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::chat\+Signal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_draw_af9ed50b9ec6a3bae6a995a394e6c58e3}
 
 
-\hyperlink{class_draw_a4e01f0c9c841a83b86cee5f35b4041a2}{Draw\+::fps}. 
+Signalisiert dem \hyperlink{class_chat}{Chat} das er versteckt oder angezeigt werden soll. 
 
-Errechnet lediglich die fps und setzt den Zähler wieder 0.
+chat\+Signal \hypertarget{class_draw_a799aeae3d852fe42b9521f6cef53c41e}{}\index{Draw@{Draw}!hide\+Only\+Chat@{hide\+Only\+Chat}}
+\index{hide\+Only\+Chat@{hide\+Only\+Chat}!Draw@{Draw}}
+\subsubsection[{hide\+Only\+Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::hide\+Only\+Chat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_draw_a799aeae3d852fe42b9521f6cef53c41e}
 
-\begin{DoxyReturn}{Returns}
-The Frames per second. 
-\end{DoxyReturn}
-\hypertarget{class_draw_a70803e861847ba4d1fce021502eb9d2b}{}\index{Draw@{Draw}!is\+Fps\+Visible@{is\+Fps\+Visible}}
+
+Versteckt nur den \hyperlink{class_chat}{Chat}. 
+
+hide\+Only\+Chat \hypertarget{class_draw_a70803e861847ba4d1fce021502eb9d2b}{}\index{Draw@{Draw}!is\+Fps\+Visible@{is\+Fps\+Visible}}
 \index{is\+Fps\+Visible@{is\+Fps\+Visible}!Draw@{Draw}}
 \subsubsection[{is\+Fps\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Draw\+::is\+Fps\+Visible (
 \begin{DoxyParamCaption}
@@ -90,12 +118,10 @@ The Frames per second.
 )}\label{class_draw_a70803e861847ba4d1fce021502eb9d2b}
 
 
-\hyperlink{class_draw_a70803e861847ba4d1fce021502eb9d2b}{Draw\+::is\+Fps\+Visible}. 
+Gibt an ob die Fps sichtbar sind. 
 
-Gibt aus ob die Fps Sichtbar sind.
-
-\begin{DoxyReturn}{Returns}
-
+is\+Fps\+Visible \begin{DoxyReturn}{Returns}
+show\+Fps 
 \end{DoxyReturn}
 \hypertarget{class_draw_a6d1346ffb671cc8e622700125b0dbc60}{}\index{Draw@{Draw}!key\+Press\+Event@{key\+Press\+Event}}
 \index{key\+Press\+Event@{key\+Press\+Event}!Draw@{Draw}}
@@ -106,13 +132,11 @@ Gibt aus ob die Fps Sichtbar sind.
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_draw_a6d1346ffb671cc8e622700125b0dbc60}
 
 
-\hyperlink{class_draw_a6d1346ffb671cc8e622700125b0dbc60}{Draw\+::key\+Press\+Event}. 
+Registriert die Tastenschläge des Benutzers. 
 
-Das Event wenn eine Taste gedrückt wurde.
-
-
+key\+Press\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & \\
+{\em e} & Die Taste welche gedrückt wird. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_draw_a9aff693268ed2232fbb4154617ea49cc}{}\index{Draw@{Draw}!key\+Release\+Event@{key\+Release\+Event}}
@@ -124,13 +148,11 @@ Das Event wenn eine Taste gedrückt wurde.
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_draw_a9aff693268ed2232fbb4154617ea49cc}
 
 
-\hyperlink{class_draw_a9aff693268ed2232fbb4154617ea49cc}{Draw\+::key\+Release\+Event}. 
+Registriert wenn der Benutzer die Taste loslässt. 
 
-Das Event wenn eine Taste losgelassen wurde.
-
-
+key\+Release\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & \\
+{\em e} & Die Taste welche losgelassen wurde. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}{}\index{Draw@{Draw}!ki\+Action\+True@{ki\+Action\+True}}
@@ -142,7 +164,9 @@ Das Event wenn eine Taste losgelassen wurde.
 )\hspace{0.3cm}{\ttfamily [slot]}}\label{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}
 
 
-\hyperlink{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}{Draw\+::ki\+Action\+True}. 
+Wird angetriggert wenn die K\+I wieder einen Zug machen soll. 
+
+\hyperlink{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}{Draw\+::ki\+Action\+True}.
 
 Setzt die K\+I Action true sodass die K\+I beim nächsten Zug wieder eine Aktion machen soll. \hypertarget{class_draw_a14d84222a5d90e9061d5a46ccfae2539}{}\index{Draw@{Draw}!load@{load}}
 \index{load@{load}!Draw@{Draw}}
@@ -155,15 +179,15 @@ Setzt die K\+I Action true sodass die K\+I beim nächsten Zug wieder eine Aktion
 )}\label{class_draw_a14d84222a5d90e9061d5a46ccfae2539}
 
 
-\hyperlink{class_draw_a14d84222a5d90e9061d5a46ccfae2539}{Draw\+::load}. 
+Ladet die gewählten Charaktere und den Hintergrund. 
 
-Läd den Charakter und den Hintergrund.
-
-
+load 
 \begin{DoxyParams}{Parameters}
-{\em sel\+Char} & \\
+{\em sel\+Char} & der gewählte Charakter. \\
 \hline
-{\em sel\+Backg} & \\
+{\em sel\+Backg} & der gewählte Hintergrund. \\
+\hline
+{\em sel\+Char2} & der gewählte 2.\+Charakter. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_draw_ae94babea5ece40d00e4c8e5e0b5506e7}{}\index{Draw@{Draw}!paint\+Event@{paint\+Event}}
@@ -175,13 +199,27 @@ Läd den Charakter und den Hintergrund.
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_draw_ae94babea5ece40d00e4c8e5e0b5506e7}
 
 
-\hyperlink{class_draw_ae94babea5ece40d00e4c8e5e0b5506e7}{Draw\+::paint\+Event}. 
+Zeichnet Elemente für die Klasse. 
 
-Das Zeichen Event, zeichnet den Bildschirm neu, immer bei Update.
-
-
+paint\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & \\
+{\em e} & Das paint\+Event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_draw_a8e1664e9a5bdb18ddfedfe8cbc7e9de3}{}\index{Draw@{Draw}!set\+Current@{set\+Current}}
+\index{set\+Current@{set\+Current}!Draw@{Draw}}
+\subsubsection[{set\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::set\+Current (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_draw_a8e1664e9a5bdb18ddfedfe8cbc7e9de3}
+
+
+Signalisiert der Main das ein anderes Widget angezeigt werden soll. 
+
+set\+Current 
+\begin{DoxyParams}{Parameters}
+{\em int} & Das Widget welches angezeigt werden soll. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_draw_a2db5297d01a7a230a1e5a504e22e4b1a}{}\index{Draw@{Draw}!set\+Fps\+Visible@{set\+Fps\+Visible}}
@@ -193,38 +231,26 @@ Das Zeichen Event, zeichnet den Bildschirm neu, immer bei Update.
 )}\label{class_draw_a2db5297d01a7a230a1e5a504e22e4b1a}
 
 
-\hyperlink{class_draw_a2db5297d01a7a230a1e5a504e22e4b1a}{Draw\+::set\+Fps\+Visible}. 
+Setzt die Fps sichtbar. 
 
-Setzt die Fps Zahl sichtbar oder unsichtbar (true für sichtbar).
-
-
+set\+Fps\+Visible 
 \begin{DoxyParams}{Parameters}
-{\em b} & \\
+{\em b} & True -\/ Fps ist sichtbar.~\newline
+False -\/ Fps nicht sichtbar. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}{}\index{Draw@{Draw}!win\+C@{win\+C}}
-\index{win\+C@{win\+C}!Draw@{Draw}}
-\subsubsection[{win\+C}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::win\+C (
+\hypertarget{class_draw_ad2ba543f075871b08e4fb22bcfa00a7f}{}\index{Draw@{Draw}!show\+Only\+Chat@{show\+Only\+Chat}}
+\index{show\+Only\+Chat@{show\+Only\+Chat}!Draw@{Draw}}
+\subsubsection[{show\+Only\+Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::show\+Only\+Chat (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_draw_ad2ba543f075871b08e4fb22bcfa00a7f}
 
 
-\hyperlink{class_draw_a706414ad08bb093ccd2bcd61e12dabe1}{Draw\+::win\+C}. 
+Zeigt nur den \hyperlink{class_chat}{Chat}. 
 
-Szenario Spieler 1. \hypertarget{class_draw_ac63e4e142c5a594016d51a80f7de5194}{}\index{Draw@{Draw}!win\+E@{win\+E}}
-\index{win\+E@{win\+E}!Draw@{Draw}}
-\subsubsection[{win\+E}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::win\+E (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_draw_ac63e4e142c5a594016d51a80f7de5194}
-
-
-\hyperlink{class_draw_ac63e4e142c5a594016d51a80f7de5194}{Draw\+::win\+E}. 
-
-Szenario Spieler 2 / K\+I wins. 
+show\+Only\+Chat 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

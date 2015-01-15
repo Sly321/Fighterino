@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -84,33 +85,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">sprite.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SPRITE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SPRITE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QtWidgets&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_sprite.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sprite.html">Sprite</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_sprite.html">Sprite</a>(QImage bild);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    QImage getImage();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    QImage getImage(<span class="keywordtype">int</span> sequence);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    QImage getImageMirrored(<span class="keywordtype">int</span> sequence);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    QImage getImage(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> sequence, <span class="keywordtype">bool</span> mirrored = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    QImage bild;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> anzahl;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> x;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> y;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif // SPRITE_H</span></div>
-<div class="ttc" id="class_sprite_html"><div class="ttname"><a href="class_sprite.html">Sprite</a></div><div class="ttdef"><b>Definition:</b> sprite.h:6</div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef SPRITE_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define SPRITE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QtWidgets&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_sprite.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sprite.html">Sprite</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_sprite.html#a247eff7723c39ee82ba183e975f644dd">Sprite</a>(QImage bild);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    QImage <a class="code" href="class_sprite.html#a37b20fb41171754d6cc893a1efe9cea8">getImage</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QImage <a class="code" href="class_sprite.html#a37b20fb41171754d6cc893a1efe9cea8">getImage</a>(<span class="keywordtype">int</span> sequence);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    QImage <a class="code" href="class_sprite.html#a791c9dfd90379dfcc2466b0049b41967">getImageMirrored</a>(<span class="keywordtype">int</span> sequence);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QImage <a class="code" href="class_sprite.html#a37b20fb41171754d6cc893a1efe9cea8">getImage</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> sequence, <span class="keywordtype">bool</span> mirrored = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QImage bild;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> anzahl;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> x;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> y;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif // SPRITE_H</span></div>
+<div class="ttc" id="class_sprite_html_a37b20fb41171754d6cc893a1efe9cea8"><div class="ttname"><a href="class_sprite.html#a37b20fb41171754d6cc893a1efe9cea8">Sprite::getImage</a></div><div class="ttdeci">QImage getImage()</div><div class="ttdoc">Gibt das Bild zurück. </div><div class="ttdef"><b>Definition:</b> sprite.cpp:11</div></div>
+<div class="ttc" id="class_sprite_html_a791c9dfd90379dfcc2466b0049b41967"><div class="ttname"><a href="class_sprite.html#a791c9dfd90379dfcc2466b0049b41967">Sprite::getImageMirrored</a></div><div class="ttdeci">QImage getImageMirrored(int sequence)</div><div class="ttdoc">Gibt das Bild zurück. </div><div class="ttdef"><b>Definition:</b> sprite.cpp:25</div></div>
+<div class="ttc" id="class_sprite_html"><div class="ttname"><a href="class_sprite.html">Sprite</a></div><div class="ttdoc">Sprite Klasse für die Bilder. </div><div class="ttdef"><b>Definition:</b> sprite.h:12</div></div>
+<div class="ttc" id="class_sprite_html_a247eff7723c39ee82ba183e975f644dd"><div class="ttname"><a href="class_sprite.html#a247eff7723c39ee82ba183e975f644dd">Sprite::Sprite</a></div><div class="ttdeci">Sprite(QImage bild)</div><div class="ttdoc">Erzeugt ein Sprite aus einem Bild. </div><div class="ttdef"><b>Definition:</b> sprite.cpp:3</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 14 2015 17:21:52 for Fighterino by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 15 2015 19:30:21 for Fighterino by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

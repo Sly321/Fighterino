@@ -1,5 +1,14 @@
 \hypertarget{class_choose_menu}{}\section{Choose\+Menu Class Reference}
 \label{class_choose_menu}\index{Choose\+Menu@{Choose\+Menu}}
+
+
+choose\+Menu Klasse repräsentiert die Charakterauswahl.  
+
+
+
+
+{\ttfamily \#include $<$choosemenu.\+h$>$}
+
 Inheritance diagram for Choose\+Menu\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,44 +18,42 @@ Inheritance diagram for Choose\+Menu\+:\begin{figure}[H]
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_choose_menu_a053dc4e1fccc670fd57940a9143ba70e}{}void {\bfseries set\+Current} (int)\label{class_choose_menu_a053dc4e1fccc670fd57940a9143ba70e}
-
-\item 
-\hypertarget{class_choose_menu_a9ddf26dbd1f7e26d80978de6a881ee1b}{}void {\bfseries set\+Character} (int)\label{class_choose_menu_a9ddf26dbd1f7e26d80978de6a881ee1b}
-
-\item 
-\hypertarget{class_choose_menu_af8b98075fd4c7c50ad7417852e8ed226}{}void {\bfseries set\+Character2} (int)\label{class_choose_menu_af8b98075fd4c7c50ad7417852e8ed226}
-
-\item 
-\hypertarget{class_choose_menu_ab60b2705eb02edf89244d2f44debd3e7}{}void {\bfseries right} ()\label{class_choose_menu_ab60b2705eb02edf89244d2f44debd3e7}
-
-\item 
-\hypertarget{class_choose_menu_a667b64a72cbadf598af6eadd27d474de}{}void {\bfseries down} ()\label{class_choose_menu_a667b64a72cbadf598af6eadd27d474de}
-
-\item 
-\hypertarget{class_choose_menu_aab43a0cf8d120937626a34f24ba29342}{}void {\bfseries up} ()\label{class_choose_menu_aab43a0cf8d120937626a34f24ba29342}
-
-\item 
-\hypertarget{class_choose_menu_a583409f96522df4268a0d3441380b492}{}void {\bfseries left} ()\label{class_choose_menu_a583409f96522df4268a0d3441380b492}
-
-\end{DoxyCompactItemize}
+void \hyperlink{class_choose_menu_a053dc4e1fccc670fd57940a9143ba70e}{set\+Current} (int)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein anderes Widget angezeigt werden soll. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_menu_a9ddf26dbd1f7e26d80978de6a881ee1b}{set\+Character} (int)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein Charakter ausgewählt wurde. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_menu_af8b98075fd4c7c50ad7417852e8ed226}{set\+Character2} (int)
+\begin{DoxyCompactList}\small\item\em Signalisiert der Main das ein 2.\+Charakter ausgewählt wurde. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_menu_ab60b2705eb02edf89244d2f44debd3e7}{right} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Anweder nach rechts gegangen ist. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_menu_a667b64a72cbadf598af6eadd27d474de}{down} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Anweder nach unten gegangen ist. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_menu_aab43a0cf8d120937626a34f24ba29342}{up} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Anweder nach oben gegangen ist. \end{DoxyCompactList}\item 
+void \hyperlink{class_choose_menu_a583409f96522df4268a0d3441380b492}{left} ()
+\begin{DoxyCompactList}\small\item\em Signalisiert das der Anweder nach links gegangen ist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_choose_menu_ad44e7c05565bcea6c75ba6ddde2f0c51}{Choose\+Menu} (Q\+Widget $\ast$parent=0)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_menu_ad44e7c05565bcea6c75ba6ddde2f0c51}{Choose\+Menu\+::\+Choose\+Menu}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Contructor der choose\+Menu Klasse. \end{DoxyCompactList}\item 
 void \hyperlink{class_choose_menu_aa87f53c54f73ff60e7b4b3e77b2fa4b2}{set\+Player\+Vs\+Player} (bool value)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_menu_aa87f53c54f73ff60e7b4b3e77b2fa4b2}{Choose\+Menu\+::set\+Player\+Vs\+Player}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Setzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_choose_menu_a98996879611931da4a621b752ecdf4d1}{paint\+Event} (Q\+Paint\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_menu_a98996879611931da4a621b752ecdf4d1}{Choose\+Menu\+::paint\+Event}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Zeichnet die Charaktere und das Auswahlgitter für den User. \end{DoxyCompactList}\item 
 void \hyperlink{class_choose_menu_ae3fec13ab674dc4a7b012efcc2b9c4f6}{key\+Press\+Event} (Q\+Key\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_menu_ae3fec13ab674dc4a7b012efcc2b9c4f6}{Choose\+Menu\+::key\+Press\+Event}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Registriert die Tastenschläge des Benutzers. \end{DoxyCompactList}\item 
 void \hyperlink{class_choose_menu_a89be0220a1eeb013ddc50ba27d4fa808}{key\+Release\+Event} (Q\+Key\+Event $\ast$e)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_choose_menu_a89be0220a1eeb013ddc50ba27d4fa808}{Choose\+Menu\+::key\+Release\+Event}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Registriert wenn der Benutzer die Taste loslässt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+choose\+Menu Klasse repräsentiert die Charakterauswahl. 
+
+choose\+Menu Klasse repräsentiert die Charakterauswahl, sie zeigt die Charaktere an und fängt die Tasten ab die der Benutzer eingibt. Wenn der Benutzer fertig ist werden die Daten weitergegeben und es wird zur Hauptklasse zurückgekehrt. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_choose_menu_ad44e7c05565bcea6c75ba6ddde2f0c51}{}\index{Choose\+Menu@{Choose\+Menu}!Choose\+Menu@{Choose\+Menu}}
@@ -58,19 +65,28 @@ void \hyperlink{class_choose_menu_a89be0220a1eeb013ddc50ba27d4fa808}{key\+Releas
 )\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_choose_menu_ad44e7c05565bcea6c75ba6ddde2f0c51}
 
 
-\hyperlink{class_choose_menu_ad44e7c05565bcea6c75ba6ddde2f0c51}{Choose\+Menu\+::\+Choose\+Menu}. 
+Contructor der choose\+Menu Klasse. 
 
-Diese Klasse repräsentiert die Charakterauswahl, sie zeigt die Charaktere an und fängt die Tasten ab die der Benutzer eingibt. Wenn der Benutzer fertig ist werden die Daten weitergegeben und es wird zur Hauptklasse zurückgekehrt.
-
-
+\hyperlink{class_choose_menu}{Choose\+Menu} Erstellt die nötigen Image dateien und initialisiert die Einstellungen für das Auswahlmenü. 
 \begin{DoxyParams}{Parameters}
-{\em parent} & The parent widget. \\
+{\em parent} & Das parent Widget falls vorhanden. \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_choose_menu_ae3fec13ab674dc4a7b012efcc2b9c4f6}{}\index{Choose\+Menu@{Choose\+Menu}!key\+Press\+Event@{key\+Press\+Event}}
+\hypertarget{class_choose_menu_a667b64a72cbadf598af6eadd27d474de}{}\index{Choose\+Menu@{Choose\+Menu}!down@{down}}
+\index{down@{down}!Choose\+Menu@{Choose\+Menu}}
+\subsubsection[{down}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_menu_a667b64a72cbadf598af6eadd27d474de}
+
+
+Signalisiert das der Anweder nach unten gegangen ist. 
+
+down \hypertarget{class_choose_menu_ae3fec13ab674dc4a7b012efcc2b9c4f6}{}\index{Choose\+Menu@{Choose\+Menu}!key\+Press\+Event@{key\+Press\+Event}}
 \index{key\+Press\+Event@{key\+Press\+Event}!Choose\+Menu@{Choose\+Menu}}
 \subsubsection[{key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::key\+Press\+Event (
 \begin{DoxyParamCaption}
@@ -79,13 +95,11 @@ Diese Klasse repräsentiert die Charakterauswahl, sie zeigt die Charaktere an un
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_choose_menu_ae3fec13ab674dc4a7b012efcc2b9c4f6}
 
 
-\hyperlink{class_choose_menu_ae3fec13ab674dc4a7b012efcc2b9c4f6}{Choose\+Menu\+::key\+Press\+Event}. 
+Registriert die Tastenschläge des Benutzers. 
 
-Fängt Tastendrücken vom Benutzer ab und reagiert darauf entsprechend.
-
-
+key\+Press\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & Keyevent. \\
+{\em e} & Die Taste welche gedrückt wird. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_choose_menu_a89be0220a1eeb013ddc50ba27d4fa808}{}\index{Choose\+Menu@{Choose\+Menu}!key\+Release\+Event@{key\+Release\+Event}}
@@ -97,16 +111,25 @@ Fängt Tastendrücken vom Benutzer ab und reagiert darauf entsprechend.
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_choose_menu_a89be0220a1eeb013ddc50ba27d4fa808}
 
 
-\hyperlink{class_choose_menu_a89be0220a1eeb013ddc50ba27d4fa808}{Choose\+Menu\+::key\+Release\+Event}. 
+Registriert wenn der Benutzer die Taste loslässt. 
 
-Fängt das loslassen einer Taste des Users ab und reagiert entsprechend darauf.
-
-
+key\+Release\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & \\
+{\em e} & Die Taste welche losgelassen wurde. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_choose_menu_a98996879611931da4a621b752ecdf4d1}{}\index{Choose\+Menu@{Choose\+Menu}!paint\+Event@{paint\+Event}}
+\hypertarget{class_choose_menu_a583409f96522df4268a0d3441380b492}{}\index{Choose\+Menu@{Choose\+Menu}!left@{left}}
+\index{left@{left}!Choose\+Menu@{Choose\+Menu}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_menu_a583409f96522df4268a0d3441380b492}
+
+
+Signalisiert das der Anweder nach links gegangen ist. 
+
+left \hypertarget{class_choose_menu_a98996879611931da4a621b752ecdf4d1}{}\index{Choose\+Menu@{Choose\+Menu}!paint\+Event@{paint\+Event}}
 \index{paint\+Event@{paint\+Event}!Choose\+Menu@{Choose\+Menu}}
 \subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::paint\+Event (
 \begin{DoxyParamCaption}
@@ -115,13 +138,70 @@ Fängt das loslassen einer Taste des Users ab und reagiert entsprechend darauf.
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_choose_menu_a98996879611931da4a621b752ecdf4d1}
 
 
-\hyperlink{class_choose_menu_a98996879611931da4a621b752ecdf4d1}{Choose\+Menu\+::paint\+Event}. 
+Zeichnet die Charaktere und das Auswahlgitter für den User. 
 
-Zeichnet die Charaktere und das Auswahlgitter für den User.
-
-
+paint\+Event 
 \begin{DoxyParams}{Parameters}
-{\em e} & Paintevent. \\
+{\em e} & Das paint\+Event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_choose_menu_ab60b2705eb02edf89244d2f44debd3e7}{}\index{Choose\+Menu@{Choose\+Menu}!right@{right}}
+\index{right@{right}!Choose\+Menu@{Choose\+Menu}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_menu_ab60b2705eb02edf89244d2f44debd3e7}
+
+
+Signalisiert das der Anweder nach rechts gegangen ist. 
+
+right \hypertarget{class_choose_menu_a9ddf26dbd1f7e26d80978de6a881ee1b}{}\index{Choose\+Menu@{Choose\+Menu}!set\+Character@{set\+Character}}
+\index{set\+Character@{set\+Character}!Choose\+Menu@{Choose\+Menu}}
+\subsubsection[{set\+Character}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::set\+Character (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_menu_a9ddf26dbd1f7e26d80978de6a881ee1b}
+
+
+Signalisiert der Main das ein Charakter ausgewählt wurde. 
+
+set\+Character 
+\begin{DoxyParams}{Parameters}
+{\em Der} & \hyperlink{class_character}{Character} der ausgewählt wurde. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_choose_menu_af8b98075fd4c7c50ad7417852e8ed226}{}\index{Choose\+Menu@{Choose\+Menu}!set\+Character2@{set\+Character2}}
+\index{set\+Character2@{set\+Character2}!Choose\+Menu@{Choose\+Menu}}
+\subsubsection[{set\+Character2}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::set\+Character2 (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_menu_af8b98075fd4c7c50ad7417852e8ed226}
+
+
+Signalisiert der Main das ein 2.\+Charakter ausgewählt wurde. 
+
+set\+Character2 
+\begin{DoxyParams}{Parameters}
+{\em Der} & 2.\+Character der ausgewählt wurde. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_choose_menu_a053dc4e1fccc670fd57940a9143ba70e}{}\index{Choose\+Menu@{Choose\+Menu}!set\+Current@{set\+Current}}
+\index{set\+Current@{set\+Current}!Choose\+Menu@{Choose\+Menu}}
+\subsubsection[{set\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::set\+Current (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_menu_a053dc4e1fccc670fd57940a9143ba70e}
+
+
+Signalisiert der Main das ein anderes Widget angezeigt werden soll. 
+
+set\+Current 
+\begin{DoxyParams}{Parameters}
+{\em int} & Das Widget welches angezeigt werden soll. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_choose_menu_aa87f53c54f73ff60e7b4b3e77b2fa4b2}{}\index{Choose\+Menu@{Choose\+Menu}!set\+Player\+Vs\+Player@{set\+Player\+Vs\+Player}}
@@ -133,16 +213,25 @@ Zeichnet die Charaktere und das Auswahlgitter für den User.
 )}\label{class_choose_menu_aa87f53c54f73ff60e7b4b3e77b2fa4b2}
 
 
-\hyperlink{class_choose_menu_aa87f53c54f73ff60e7b4b3e77b2fa4b2}{Choose\+Menu\+::set\+Player\+Vs\+Player}. 
+Setzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden. 
 
-Setzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden.
-
-
+set\+Player\+V\+S\+Player 
 \begin{DoxyParams}{Parameters}
-{\em value} & \\
+{\em value} & der Wert für den Modus. \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_choose_menu_aab43a0cf8d120937626a34f24ba29342}{}\index{Choose\+Menu@{Choose\+Menu}!up@{up}}
+\index{up@{up}!Choose\+Menu@{Choose\+Menu}}
+\subsubsection[{up}]{\setlength{\rightskip}{0pt plus 5cm}void Choose\+Menu\+::up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_choose_menu_aab43a0cf8d120937626a34f24ba29342}
 
+
+Signalisiert das der Anweder nach oben gegangen ist. 
+
+right 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
