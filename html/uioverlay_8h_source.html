@@ -4,10 +4,18 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Fighterino: uioverlay.h Source File</title>
+<title>Version: uioverlay.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="start.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Fighterino
+   <div id="projectname">Version
+   &#160;<span id="projectnumber">9.9</span>
    </div>
   </td>
  </tr>
@@ -66,6 +76,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('uioverlay_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -108,16 +132,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif // UIOVERLAY_H</span></div>
-<div class="ttc" id="class_u_i_overlay_html"><div class="ttname"><a href="class_u_i_overlay.html">UIOverlay</a></div><div class="ttdoc">UIOverlay Klasse ist für die Darstellung des Interfaces zuständig. </div><div class="ttdef"><b>Definition:</b> uioverlay.h:13</div></div>
-<div class="ttc" id="class_character_html"><div class="ttname"><a href="class_character.html">Character</a></div><div class="ttdoc">Character Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. ...</div><div class="ttdef"><b>Definition:</b> character.h:24</div></div>
-<div class="ttc" id="class_u_i_overlay_html_a9b3960185a836ecb504ce25d22c1893e"><div class="ttname"><a href="class_u_i_overlay.html#a9b3960185a836ecb504ce25d22c1893e">UIOverlay::drawInterface</a></div><div class="ttdeci">void drawInterface(QPainter *p, Character *c, Character *e)</div><div class="ttdoc">Zeichnet das Interface. </div><div class="ttdef"><b>Definition:</b> uioverlay.cpp:8</div></div>
-<div class="ttc" id="class_u_i_overlay_html_a51696f81d4333f2c7537a103d9440c47"><div class="ttname"><a href="class_u_i_overlay.html#a51696f81d4333f2c7537a103d9440c47">UIOverlay::UIOverlay</a></div><div class="ttdeci">UIOverlay(QObject *parent=0)</div><div class="ttdoc">Contructor der Klasse UIOverlay. </div><div class="ttdef"><b>Definition:</b> uioverlay.cpp:3</div></div>
+<div class="ttc" id="class_u_i_overlay_html"><div class="ttname"><a href="class_u_i_overlay.html">UIOverlay</a></div><div class="ttdoc">UIOverlay Klasse ist für die Darstellung des Interfaces zuständig. </div><div class="ttdef"><b>Definition:</b> <a href="uioverlay_8h_source.html#l00013">uioverlay.h:13</a></div></div>
+<div class="ttc" id="class_character_html"><div class="ttname"><a href="class_character.html">Character</a></div><div class="ttdoc">Character Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. ...</div><div class="ttdef"><b>Definition:</b> <a href="character_8h_source.html#l00024">character.h:24</a></div></div>
+<div class="ttc" id="class_u_i_overlay_html_a9b3960185a836ecb504ce25d22c1893e"><div class="ttname"><a href="class_u_i_overlay.html#a9b3960185a836ecb504ce25d22c1893e">UIOverlay::drawInterface</a></div><div class="ttdeci">void drawInterface(QPainter *p, Character *c, Character *e)</div><div class="ttdoc">Zeichnet das Interface. </div><div class="ttdef"><b>Definition:</b> <a href="uioverlay_8cpp_source.html#l00008">uioverlay.cpp:8</a></div></div>
+<div class="ttc" id="class_u_i_overlay_html_a51696f81d4333f2c7537a103d9440c47"><div class="ttname"><a href="class_u_i_overlay.html#a51696f81d4333f2c7537a103d9440c47">UIOverlay::UIOverlay</a></div><div class="ttdeci">UIOverlay(QObject *parent=0)</div><div class="ttdoc">Contructor der Klasse UIOverlay. </div><div class="ttdef"><b>Definition:</b> <a href="uioverlay_8cpp_source.html#l00003">uioverlay.cpp:3</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 15 2015 19:30:21 for Fighterino by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>uioverlay.h</b></li>
+    <li class="footer">Generated on Thu Jan 15 2015 19:47:16 for Version by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

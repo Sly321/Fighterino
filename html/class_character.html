@@ -4,10 +4,18 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Fighterino: Character Class Reference</title>
+<title>Version: Character Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="start.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Fighterino
+   <div id="projectname">Version
+   &#160;<span id="projectnumber">9.9</span>
    </div>
   </td>
  </tr>
@@ -68,6 +78,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_character.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -82,7 +107,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
@@ -181,7 +205,9 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_character.html" title="Character Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. ...">Character</a> Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. </p>
-<p>Diese Klasse ist vollständig für das Zeichnen und Bewegen des Charakters zuständig. Sie wird von Draw.cpp aufgerufen. Um neue Bilder einzufügen muss nur im Contructer ein Case hinzugefügt werden, z.B. Case 2. Nun kann dann im Auswahlmenu für Charaktere die 2 gewählt werden (Mitte oben) und die Bilder dieses Charakteres werden geladen. Achte darauf alle Bilder, und auch auf die richtige größe eingefügt zu haben. Sonst wird es nicht funktionieren. Shadow kann so geladen werden wie er ist, er wird für alle Charaktere benutzt. </p>
+<p>Diese Klasse ist vollständig für das Zeichnen und Bewegen des Charakters zuständig. Sie wird von <a class="el" href="draw_8cpp_source.html">Draw.cpp</a> aufgerufen. Um neue Bilder einzufügen muss nur im Contructer ein Case hinzugefügt werden, z.B. Case 2. Nun kann dann im Auswahlmenu für Charaktere die 2 gewählt werden (Mitte oben) und die Bilder dieses Charakteres werden geladen. Achte darauf alle Bilder, und auch auf die richtige größe eingefügt zu haben. Sonst wird es nicht funktionieren. Shadow kann so geladen werden wie er ist, er wird für alle Charaktere benutzt. </p>
+
+<p>Definition at line <a class="el" href="character_8h_source.html#l00024">24</a> of file <a class="el" href="character_8h_source.html">character.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aefeb2b4e6d072de60e7cacb4d2c81b7a"></a>
 <div class="memitem">
@@ -230,6 +256,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00003">3</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,6 +321,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00088">88</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a2960bf6a336ffdfac0d19d0909ceb1dd"></a>
@@ -326,6 +356,8 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True - Wenn der Gegner sich links befindet.<br />
 False - Wenn nicht. </dd></dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00301">301</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -361,6 +393,8 @@ False - Wenn nicht. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>True - Wenn der Gegner sich links befindet und in schlagweite ist.<br />
 False - Wenn nicht. </dd></dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00317">317</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aea3908941f3be893dc1964b224e74825"></a>
@@ -394,6 +428,8 @@ False - Wenn nicht. </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True - Wenn der Gegner sich rechts befindet.<br />
 False - Wenn nicht. </dd></dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00309">309</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -429,6 +465,8 @@ False - Wenn nicht. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>True - Wenn der Gegner sich rechts befindet und in schlagweite ist.<br />
 False - Wenn nicht. </dd></dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00325">325</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abd97793fd7945f52850018713e7726e3"></a>
@@ -446,6 +484,8 @@ False - Wenn nicht. </dd></dl>
 
 <p>Gibt das Icon zurück als QImage welches den Charakter darstellt. </p>
 <p>getIcon </p><dl class="section return"><dt>Returns</dt><dd>Icon von dem ausgewählten Charakter (Das Gesicht als QImage). </dd></dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00293">293</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -465,6 +505,8 @@ False - Wenn nicht. </dd></dl>
 <p>Gibt das aktuelle Leben des Charakteres zurück. </p>
 <p>getLife </p><dl class="section return"><dt>Returns</dt><dd>Der aktuelle Lebens-Wert des Charakteres. </dd></dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00156">156</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a047f58799c51258670497cda68ca4b8c"></a>
@@ -482,6 +524,8 @@ False - Wenn nicht. </dd></dl>
 
 <p>Gibt das aktuelle Mana des Charakteres zurück. </p>
 <p>getMana </p><dl class="section return"><dt>Returns</dt><dd>Der aktuelle Mana-Wert des Charakteres. </dd></dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00177">177</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -501,6 +545,8 @@ False - Wenn nicht. </dd></dl>
 <p>Gibt den Namen des aktuellen Charakteres zurück. </p>
 <p>getName </p><dl class="section return"><dt>Returns</dt><dd>Name des aktuellen Charakteres. </dd></dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00297">297</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4b4280b04c7b8839ffb46bb3be4cb490"></a>
@@ -519,6 +565,8 @@ False - Wenn nicht. </dd></dl>
 <p>Gibt den aktuellen X-Wert zurück den der Charakter hat. </p>
 <p>getX </p><dl class="section return"><dt>Returns</dt><dd>Die aktuelle X-Position. </dd></dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00148">148</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a28c072ac846a33336cc7c5fb869c4cd8"></a>
@@ -536,6 +584,8 @@ False - Wenn nicht. </dd></dl>
 
 <p>Gibt den aktuellen Y-Wert zurück den der Charakter hat. </p>
 <p>getY </p><dl class="section return"><dt>Returns</dt><dd>Die aktuelle Y-Position. </dd></dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00152">152</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -562,6 +612,8 @@ False - Wenn nicht. </dd></dl>
 
 <p>Signalisiert das der Charakter springt. </p>
 <p>jumpUp </p>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00220">220</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -596,6 +648,8 @@ False - läuft nicht nach links. </td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00196">196</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a732ddad97c8e4b271aac67ba1d7d3c98"></a>
@@ -629,6 +683,8 @@ False - läuft nicht nach rechts. </td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00188">188</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a5745dbf38bf7b408f254408f898a2e46"></a>
@@ -654,6 +710,8 @@ False - läuft nicht nach rechts. </td></tr>
 
 <p>Signalisiert das der Charakter zuschlägt. </p>
 <p>punch </p>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00208">208</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -686,6 +744,8 @@ False - läuft nicht nach rechts. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00164">164</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -720,6 +780,8 @@ False - der Charaktere duckt sich nicht. </td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00204">204</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6a3f9b96fd22d73660f458e52a2e04ba"></a>
@@ -751,6 +813,8 @@ False - der Charaktere duckt sich nicht. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00160">160</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
 
 </div>
 </div>
@@ -785,18 +849,24 @@ False - Charakter ist nicht stunned. </td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="character_8cpp_source.html#l00173">173</a> of file <a class="el" href="character_8cpp_source.html">character.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="character_8h_source.html">character.h</a></li>
-<li>character.cpp</li>
+<li><a class="el" href="character_8cpp_source.html">character.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 15 2015 19:30:21 for Fighterino by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_character.html">Character</a></li>
+    <li class="footer">Generated on Thu Jan 15 2015 19:47:16 for Version by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

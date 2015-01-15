@@ -1,0 +1,136 @@
+.TH "Sprite" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Sprite \- \fBSprite\fP Klasse für die Bilder\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sprite\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSprite\fP (QImage bild)"
+.br
+.RI "\fIErzeugt ein \fBSprite\fP aus einem Bild\&. \fP"
+.ti -1c
+.RI "QImage \fBgetImage\fP ()"
+.br
+.RI "\fIGibt das Bild zurück\&. \fP"
+.ti -1c
+.RI "QImage \fBgetImage\fP (int sequence)"
+.br
+.RI "\fIGibt das Bild zurück\&. \fP"
+.ti -1c
+.RI "QImage \fBgetImageMirrored\fP (int sequence)"
+.br
+.RI "\fIGibt das Bild zurück\&. \fP"
+.ti -1c
+.RI "QImage \fBgetImage\fP (int x, int y, int sequence, bool mirrored=false)"
+.br
+.RI "\fIGibt das Bild zurück\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSprite\fP Klasse für die Bilder\&. 
+
+Diese Klasse stellt verschiedene Sprites für die verschiedenen Szenen/Aktionen zur Verfügung\&. 
+.PP
+Definition at line 12 of file sprite\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Sprite::Sprite (QImage bild)"
+
+.PP
+Erzeugt ein \fBSprite\fP aus einem Bild\&. \fBSprite\fP erstellt ein \fBSprite\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbild\fP Das Bild für den \fBSprite\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file sprite\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QImage Sprite::getImage ()"
+
+.PP
+Gibt das Bild zurück\&. getImage 
+.PP
+\fBReturns:\fP
+.RS 4
+ein Bild\&. 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file sprite\&.cpp\&.
+.SS "QImage Sprite::getImage (int sequence)"
+
+.PP
+Gibt das Bild zurück\&. getImage 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsequence\fP Eine Sequenz von Bildern\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ein Bild\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file sprite\&.cpp\&.
+.SS "QImage Sprite::getImage (int x, int y, int sequence, bool mirrored = \fCfalse\fP)"
+
+.PP
+Gibt das Bild zurück\&. getImage 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP X-Wert des Bildes\&. 
+.br
+\fIy\fP Y-Wert des Bildes\&. 
+.br
+\fIsequence\fP Eine Sequenz von Bildern\&. 
+.br
+\fImirrored\fP Bild ist nicht gespiegelt\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ein Bild\&. 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file sprite\&.cpp\&.
+.SS "QImage Sprite::getImageMirrored (int sequence)"
+
+.PP
+Gibt das Bild zurück\&. getImageMirrored 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsequence\fP Eine Sequenz von Bildern\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ein gespiegeltes Bild\&. 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file sprite\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

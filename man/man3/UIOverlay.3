@@ -1,0 +1,74 @@
+.TH "UIOverlay" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UIOverlay \- \fBUIOverlay\fP Klasse ist für die Darstellung des Interfaces zuständig\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <uioverlay\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBdrawInterface\fP (QPainter *p, \fBCharacter\fP *c, \fBCharacter\fP *e)"
+.br
+.RI "\fIZeichnet das Interface\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUIOverlay\fP (QObject *parent=0)"
+.br
+.RI "\fIContructor der Klasse \fBUIOverlay\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBUIOverlay\fP Klasse ist für die Darstellung des Interfaces zuständig\&. 
+
+Hierbei werden die Mana-, und Lebensbalken beider Spieler angezeigt\&. Außerdem gehört zu jedem Spieler ein kleines Profilbild\&. 
+.PP
+Definition at line 13 of file uioverlay\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UIOverlay::UIOverlay (QObject * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Contructor der Klasse \fBUIOverlay\fP\&. \fBUIOverlay\fP Erstellt einige Interface-Daten\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP Das parent Widget falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file uioverlay\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void UIOverlay::drawInterface (QPainter * p, \fBCharacter\fP * c, \fBCharacter\fP * e)\fC [slot]\fP"
+
+.PP
+Zeichnet das Interface\&. drawInterface 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP Der Painter damit gezeichnet werden kann\&. 
+.br
+\fIc\fP Informationen vom ersten Spieler\&. 
+.br
+\fIe\fP Informationen vom zweiten Spieler\&. 
+.RE
+.PP
+
+.PP
+Definition at line 8 of file uioverlay\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

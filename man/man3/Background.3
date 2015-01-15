@@ -1,0 +1,72 @@
+.TH "Background" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Background \- \fBBackground\fP Klasse für den Hintergrund\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <background\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBdrawBackground\fP (QPainter *p)"
+.br
+.RI "\fIZeichnet des Hintergrund\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBackground\fP (int _option, QObject *parent=0)"
+.br
+.RI "\fIConstructor welcher die Images initialisiert\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBBackground\fP Klasse für den Hintergrund\&. 
+
+Diese Klasse stellt verschiedene Hintergründe für die verschiedenen Szenen zur Verfügung\&. 
+.PP
+Definition at line 14 of file background\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Background::Background (int _option, QObject * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Constructor welcher die Images initialisiert\&. Contructor der Klasse \fBBackground\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_option\fP Gibt an welcher Hintergrund gewählt wird\&. 
+.br
+\fIparent\fP Übergibt falls vorhanden das parent-QWidget\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file background\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Background::drawBackground (QPainter * p)\fC [slot]\fP"
+
+.PP
+Zeichnet des Hintergrund\&. drawBackground zeichnet den Hintergrund\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP Der QPainter wird übergeben damit gezeichnet werden kann\&. 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file background\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

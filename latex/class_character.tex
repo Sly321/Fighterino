@@ -71,7 +71,11 @@ Q\+String \hyperlink{class_character_a2c4dcc76fbba8481fba7e175378a4cd0}{get\+Nam
 \subsection{Detailed Description}
 \hyperlink{class_character}{Character} Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. 
 
-Diese Klasse ist vollständig für das Zeichnen und Bewegen des Charakters zuständig. Sie wird von Draw.\+cpp aufgerufen. Um neue Bilder einzufügen muss nur im Contructer ein Case hinzugefügt werden, z.\+B. Case 2. Nun kann dann im Auswahlmenu für Charaktere die 2 gewählt werden (Mitte oben) und die Bilder dieses Charakteres werden geladen. Achte darauf alle Bilder, und auch auf die richtige größe eingefügt zu haben. Sonst wird es nicht funktionieren. Shadow kann so geladen werden wie er ist, er wird für alle Charaktere benutzt. 
+Diese Klasse ist vollständig für das Zeichnen und Bewegen des Charakters zuständig. Sie wird von \hyperlink{draw_8cpp_source}{Draw.\+cpp} aufgerufen. Um neue Bilder einzufügen muss nur im Contructer ein Case hinzugefügt werden, z.\+B. Case 2. Nun kann dann im Auswahlmenu für Charaktere die 2 gewählt werden (Mitte oben) und die Bilder dieses Charakteres werden geladen. Achte darauf alle Bilder, und auch auf die richtige größe eingefügt zu haben. Sonst wird es nicht funktionieren. Shadow kann so geladen werden wie er ist, er wird für alle Charaktere benutzt. 
+
+Definition at line 24 of file character.\+h.
+
+
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_character_aefeb2b4e6d072de60e7cacb4d2c81b7a}{}\index{Character@{Character}!Character@{Character}}
@@ -96,6 +100,10 @@ Construktor der Klasse \hyperlink{class_character}{Character}.
 {\em parent} & Das Parent Widget falls vorhanden. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 3 of file character.\+cpp.
+
 
 
 \subsection{Member Function Documentation}
@@ -129,6 +137,10 @@ draw\+Char
 {\em e} & Der Gegner falls vorhanden. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 88 of file character.\+cpp.
+
 \hypertarget{class_character_a2960bf6a336ffdfac0d19d0909ceb1dd}{}\index{Character@{Character}!enemy\+Is\+Left@{enemy\+Is\+Left}}
 \index{enemy\+Is\+Left@{enemy\+Is\+Left}!Character@{Character}}
 \subsubsection[{enemy\+Is\+Left}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Left (
@@ -149,6 +161,10 @@ enemy\+Is\+Left
 True -\/ Wenn der Gegner sich links befindet.~\newline
 False -\/ Wenn nicht. 
 \end{DoxyReturn}
+
+
+Definition at line 301 of file character.\+cpp.
+
 \hypertarget{class_character_aa4848867a1029966d670d5f492301308}{}\index{Character@{Character}!enemy\+Is\+Left\+Range@{enemy\+Is\+Left\+Range}}
 \index{enemy\+Is\+Left\+Range@{enemy\+Is\+Left\+Range}!Character@{Character}}
 \subsubsection[{enemy\+Is\+Left\+Range}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Left\+Range (
@@ -169,6 +185,10 @@ enemy\+Is\+Left\+Range
 True -\/ Wenn der Gegner sich links befindet und in schlagweite ist.~\newline
 False -\/ Wenn nicht. 
 \end{DoxyReturn}
+
+
+Definition at line 317 of file character.\+cpp.
+
 \hypertarget{class_character_aea3908941f3be893dc1964b224e74825}{}\index{Character@{Character}!enemy\+Is\+Right@{enemy\+Is\+Right}}
 \index{enemy\+Is\+Right@{enemy\+Is\+Right}!Character@{Character}}
 \subsubsection[{enemy\+Is\+Right}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Right (
@@ -189,6 +209,10 @@ enemy\+Is\+Right
 True -\/ Wenn der Gegner sich rechts befindet.~\newline
 False -\/ Wenn nicht. 
 \end{DoxyReturn}
+
+
+Definition at line 309 of file character.\+cpp.
+
 \hypertarget{class_character_a6ae029174982ef952b074097789db3a4}{}\index{Character@{Character}!enemy\+Is\+Right\+Range@{enemy\+Is\+Right\+Range}}
 \index{enemy\+Is\+Right\+Range@{enemy\+Is\+Right\+Range}!Character@{Character}}
 \subsubsection[{enemy\+Is\+Right\+Range}]{\setlength{\rightskip}{0pt plus 5cm}bool Character\+::enemy\+Is\+Right\+Range (
@@ -209,6 +233,10 @@ enemy\+Is\+Right\+Range
 True -\/ Wenn der Gegner sich rechts befindet und in schlagweite ist.~\newline
 False -\/ Wenn nicht. 
 \end{DoxyReturn}
+
+
+Definition at line 325 of file character.\+cpp.
+
 \hypertarget{class_character_abd97793fd7945f52850018713e7726e3}{}\index{Character@{Character}!get\+Icon@{get\+Icon}}
 \index{get\+Icon@{get\+Icon}!Character@{Character}}
 \subsubsection[{get\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Image Character\+::get\+Icon (
@@ -223,6 +251,10 @@ Gibt das Icon zurück als Q\+Image welches den Charakter darstellt.
 get\+Icon \begin{DoxyReturn}{Returns}
 Icon von dem ausgewählten Charakter (Das Gesicht als Q\+Image). 
 \end{DoxyReturn}
+
+
+Definition at line 293 of file character.\+cpp.
+
 \hypertarget{class_character_a1e00eede43aa9b436b0cbd2127ab251a}{}\index{Character@{Character}!get\+Life@{get\+Life}}
 \index{get\+Life@{get\+Life}!Character@{Character}}
 \subsubsection[{get\+Life}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+Life (
@@ -237,6 +269,10 @@ Gibt das aktuelle Leben des Charakteres zurück.
 get\+Life \begin{DoxyReturn}{Returns}
 Der aktuelle Lebens-\/\+Wert des Charakteres. 
 \end{DoxyReturn}
+
+
+Definition at line 156 of file character.\+cpp.
+
 \hypertarget{class_character_a047f58799c51258670497cda68ca4b8c}{}\index{Character@{Character}!get\+Mana@{get\+Mana}}
 \index{get\+Mana@{get\+Mana}!Character@{Character}}
 \subsubsection[{get\+Mana}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+Mana (
@@ -251,6 +287,10 @@ Gibt das aktuelle Mana des Charakteres zurück.
 get\+Mana \begin{DoxyReturn}{Returns}
 Der aktuelle Mana-\/\+Wert des Charakteres. 
 \end{DoxyReturn}
+
+
+Definition at line 177 of file character.\+cpp.
+
 \hypertarget{class_character_a2c4dcc76fbba8481fba7e175378a4cd0}{}\index{Character@{Character}!get\+Name@{get\+Name}}
 \index{get\+Name@{get\+Name}!Character@{Character}}
 \subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Character\+::get\+Name (
@@ -265,6 +305,10 @@ Gibt den Namen des aktuellen Charakteres zurück.
 get\+Name \begin{DoxyReturn}{Returns}
 Name des aktuellen Charakteres. 
 \end{DoxyReturn}
+
+
+Definition at line 297 of file character.\+cpp.
+
 \hypertarget{class_character_a4b4280b04c7b8839ffb46bb3be4cb490}{}\index{Character@{Character}!get\+X@{get\+X}}
 \index{get\+X@{get\+X}!Character@{Character}}
 \subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+X (
@@ -279,6 +323,10 @@ Gibt den aktuellen X-\/\+Wert zurück den der Charakter hat.
 get\+X \begin{DoxyReturn}{Returns}
 Die aktuelle X-\/\+Position. 
 \end{DoxyReturn}
+
+
+Definition at line 148 of file character.\+cpp.
+
 \hypertarget{class_character_a28c072ac846a33336cc7c5fb869c4cd8}{}\index{Character@{Character}!get\+Y@{get\+Y}}
 \index{get\+Y@{get\+Y}!Character@{Character}}
 \subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}int Character\+::get\+Y (
@@ -293,6 +341,10 @@ Gibt den aktuellen Y-\/\+Wert zurück den der Charakter hat.
 get\+Y \begin{DoxyReturn}{Returns}
 Die aktuelle Y-\/\+Position. 
 \end{DoxyReturn}
+
+
+Definition at line 152 of file character.\+cpp.
+
 \hypertarget{class_character_a2257c559f50f1e78eea8d49dbe12af49}{}\index{Character@{Character}!jump\+Up@{jump\+Up}}
 \index{jump\+Up@{jump\+Up}!Character@{Character}}
 \subsubsection[{jump\+Up}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::jump\+Up (
@@ -304,7 +356,11 @@ Die aktuelle Y-\/\+Position.
 
 Signalisiert das der Charakter springt. 
 
-jump\+Up \hypertarget{class_character_adcc18bee13545c734c695dee06a9f094}{}\index{Character@{Character}!move\+Left@{move\+Left}}
+jump\+Up 
+
+Definition at line 220 of file character.\+cpp.
+
+\hypertarget{class_character_adcc18bee13545c734c695dee06a9f094}{}\index{Character@{Character}!move\+Left@{move\+Left}}
 \index{move\+Left@{move\+Left}!Character@{Character}}
 \subsubsection[{move\+Left}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::move\+Left (
 \begin{DoxyParamCaption}
@@ -321,6 +377,10 @@ move\+Left
 False -\/ läuft nicht nach links. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 196 of file character.\+cpp.
+
 \hypertarget{class_character_a732ddad97c8e4b271aac67ba1d7d3c98}{}\index{Character@{Character}!move\+Right@{move\+Right}}
 \index{move\+Right@{move\+Right}!Character@{Character}}
 \subsubsection[{move\+Right}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::move\+Right (
@@ -338,6 +398,10 @@ move\+Right
 False -\/ läuft nicht nach rechts. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 188 of file character.\+cpp.
+
 \hypertarget{class_character_a5745dbf38bf7b408f254408f898a2e46}{}\index{Character@{Character}!punch@{punch}}
 \index{punch@{punch}!Character@{Character}}
 \subsubsection[{punch}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::punch (
@@ -349,7 +413,11 @@ False -\/ läuft nicht nach rechts. \\
 
 Signalisiert das der Charakter zuschlägt. 
 
-punch \hypertarget{class_character_aacbdc7590f8a9f6b295117a9675e2ab5}{}\index{Character@{Character}!reduce\+Life@{reduce\+Life}}
+punch 
+
+Definition at line 208 of file character.\+cpp.
+
+\hypertarget{class_character_aacbdc7590f8a9f6b295117a9675e2ab5}{}\index{Character@{Character}!reduce\+Life@{reduce\+Life}}
 \index{reduce\+Life@{reduce\+Life}!Character@{Character}}
 \subsubsection[{reduce\+Life}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::reduce\+Life (
 \begin{DoxyParamCaption}
@@ -365,6 +433,10 @@ reduce\+Life
 {\em redu} & Die Menge um wieviel es reduziert wird. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 164 of file character.\+cpp.
+
 \hypertarget{class_character_a8cfbb3e6ea62013a74f7b837054ee03f}{}\index{Character@{Character}!set\+Crouch@{set\+Crouch}}
 \index{set\+Crouch@{set\+Crouch}!Character@{Character}}
 \subsubsection[{set\+Crouch}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::set\+Crouch (
@@ -382,6 +454,10 @@ set\+Crouch
 False -\/ der Charaktere duckt sich nicht. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 204 of file character.\+cpp.
+
 \hypertarget{class_character_a6a3f9b96fd22d73660f458e52a2e04ba}{}\index{Character@{Character}!set\+Life@{set\+Life}}
 \index{set\+Life@{set\+Life}!Character@{Character}}
 \subsubsection[{set\+Life}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::set\+Life (
@@ -398,6 +474,10 @@ set\+Life
 {\em value} & Die Menge des Lebens das gesetzt werden soll. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 160 of file character.\+cpp.
+
 \hypertarget{class_character_a374c40a183c8c1795b10004a07b36fd7}{}\index{Character@{Character}!set\+Stunned@{set\+Stunned}}
 \index{set\+Stunned@{set\+Stunned}!Character@{Character}}
 \subsubsection[{set\+Stunned}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+::set\+Stunned (
@@ -415,6 +495,10 @@ set\+Stunned
 False -\/ Charakter ist nicht stunned. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 173 of file character.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

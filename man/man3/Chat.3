@@ -1,0 +1,115 @@
+.TH "Chat" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Chat \- \fBChat\fP Klasse beschäftigt sich damit einen \fBChat\fP anzuzeigen und ihn auszuwerten\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <chat\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsignal\fP ()"
+.br
+.RI "\fISignalisiert dem \fBChat\fP das er versteckt oder angezeigt werden soll\&. \fP"
+.ti -1c
+.RI "void \fBshowOnlyChat\fP ()"
+.br
+.RI "\fIZeigt nur den \fBChat\fP\&. \fP"
+.ti -1c
+.RI "void \fBhideOnlyChat\fP ()"
+.br
+.RI "\fIVersteckt nur den \fBChat\fP\&. \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetCurrent\fP (int a)"
+.br
+.RI "\fISignalisiert der Main das ein anderes Widget angezeigt werden soll\&. \fP"
+.ti -1c
+.RI "void \fBsetFocusTo\fP (int a)"
+.br
+.RI "\fISignalisiert der Main das ein anderes Widget den Focus bekommen soll\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChat\fP (QWidget *parent=0)"
+.br
+.RI "\fIContructor der Klasse \fBChat\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBChat\fP Klasse beschäftigt sich damit einen \fBChat\fP anzuzeigen und ihn auszuwerten\&. 
+.PP
+Definition at line 12 of file chat\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Chat::Chat (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Contructor der Klasse \fBChat\fP\&. \fBChat\fP Erstellt einige standardvariable für die Klasse\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP Das parent Widget falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file chat\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Chat::hideOnlyChat ()\fC [slot]\fP"
+
+.PP
+Versteckt nur den \fBChat\fP\&. hideOnlyChat 
+.PP
+Definition at line 65 of file chat\&.cpp\&.
+.SS "void Chat::setCurrent (int a)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein anderes Widget angezeigt werden soll\&. setCurrent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Das Widget welches angezeigt werden soll\&. 
+.RE
+.PP
+
+.SS "void Chat::setFocusTo (int a)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein anderes Widget den Focus bekommen soll\&. setFocusTo 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Das widget welches den Focus bekommen soll\&. 
+.RE
+.PP
+
+.SS "void Chat::showOnlyChat ()\fC [slot]\fP"
+
+.PP
+Zeigt nur den \fBChat\fP\&. showOnlyChat 
+.PP
+Definition at line 57 of file chat\&.cpp\&.
+.SS "void Chat::signal ()\fC [slot]\fP"
+
+.PP
+Signalisiert dem \fBChat\fP das er versteckt oder angezeigt werden soll\&. signal 
+.PP
+Definition at line 45 of file chat\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

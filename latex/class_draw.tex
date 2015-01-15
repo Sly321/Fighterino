@@ -67,6 +67,10 @@ Die \hyperlink{class_draw}{Draw} Klasse (ruft die Klassen \hyperlink{class_chara
 
 Die Klasse \hyperlink{class_draw}{Draw} ruft die Klassen \hyperlink{class_character}{Character}, \hyperlink{class_background}{Background} und Ui\+Overlay auf. Diese sind für das Zeichnen im Spiel verantwortlich. \hyperlink{class_character}{Character} und \hyperlink{class_background}{Background} werden Zahlen übergeben welche für die jeweilige Auswahl stehen (\hyperlink{class_background}{Background} 1, 2, ... etc.). Die Ui\+Overlay Klasse brauch zum Zeichnen immer den \hyperlink{class_character}{Character} als object, damit Healthbar etc. korrekte Werte zeichnen. 
 
+Definition at line 21 of file draw.\+h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_draw_a04439e9d5f430ebe2c1cf8216b542930}{}\index{Draw@{Draw}!Draw@{Draw}}
 \index{Draw@{Draw}!Draw@{Draw}}
@@ -84,6 +88,10 @@ Contructor der Klasse \hyperlink{class_draw}{Draw}.
 {\em parent} & Übergibt falls vorhanden das parent-\/\+Q\+Widget. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 3 of file draw.\+cpp.
+
 
 
 \subsection{Member Function Documentation}
@@ -123,6 +131,10 @@ Gibt an ob die Fps sichtbar sind.
 is\+Fps\+Visible \begin{DoxyReturn}{Returns}
 show\+Fps 
 \end{DoxyReturn}
+
+
+Definition at line 127 of file draw.\+cpp.
+
 \hypertarget{class_draw_a6d1346ffb671cc8e622700125b0dbc60}{}\index{Draw@{Draw}!key\+Press\+Event@{key\+Press\+Event}}
 \index{key\+Press\+Event@{key\+Press\+Event}!Draw@{Draw}}
 \subsubsection[{key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::key\+Press\+Event (
@@ -139,6 +151,10 @@ key\+Press\+Event
 {\em e} & Die Taste welche gedrückt wird. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 131 of file draw.\+cpp.
+
 \hypertarget{class_draw_a9aff693268ed2232fbb4154617ea49cc}{}\index{Draw@{Draw}!key\+Release\+Event@{key\+Release\+Event}}
 \index{key\+Release\+Event@{key\+Release\+Event}!Draw@{Draw}}
 \subsubsection[{key\+Release\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::key\+Release\+Event (
@@ -155,6 +171,10 @@ key\+Release\+Event
 {\em e} & Die Taste welche losgelassen wurde. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 185 of file draw.\+cpp.
+
 \hypertarget{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}{}\index{Draw@{Draw}!ki\+Action\+True@{ki\+Action\+True}}
 \index{ki\+Action\+True@{ki\+Action\+True}!Draw@{Draw}}
 \subsubsection[{ki\+Action\+True}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::ki\+Action\+True (
@@ -168,7 +188,11 @@ Wird angetriggert wenn die K\+I wieder einen Zug machen soll.
 
 \hyperlink{class_draw_a16841fa2b2ccda01f1e90d657d4427bc}{Draw\+::ki\+Action\+True}.
 
-Setzt die K\+I Action true sodass die K\+I beim nächsten Zug wieder eine Aktion machen soll. \hypertarget{class_draw_a14d84222a5d90e9061d5a46ccfae2539}{}\index{Draw@{Draw}!load@{load}}
+Setzt die K\+I Action true sodass die K\+I beim nächsten Zug wieder eine Aktion machen soll. 
+
+Definition at line 283 of file draw.\+cpp.
+
+\hypertarget{class_draw_a14d84222a5d90e9061d5a46ccfae2539}{}\index{Draw@{Draw}!load@{load}}
 \index{load@{load}!Draw@{Draw}}
 \subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::load (
 \begin{DoxyParamCaption}
@@ -190,6 +214,10 @@ load
 {\em sel\+Char2} & der gewählte 2.\+Charakter. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 219 of file draw.\+cpp.
+
 \hypertarget{class_draw_ae94babea5ece40d00e4c8e5e0b5506e7}{}\index{Draw@{Draw}!paint\+Event@{paint\+Event}}
 \index{paint\+Event@{paint\+Event}!Draw@{Draw}}
 \subsubsection[{paint\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::paint\+Event (
@@ -206,6 +234,10 @@ paint\+Event
 {\em e} & Das paint\+Event. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 36 of file draw.\+cpp.
+
 \hypertarget{class_draw_a8e1664e9a5bdb18ddfedfe8cbc7e9de3}{}\index{Draw@{Draw}!set\+Current@{set\+Current}}
 \index{set\+Current@{set\+Current}!Draw@{Draw}}
 \subsubsection[{set\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::set\+Current (
@@ -239,6 +271,10 @@ set\+Fps\+Visible
 False -\/ Fps nicht sichtbar. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 123 of file draw.\+cpp.
+
 \hypertarget{class_draw_ad2ba543f075871b08e4fb22bcfa00a7f}{}\index{Draw@{Draw}!show\+Only\+Chat@{show\+Only\+Chat}}
 \index{show\+Only\+Chat@{show\+Only\+Chat}!Draw@{Draw}}
 \subsubsection[{show\+Only\+Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\+::show\+Only\+Chat (

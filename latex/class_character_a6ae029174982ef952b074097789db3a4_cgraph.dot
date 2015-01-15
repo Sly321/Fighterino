@@ -1,0 +1,12 @@
+digraph "Character::enemyIsRightRange"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Character::enemyIsRightRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Character::enemyIsRight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#aea3908941f3be893dc1964b224e74825",tooltip="Gibt an ob ein Gegner sich rechts von einem befindet. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Character::getX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a4b4280b04c7b8839ffb46bb3be4cb490",tooltip="Gibt den aktuellen X-Wert zurück den der Charakter hat. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

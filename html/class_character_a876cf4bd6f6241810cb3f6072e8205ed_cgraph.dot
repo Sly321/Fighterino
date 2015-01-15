@@ -1,0 +1,17 @@
+digraph "Character::drawChar"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Character::drawChar",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Sprite::getImage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite.html#a37b20fb41171754d6cc893a1efe9cea8",tooltip="Gibt das Bild zurück. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Sprite::getImageMirrored",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite.html#a791c9dfd90379dfcc2466b0049b41967",tooltip="Gibt das Bild zurück. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Character::setStunned",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a374c40a183c8c1795b10004a07b36fd7",tooltip="Setzt den Charakter auf stunned oder nicht. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Character::getX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a4b4280b04c7b8839ffb46bb3be4cb490",tooltip="Gibt den aktuellen X-Wert zurück den der Charakter hat. "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Character::reduceLife",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#aacbdc7590f8a9f6b295117a9675e2ab5",tooltip="Verringert das Leben des Charakteres. "];
+}

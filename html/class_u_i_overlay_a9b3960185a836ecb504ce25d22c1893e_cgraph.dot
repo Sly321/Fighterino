@@ -1,0 +1,13 @@
+digraph "UIOverlay::drawInterface"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="UIOverlay::drawInterface",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Character::getIcon",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#abd97793fd7945f52850018713e7726e3",tooltip="Gibt das Icon zurück als QImage welches den Charakter darstellt. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Character::getLife",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a1e00eede43aa9b436b0cbd2127ab251a",tooltip="Gibt das aktuelle Leben des Charakteres zurück. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Character::getMana",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a047f58799c51258670497cda68ca4b8c",tooltip="Gibt das aktuelle Mana des Charakteres zurück. "];
+}

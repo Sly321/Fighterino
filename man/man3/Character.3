@@ -1,0 +1,416 @@
+.TH "Character" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Character \- \fBCharacter\fP Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <character\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBmoveRight\fP (bool value)"
+.br
+.RI "\fISignalisiert das der Charakter nach rechts läuft oder nicht\&. \fP"
+.ti -1c
+.RI "void \fBmoveLeft\fP (bool value)"
+.br
+.RI "\fISignalisiert das der Charakter nach links läuft oder nicht\&. \fP"
+.ti -1c
+.RI "void \fBjumpUp\fP ()"
+.br
+.RI "\fISignalisiert das der Charakter springt\&. \fP"
+.ti -1c
+.RI "void \fBsetCrouch\fP (bool value)"
+.br
+.RI "\fISignalisiert das der Charakter sich duckt oder sich nicht duckt\&. \fP"
+.ti -1c
+.RI "void \fBpunch\fP ()"
+.br
+.RI "\fISignalisiert das der Charakter zuschlägt\&. \fP"
+.ti -1c
+.RI "void \fBreduceLife\fP (int redu)"
+.br
+.RI "\fIVerringert das Leben des Charakteres\&. \fP"
+.ti -1c
+.RI "void \fBsetLife\fP (int value)"
+.br
+.RI "\fISetzt das Leben eines Charakteres\&. \fP"
+.ti -1c
+.RI "void \fBsetStunned\fP (bool value)"
+.br
+.RI "\fISetzt den Charakter auf stunned oder nicht\&. \fP"
+.ti -1c
+.RI "bool \fBenemyIsLeft\fP (\fBCharacter\fP *enemy)"
+.br
+.RI "\fIGibt an ob ein Gegner sich links von einem befindet\&. \fP"
+.ti -1c
+.RI "bool \fBenemyIsRight\fP (\fBCharacter\fP *enemy)"
+.br
+.RI "\fIGibt an ob ein Gegner sich rechts von einem befindet\&. \fP"
+.ti -1c
+.RI "bool \fBenemyIsLeftRange\fP (\fBCharacter\fP *enemy)"
+.br
+.RI "\fIGibt an ob ein Gegner sich links und in schlagweite von einem befindet\&. \fP"
+.ti -1c
+.RI "bool \fBenemyIsRightRange\fP (\fBCharacter\fP *enemy)"
+.br
+.RI "\fIGibt an ob ein Gegner sich rechts und in schlagweite von einem befindet\&. \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBdeath\fP ()"
+.br
+.RI "\fIDer Charakter stirbt\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCharacter\fP (int _option=1, bool enemy=false, QObject *parent=0)"
+.br
+.RI "\fIConstruktor der Klasse \fBCharacter\fP\&. \fP"
+.ti -1c
+.RI "void \fBdrawChar\fP (QPainter *p, \fBCharacter\fP *e=NULL)"
+.br
+.RI "\fIZeichnet den Charakter\&. \fP"
+.ti -1c
+.RI "int \fBgetX\fP ()"
+.br
+.RI "\fIGibt den aktuellen X-Wert zurück den der Charakter hat\&. \fP"
+.ti -1c
+.RI "int \fBgetY\fP ()"
+.br
+.RI "\fIGibt den aktuellen Y-Wert zurück den der Charakter hat\&. \fP"
+.ti -1c
+.RI "int \fBgetLife\fP ()"
+.br
+.RI "\fIGibt das aktuelle Leben des Charakteres zurück\&. \fP"
+.ti -1c
+.RI "int \fBgetMana\fP ()"
+.br
+.RI "\fIGibt das aktuelle Mana des Charakteres zurück\&. \fP"
+.ti -1c
+.RI "QImage \fBgetIcon\fP ()"
+.br
+.RI "\fIGibt das Icon zurück als QImage welches den Charakter darstellt\&. \fP"
+.ti -1c
+.RI "QString \fBgetName\fP ()"
+.br
+.RI "\fIGibt den Namen des aktuellen Charakteres zurück\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCharacter\fP Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig\&. 
+
+Diese Klasse ist vollständig für das Zeichnen und Bewegen des Charakters zuständig\&. Sie wird von \fBDraw\&.cpp\fP aufgerufen\&. Um neue Bilder einzufügen muss nur im Contructer ein Case hinzugefügt werden, z\&.B\&. Case 2\&. Nun kann dann im Auswahlmenu für Charaktere die 2 gewählt werden (Mitte oben) und die Bilder dieses Charakteres werden geladen\&. Achte darauf alle Bilder, und auch auf die richtige größe eingefügt zu haben\&. Sonst wird es nicht funktionieren\&. Shadow kann so geladen werden wie er ist, er wird für alle Charaktere benutzt\&. 
+.PP
+Definition at line 24 of file character\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Character::Character (int _option = \fC1\fP, bool enemy = \fCfalse\fP, QObject * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Construktor der Klasse \fBCharacter\fP\&. \fBCharacter\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_option\fP Welcher Charakter ausgewählt wurde\&. 
+.br
+\fIenemy\fP Ob ein Gegner existiert oder nicht (Computergegner)\&. 
+.br
+\fIparent\fP Das Parent Widget falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file character\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Character::death ()\fC [signal]\fP"
+
+.PP
+Der Charakter stirbt\&. death Signalisiert den Tod des aktuellen Charakteres\&. 
+.SS "void Character::drawChar (QPainter * p, \fBCharacter\fP * e = \fCNULL\fP)"
+
+.PP
+Zeichnet den Charakter\&. drawChar 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP Der Painter damit gezeichnet werden kann\&. 
+.br
+\fIe\fP Der Gegner falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file character\&.cpp\&.
+.SS "bool Character::enemyIsLeft (\fBCharacter\fP * enemy)\fC [slot]\fP"
+
+.PP
+Gibt an ob ein Gegner sich links von einem befindet\&. enemyIsLeft 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenemy\fP Variable der Klasse \fBCharacter\fP, dies ist der Gegner\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True - Wenn der Gegner sich links befindet\&.
+.br
+False - Wenn nicht\&. 
+.RE
+.PP
+
+.PP
+Definition at line 301 of file character\&.cpp\&.
+.SS "bool Character::enemyIsLeftRange (\fBCharacter\fP * enemy)\fC [slot]\fP"
+
+.PP
+Gibt an ob ein Gegner sich links und in schlagweite von einem befindet\&. enemyIsLeftRange 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenemy\fP Variable der Klasse \fBCharacter\fP, dies ist der Gegner\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True - Wenn der Gegner sich links befindet und in schlagweite ist\&.
+.br
+False - Wenn nicht\&. 
+.RE
+.PP
+
+.PP
+Definition at line 317 of file character\&.cpp\&.
+.SS "bool Character::enemyIsRight (\fBCharacter\fP * enemy)\fC [slot]\fP"
+
+.PP
+Gibt an ob ein Gegner sich rechts von einem befindet\&. enemyIsRight 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenemy\fP Variable der Klasse \fBCharacter\fP, dies ist der Gegner\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True - Wenn der Gegner sich rechts befindet\&.
+.br
+False - Wenn nicht\&. 
+.RE
+.PP
+
+.PP
+Definition at line 309 of file character\&.cpp\&.
+.SS "bool Character::enemyIsRightRange (\fBCharacter\fP * enemy)\fC [slot]\fP"
+
+.PP
+Gibt an ob ein Gegner sich rechts und in schlagweite von einem befindet\&. enemyIsRightRange 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenemy\fP Variable der Klasse \fBCharacter\fP, dies ist der Gegner\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True - Wenn der Gegner sich rechts befindet und in schlagweite ist\&.
+.br
+False - Wenn nicht\&. 
+.RE
+.PP
+
+.PP
+Definition at line 325 of file character\&.cpp\&.
+.SS "QImage Character::getIcon ()"
+
+.PP
+Gibt das Icon zurück als QImage welches den Charakter darstellt\&. getIcon 
+.PP
+\fBReturns:\fP
+.RS 4
+Icon von dem ausgewählten Charakter (Das Gesicht als QImage)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 293 of file character\&.cpp\&.
+.SS "int Character::getLife ()"
+
+.PP
+Gibt das aktuelle Leben des Charakteres zurück\&. getLife 
+.PP
+\fBReturns:\fP
+.RS 4
+Der aktuelle Lebens-Wert des Charakteres\&. 
+.RE
+.PP
+
+.PP
+Definition at line 156 of file character\&.cpp\&.
+.SS "int Character::getMana ()"
+
+.PP
+Gibt das aktuelle Mana des Charakteres zurück\&. getMana 
+.PP
+\fBReturns:\fP
+.RS 4
+Der aktuelle Mana-Wert des Charakteres\&. 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file character\&.cpp\&.
+.SS "QString Character::getName ()"
+
+.PP
+Gibt den Namen des aktuellen Charakteres zurück\&. getName 
+.PP
+\fBReturns:\fP
+.RS 4
+Name des aktuellen Charakteres\&. 
+.RE
+.PP
+
+.PP
+Definition at line 297 of file character\&.cpp\&.
+.SS "int Character::getX ()"
+
+.PP
+Gibt den aktuellen X-Wert zurück den der Charakter hat\&. getX 
+.PP
+\fBReturns:\fP
+.RS 4
+Die aktuelle X-Position\&. 
+.RE
+.PP
+
+.PP
+Definition at line 148 of file character\&.cpp\&.
+.SS "int Character::getY ()"
+
+.PP
+Gibt den aktuellen Y-Wert zurück den der Charakter hat\&. getY 
+.PP
+\fBReturns:\fP
+.RS 4
+Die aktuelle Y-Position\&. 
+.RE
+.PP
+
+.PP
+Definition at line 152 of file character\&.cpp\&.
+.SS "void Character::jumpUp ()\fC [slot]\fP"
+
+.PP
+Signalisiert das der Charakter springt\&. jumpUp 
+.PP
+Definition at line 220 of file character\&.cpp\&.
+.SS "void Character::moveLeft (bool value)\fC [slot]\fP"
+
+.PP
+Signalisiert das der Charakter nach links läuft oder nicht\&. moveLeft 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP True - läuft nach links\&.
+.br
+False - läuft nicht nach links\&. 
+.RE
+.PP
+
+.PP
+Definition at line 196 of file character\&.cpp\&.
+.SS "void Character::moveRight (bool value)\fC [slot]\fP"
+
+.PP
+Signalisiert das der Charakter nach rechts läuft oder nicht\&. moveRight 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP True - läuft nach rechts\&.
+.br
+False - läuft nicht nach rechts\&. 
+.RE
+.PP
+
+.PP
+Definition at line 188 of file character\&.cpp\&.
+.SS "void Character::punch ()\fC [slot]\fP"
+
+.PP
+Signalisiert das der Charakter zuschlägt\&. punch 
+.PP
+Definition at line 208 of file character\&.cpp\&.
+.SS "void Character::reduceLife (int redu)\fC [slot]\fP"
+
+.PP
+Verringert das Leben des Charakteres\&. reduceLife 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIredu\fP Die Menge um wieviel es reduziert wird\&. 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file character\&.cpp\&.
+.SS "void Character::setCrouch (bool value)\fC [slot]\fP"
+
+.PP
+Signalisiert das der Charakter sich duckt oder sich nicht duckt\&. setCrouch 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP True - der Charaktere duckt sich\&.
+.br
+False - der Charaktere duckt sich nicht\&. 
+.RE
+.PP
+
+.PP
+Definition at line 204 of file character\&.cpp\&.
+.SS "void Character::setLife (int value)\fC [slot]\fP"
+
+.PP
+Setzt das Leben eines Charakteres\&. setLife 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP Die Menge des Lebens das gesetzt werden soll\&. 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file character\&.cpp\&.
+.SS "void Character::setStunned (bool value)\fC [slot]\fP"
+
+.PP
+Setzt den Charakter auf stunned oder nicht\&. setStunned 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP True - Charakter ist stunned\&.
+.br
+False - Charakter ist nicht stunned\&. 
+.RE
+.PP
+
+.PP
+Definition at line 173 of file character\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

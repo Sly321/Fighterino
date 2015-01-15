@@ -1,0 +1,13 @@
+digraph "ChooseBackground::ChooseBackground"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ChooseBackground::Choose\lBackground",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ChooseBackground::selectedLeft",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_choose_background.html#a134632704516ff01d21147a6f7238b8f",tooltip="Wird angetriggert wenn das linke Icon selektiert wurde. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ChooseBackground::selectedMid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_choose_background.html#a9fa9d22a3cfd437307117bb32036b731",tooltip="Wird angetriggert wenn das mittige Icon selektiert wurde. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ChooseBackground::selected\lRight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_choose_background.html#afc6ef25b1b6e1ed1e9842be71542a092",tooltip="Wird angetriggert wenn das rechte Icon selektiert wurde. "];
+}

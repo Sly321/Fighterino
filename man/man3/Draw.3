@@ -1,0 +1,232 @@
+.TH "Draw" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Draw \- Die \fBDraw\fP Klasse (ruft die Klassen \fBCharacter\fP, \fBBackground\fP und UiOverlay auf)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <draw\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "int \fBfps\fP ()"
+.br
+.RI "\fIWird angetriggert wenn die fps angezeigt wird\&. \fP"
+.ti -1c
+.RI "void \fBwinC\fP ()"
+.br
+.RI "\fIWird angetriggert wenn der erste Spieler gewinnt\&. \fP"
+.ti -1c
+.RI "void \fBwinE\fP ()"
+.br
+.RI "\fIWird angetriggert wenn der zweite Spieler/KI gewinnt\&. \fP"
+.ti -1c
+.RI "void \fBkiActionTrue\fP ()"
+.br
+.RI "\fIWird angetriggert wenn die KI wieder einen Zug machen soll\&. \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBchatSignal\fP ()"
+.br
+.RI "\fISignalisiert dem \fBChat\fP das er versteckt oder angezeigt werden soll\&. \fP"
+.ti -1c
+.RI "void \fBshowOnlyChat\fP ()"
+.br
+.RI "\fIZeigt nur den \fBChat\fP\&. \fP"
+.ti -1c
+.RI "void \fBhideOnlyChat\fP ()"
+.br
+.RI "\fIVersteckt nur den \fBChat\fP\&. \fP"
+.ti -1c
+.RI "void \fBsetCurrent\fP (int)"
+.br
+.RI "\fISignalisiert der Main das ein anderes Widget angezeigt werden soll\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDraw\fP (QWidget *parent=0)"
+.br
+.RI "\fIConstructor der Klasse \fBDraw\fP\&. \fP"
+.ti -1c
+.RI "void \fBsetFpsVisible\fP (bool b)"
+.br
+.RI "\fISetzt die Fps sichtbar\&. \fP"
+.ti -1c
+.RI "bool \fBisFpsVisible\fP ()"
+.br
+.RI "\fIGibt an ob die Fps sichtbar sind\&. \fP"
+.ti -1c
+.RI "void \fBload\fP (int selChar, int selBackg, int selChar2)"
+.br
+.RI "\fILadet die gewählten Charaktere und den Hintergrund\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpaintEvent\fP (QPaintEvent *e)"
+.br
+.RI "\fIZeichnet Elemente für die Klasse\&. \fP"
+.ti -1c
+.RI "void \fBkeyPressEvent\fP (QKeyEvent *e)"
+.br
+.RI "\fIRegistriert die Tastenschläge des Benutzers\&. \fP"
+.ti -1c
+.RI "void \fBkeyReleaseEvent\fP (QKeyEvent *e)"
+.br
+.RI "\fIRegistriert wenn der Benutzer die Taste loslässt\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Die \fBDraw\fP Klasse (ruft die Klassen \fBCharacter\fP, \fBBackground\fP und UiOverlay auf)\&. 
+
+Die Klasse \fBDraw\fP ruft die Klassen \fBCharacter\fP, \fBBackground\fP und UiOverlay auf\&. Diese sind für das Zeichnen im Spiel verantwortlich\&. \fBCharacter\fP und \fBBackground\fP werden Zahlen übergeben welche für die jeweilige Auswahl stehen (\fBBackground\fP 1, 2, \&.\&.\&. etc\&.)\&. Die UiOverlay Klasse brauch zum Zeichnen immer den \fBCharacter\fP als object, damit Healthbar etc\&. korrekte Werte zeichnen\&. 
+.PP
+Definition at line 21 of file draw\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Draw::Draw (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Constructor der Klasse \fBDraw\fP\&. Contructor der Klasse \fBDraw\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP Übergibt falls vorhanden das parent-QWidget\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file draw\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Draw::chatSignal ()\fC [signal]\fP"
+
+.PP
+Signalisiert dem \fBChat\fP das er versteckt oder angezeigt werden soll\&. chatSignal 
+.SS "void Draw::hideOnlyChat ()\fC [signal]\fP"
+
+.PP
+Versteckt nur den \fBChat\fP\&. hideOnlyChat 
+.SS "bool Draw::isFpsVisible ()"
+
+.PP
+Gibt an ob die Fps sichtbar sind\&. isFpsVisible 
+.PP
+\fBReturns:\fP
+.RS 4
+showFps 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file draw\&.cpp\&.
+.SS "void Draw::keyPressEvent (QKeyEvent * e)\fC [protected]\fP"
+
+.PP
+Registriert die Tastenschläge des Benutzers\&. keyPressEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Die Taste welche gedrückt wird\&. 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file draw\&.cpp\&.
+.SS "void Draw::keyReleaseEvent (QKeyEvent * e)\fC [protected]\fP"
+
+.PP
+Registriert wenn der Benutzer die Taste loslässt\&. keyReleaseEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Die Taste welche losgelassen wurde\&. 
+.RE
+.PP
+
+.PP
+Definition at line 185 of file draw\&.cpp\&.
+.SS "void Draw::kiActionTrue ()\fC [slot]\fP"
+
+.PP
+Wird angetriggert wenn die KI wieder einen Zug machen soll\&. \fBDraw::kiActionTrue\fP\&.
+.PP
+Setzt die KI Action true sodass die KI beim nächsten Zug wieder eine Aktion machen soll\&. 
+.PP
+Definition at line 283 of file draw\&.cpp\&.
+.SS "void Draw::load (int selChar, int selBackg, int selChar2)"
+
+.PP
+Ladet die gewählten Charaktere und den Hintergrund\&. load 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIselChar\fP der gewählte Charakter\&. 
+.br
+\fIselBackg\fP der gewählte Hintergrund\&. 
+.br
+\fIselChar2\fP der gewählte 2\&.Charakter\&. 
+.RE
+.PP
+
+.PP
+Definition at line 219 of file draw\&.cpp\&.
+.SS "void Draw::paintEvent (QPaintEvent * e)\fC [protected]\fP"
+
+.PP
+Zeichnet Elemente für die Klasse\&. paintEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Das paintEvent\&. 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file draw\&.cpp\&.
+.SS "void Draw::setCurrent (int)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein anderes Widget angezeigt werden soll\&. setCurrent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP Das Widget welches angezeigt werden soll\&. 
+.RE
+.PP
+
+.SS "void Draw::setFpsVisible (bool b)"
+
+.PP
+Setzt die Fps sichtbar\&. setFpsVisible 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP True - Fps ist sichtbar\&.
+.br
+False - Fps nicht sichtbar\&. 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file draw\&.cpp\&.
+.SS "void Draw::showOnlyChat ()\fC [signal]\fP"
+
+.PP
+Zeigt nur den \fBChat\fP\&. showOnlyChat 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

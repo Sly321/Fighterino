@@ -1,0 +1,103 @@
+.TH "StartMenu" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StartMenu \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QWidget\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBAnim\fP ()"
+.br
+.RI "\fIStartet die Animation im Start-Menü\&. \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetCurrent\fP (int a)"
+.br
+.RI "\fISignalisiert der Main das ein anderes Widget angezeigt werden soll\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStartMenu\fP (QWidget *parent=0)"
+.br
+.RI "\fIConstruktor der Klasse \fBStartMenu\fP\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpaintEvent\fP (QPaintEvent *e)"
+.br
+.RI "\fIZeichnet Elemente für die Klasse\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QRect \fBptitle\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file startmenu\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "StartMenu::StartMenu (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Construktor der Klasse \fBStartMenu\fP\&. \fBStartMenu\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP Das Parent Widget falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 6 of file startmenu\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void StartMenu::Anim ()\fC [slot]\fP"
+
+.PP
+Startet die Animation im Start-Menü\&. Anim 
+.PP
+Definition at line 28 of file startmenu\&.cpp\&.
+.SS "void StartMenu::paintEvent (QPaintEvent * e)\fC [protected]\fP"
+
+.PP
+Zeichnet Elemente für die Klasse\&. paintEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Das paintEvent\&. 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file startmenu\&.cpp\&.
+.SS "void StartMenu::setCurrent (int a)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein anderes Widget angezeigt werden soll\&. setCurrent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Das Widget welches angezeigt werden soll\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

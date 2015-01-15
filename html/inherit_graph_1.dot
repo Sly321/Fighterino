@@ -1,0 +1,19 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Chat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_chat.html",tooltip="Chat Klasse beschäftigt sich damit einen Chat anzuzeigen und ihn auszuwerten. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ChooseBackground",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_choose_background.html",tooltip="chooseBackground Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hintergrund für ..."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ChooseMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_choose_menu.html",tooltip="chooseMenu Klasse repräsentiert die Charakterauswahl. "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_draw.html",tooltip="Die Draw Klasse (ruft die Klassen Character, Background und UiOverlay auf). "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Fighterino",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_fighterino.html",tooltip="Fighterino Klasse für die Menüs. "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="StartMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_start_menu.html"];
+}

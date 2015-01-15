@@ -1,0 +1,87 @@
+.TH "Fighterino" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Fighterino \- \fBFighterino\fP Klasse für die Menüs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fighterino\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFighterino\fP (QWidget *parent=0)"
+.br
+.RI "\fIder \fBFighterino\fP Constructor\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBkeyPressEvent\fP (QKeyEvent *e)"
+.br
+.RI "\fIRegistriert die Tastenschläge des Benutzers\&. \fP"
+.ti -1c
+.RI "void \fBresizeEvent\fP (QResizeEvent *event)"
+.br
+.RI "\fIErhält Widgets Größenveränderung-Ereignisse, die in dem Event-Parameter übergeben werden\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBFighterino\fP Klasse für die Menüs\&. 
+
+Diese Klasse liefert die Widgets für die Menüs und Auswahlmöglichkeiten\&. 
+.PP
+Definition at line 24 of file fighterino\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Fighterino::Fighterino (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+der \fBFighterino\fP Constructor\&. Contructor der Klasse \fBFighterino\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP Übergibt falls vorhanden das parent-QWidget\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file fighterino\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Fighterino::keyPressEvent (QKeyEvent * e)\fC [protected]\fP"
+
+.PP
+Registriert die Tastenschläge des Benutzers\&. keyPressEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Die Taste welche gedrückt wird\&. 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file fighterino\&.cpp\&.
+.SS "void Fighterino::resizeEvent (QResizeEvent * event)\fC [protected]\fP"
+
+.PP
+Erhält Widgets Größenveränderung-Ereignisse, die in dem Event-Parameter übergeben werden\&. resizeEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIevent\fP Das ResizeEvent\&. 
+.RE
+.PP
+
+.PP
+Definition at line 135 of file fighterino\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

@@ -1,0 +1,74 @@
+.TH "DrawObject" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DrawObject \- drawObject Klasse um ein Objekt zeichnen zu können\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <drawobject\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "QImage \fBgetObject\fP ()"
+.br
+.RI "\fIGibt ein Objekt/Frame zurück\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDrawObject\fP (QString source, int _frameX, int _frameY, QObject *parent=0)"
+.br
+.RI "\fIContructor der drawObject Klasse\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+drawObject Klasse um ein Objekt zeichnen zu können\&. 
+.PP
+Definition at line 11 of file drawobject\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DrawObject::DrawObject (QString source, int _frameX, int _frameY, QObject * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Contructor der drawObject Klasse\&. Constructor der Klasse \fBDrawObject\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP Die Quelle des Frames\&. 
+.br
+\fI_frameX\fP X-Wert des Frames\&. 
+.br
+\fI_frameY\fP Y-Wert des Frames\&. 
+.br
+\fIparent\fP Das parent Widget falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file drawobject\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QImage DrawObject::getObject ()\fC [slot]\fP"
+
+.PP
+Gibt ein Objekt/Frame zurück\&. getObject 
+.PP
+\fBReturns:\fP
+.RS 4
+Das erstellte Bild 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file drawobject\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

@@ -1,0 +1,202 @@
+.TH "ChooseMenu" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChooseMenu \- chooseMenu Klasse repräsentiert die Charakterauswahl\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <choosemenu\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetCurrent\fP (int)"
+.br
+.RI "\fISignalisiert der Main das ein anderes Widget angezeigt werden soll\&. \fP"
+.ti -1c
+.RI "void \fBsetCharacter\fP (int)"
+.br
+.RI "\fISignalisiert der Main das ein Charakter ausgewählt wurde\&. \fP"
+.ti -1c
+.RI "void \fBsetCharacter2\fP (int)"
+.br
+.RI "\fISignalisiert der Main das ein 2\&.Charakter ausgewählt wurde\&. \fP"
+.ti -1c
+.RI "void \fBright\fP ()"
+.br
+.RI "\fISignalisiert das der Anweder nach rechts gegangen ist\&. \fP"
+.ti -1c
+.RI "void \fBdown\fP ()"
+.br
+.RI "\fISignalisiert das der Anweder nach unten gegangen ist\&. \fP"
+.ti -1c
+.RI "void \fBup\fP ()"
+.br
+.RI "\fISignalisiert das der Anweder nach oben gegangen ist\&. \fP"
+.ti -1c
+.RI "void \fBleft\fP ()"
+.br
+.RI "\fISignalisiert das der Anweder nach links gegangen ist\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChooseMenu\fP (QWidget *parent=0)"
+.br
+.RI "\fIContructor der chooseMenu Klasse\&. \fP"
+.ti -1c
+.RI "void \fBsetPlayerVsPlayer\fP (bool value)"
+.br
+.RI "\fISetzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpaintEvent\fP (QPaintEvent *e)"
+.br
+.RI "\fIZeichnet die Charaktere und das Auswahlgitter für den User\&. \fP"
+.ti -1c
+.RI "void \fBkeyPressEvent\fP (QKeyEvent *e)"
+.br
+.RI "\fIRegistriert die Tastenschläge des Benutzers\&. \fP"
+.ti -1c
+.RI "void \fBkeyReleaseEvent\fP (QKeyEvent *e)"
+.br
+.RI "\fIRegistriert wenn der Benutzer die Taste loslässt\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+chooseMenu Klasse repräsentiert die Charakterauswahl\&. 
+
+chooseMenu Klasse repräsentiert die Charakterauswahl, sie zeigt die Charaktere an und fängt die Tasten ab die der Benutzer eingibt\&. Wenn der Benutzer fertig ist werden die Daten weitergegeben und es wird zur Hauptklasse zurückgekehrt\&. 
+.PP
+Definition at line 14 of file choosemenu\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChooseMenu::ChooseMenu (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Contructor der chooseMenu Klasse\&. \fBChooseMenu\fP Erstellt die nötigen Image dateien und initialisiert die Einstellungen für das Auswahlmenü\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP Das parent Widget falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file choosemenu\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ChooseMenu::down ()\fC [signal]\fP"
+
+.PP
+Signalisiert das der Anweder nach unten gegangen ist\&. down 
+.SS "void ChooseMenu::keyPressEvent (QKeyEvent * e)\fC [protected]\fP"
+
+.PP
+Registriert die Tastenschläge des Benutzers\&. keyPressEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Die Taste welche gedrückt wird\&. 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file choosemenu\&.cpp\&.
+.SS "void ChooseMenu::keyReleaseEvent (QKeyEvent * e)\fC [protected]\fP"
+
+.PP
+Registriert wenn der Benutzer die Taste loslässt\&. keyReleaseEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Die Taste welche losgelassen wurde\&. 
+.RE
+.PP
+
+.PP
+Definition at line 155 of file choosemenu\&.cpp\&.
+.SS "void ChooseMenu::left ()\fC [signal]\fP"
+
+.PP
+Signalisiert das der Anweder nach links gegangen ist\&. left 
+.SS "void ChooseMenu::paintEvent (QPaintEvent * e)\fC [protected]\fP"
+
+.PP
+Zeichnet die Charaktere und das Auswahlgitter für den User\&. paintEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Das paintEvent\&. 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file choosemenu\&.cpp\&.
+.SS "void ChooseMenu::right ()\fC [signal]\fP"
+
+.PP
+Signalisiert das der Anweder nach rechts gegangen ist\&. right 
+.SS "void ChooseMenu::setCharacter (int)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein Charakter ausgewählt wurde\&. setCharacter 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDer\fP \fBCharacter\fP der ausgewählt wurde\&. 
+.RE
+.PP
+
+.SS "void ChooseMenu::setCharacter2 (int)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein 2\&.Charakter ausgewählt wurde\&. setCharacter2 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDer\fP 2\&.Character der ausgewählt wurde\&. 
+.RE
+.PP
+
+.SS "void ChooseMenu::setCurrent (int)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein anderes Widget angezeigt werden soll\&. setCurrent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP Das Widget welches angezeigt werden soll\&. 
+.RE
+.PP
+
+.SS "void ChooseMenu::setPlayerVsPlayer (bool value)"
+
+.PP
+Setzt das Menu darauf das es ein Spieler gegen Spieler Spiel wird und 2 Charaktere ausgewählt werden\&. setPlayerVSPlayer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP der Wert für den Modus\&. 
+.RE
+.PP
+
+.PP
+Definition at line 227 of file choosemenu\&.cpp\&.
+.SS "void ChooseMenu::up ()\fC [signal]\fP"
+
+.PP
+Signalisiert das der Anweder nach oben gegangen ist\&. right 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.

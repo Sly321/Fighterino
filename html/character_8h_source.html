@@ -4,10 +4,18 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Fighterino: character.h Source File</title>
+<title>Version: character.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,8 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="start.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Fighterino
+   <div id="projectname">Version
+   &#160;<span id="projectnumber">9.9</span>
    </div>
   </td>
  </tr>
@@ -66,6 +76,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('character_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -213,35 +237,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;};</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif // CHARACTER_H</span></div>
-<div class="ttc" id="class_character_html_adcc18bee13545c734c695dee06a9f094"><div class="ttname"><a href="class_character.html#adcc18bee13545c734c695dee06a9f094">Character::moveLeft</a></div><div class="ttdeci">void moveLeft(bool value)</div><div class="ttdoc">Signalisiert das der Charakter nach links läuft oder nicht. </div><div class="ttdef"><b>Definition:</b> character.cpp:196</div></div>
-<div class="ttc" id="class_character_html_a6ae029174982ef952b074097789db3a4"><div class="ttname"><a href="class_character.html#a6ae029174982ef952b074097789db3a4">Character::enemyIsRightRange</a></div><div class="ttdeci">bool enemyIsRightRange(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich rechts und in schlagweite von einem befindet. </div><div class="ttdef"><b>Definition:</b> character.cpp:325</div></div>
-<div class="ttc" id="class_character_html_aa4848867a1029966d670d5f492301308"><div class="ttname"><a href="class_character.html#aa4848867a1029966d670d5f492301308">Character::enemyIsLeftRange</a></div><div class="ttdeci">bool enemyIsLeftRange(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich links und in schlagweite von einem befindet. </div><div class="ttdef"><b>Definition:</b> character.cpp:317</div></div>
-<div class="ttc" id="class_character_html_a2960bf6a336ffdfac0d19d0909ceb1dd"><div class="ttname"><a href="class_character.html#a2960bf6a336ffdfac0d19d0909ceb1dd">Character::enemyIsLeft</a></div><div class="ttdeci">bool enemyIsLeft(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich links von einem befindet. </div><div class="ttdef"><b>Definition:</b> character.cpp:301</div></div>
-<div class="ttc" id="class_character_html_aefeb2b4e6d072de60e7cacb4d2c81b7a"><div class="ttname"><a href="class_character.html#aefeb2b4e6d072de60e7cacb4d2c81b7a">Character::Character</a></div><div class="ttdeci">Character(int _option=1, bool enemy=false, QObject *parent=0)</div><div class="ttdoc">Construktor der Klasse Character. </div><div class="ttdef"><b>Definition:</b> character.cpp:3</div></div>
-<div class="ttc" id="class_character_html_aea3908941f3be893dc1964b224e74825"><div class="ttname"><a href="class_character.html#aea3908941f3be893dc1964b224e74825">Character::enemyIsRight</a></div><div class="ttdeci">bool enemyIsRight(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich rechts von einem befindet. </div><div class="ttdef"><b>Definition:</b> character.cpp:309</div></div>
-<div class="ttc" id="class_character_html_a4b4280b04c7b8839ffb46bb3be4cb490"><div class="ttname"><a href="class_character.html#a4b4280b04c7b8839ffb46bb3be4cb490">Character::getX</a></div><div class="ttdeci">int getX()</div><div class="ttdoc">Gibt den aktuellen X-Wert zurück den der Charakter hat. </div><div class="ttdef"><b>Definition:</b> character.cpp:148</div></div>
-<div class="ttc" id="class_character_html_a876cf4bd6f6241810cb3f6072e8205ed"><div class="ttname"><a href="class_character.html#a876cf4bd6f6241810cb3f6072e8205ed">Character::drawChar</a></div><div class="ttdeci">void drawChar(QPainter *p, Character *e=NULL)</div><div class="ttdoc">Zeichnet den Charakter. </div><div class="ttdef"><b>Definition:</b> character.cpp:88</div></div>
-<div class="ttc" id="class_character_html_a732ddad97c8e4b271aac67ba1d7d3c98"><div class="ttname"><a href="class_character.html#a732ddad97c8e4b271aac67ba1d7d3c98">Character::moveRight</a></div><div class="ttdeci">void moveRight(bool value)</div><div class="ttdoc">Signalisiert das der Charakter nach rechts läuft oder nicht. </div><div class="ttdef"><b>Definition:</b> character.cpp:188</div></div>
-<div class="ttc" id="class_character_html_a5745dbf38bf7b408f254408f898a2e46"><div class="ttname"><a href="class_character.html#a5745dbf38bf7b408f254408f898a2e46">Character::punch</a></div><div class="ttdeci">void punch()</div><div class="ttdoc">Signalisiert das der Charakter zuschlägt. </div><div class="ttdef"><b>Definition:</b> character.cpp:208</div></div>
+<div class="ttc" id="class_character_html_adcc18bee13545c734c695dee06a9f094"><div class="ttname"><a href="class_character.html#adcc18bee13545c734c695dee06a9f094">Character::moveLeft</a></div><div class="ttdeci">void moveLeft(bool value)</div><div class="ttdoc">Signalisiert das der Charakter nach links läuft oder nicht. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00196">character.cpp:196</a></div></div>
+<div class="ttc" id="class_character_html_a6ae029174982ef952b074097789db3a4"><div class="ttname"><a href="class_character.html#a6ae029174982ef952b074097789db3a4">Character::enemyIsRightRange</a></div><div class="ttdeci">bool enemyIsRightRange(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich rechts und in schlagweite von einem befindet. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00325">character.cpp:325</a></div></div>
+<div class="ttc" id="class_character_html_aa4848867a1029966d670d5f492301308"><div class="ttname"><a href="class_character.html#aa4848867a1029966d670d5f492301308">Character::enemyIsLeftRange</a></div><div class="ttdeci">bool enemyIsLeftRange(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich links und in schlagweite von einem befindet. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00317">character.cpp:317</a></div></div>
+<div class="ttc" id="class_character_html_a2960bf6a336ffdfac0d19d0909ceb1dd"><div class="ttname"><a href="class_character.html#a2960bf6a336ffdfac0d19d0909ceb1dd">Character::enemyIsLeft</a></div><div class="ttdeci">bool enemyIsLeft(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich links von einem befindet. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00301">character.cpp:301</a></div></div>
+<div class="ttc" id="class_character_html_aefeb2b4e6d072de60e7cacb4d2c81b7a"><div class="ttname"><a href="class_character.html#aefeb2b4e6d072de60e7cacb4d2c81b7a">Character::Character</a></div><div class="ttdeci">Character(int _option=1, bool enemy=false, QObject *parent=0)</div><div class="ttdoc">Construktor der Klasse Character. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00003">character.cpp:3</a></div></div>
+<div class="ttc" id="class_character_html_aea3908941f3be893dc1964b224e74825"><div class="ttname"><a href="class_character.html#aea3908941f3be893dc1964b224e74825">Character::enemyIsRight</a></div><div class="ttdeci">bool enemyIsRight(Character *enemy)</div><div class="ttdoc">Gibt an ob ein Gegner sich rechts von einem befindet. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00309">character.cpp:309</a></div></div>
+<div class="ttc" id="class_character_html_a4b4280b04c7b8839ffb46bb3be4cb490"><div class="ttname"><a href="class_character.html#a4b4280b04c7b8839ffb46bb3be4cb490">Character::getX</a></div><div class="ttdeci">int getX()</div><div class="ttdoc">Gibt den aktuellen X-Wert zurück den der Charakter hat. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00148">character.cpp:148</a></div></div>
+<div class="ttc" id="class_character_html_a876cf4bd6f6241810cb3f6072e8205ed"><div class="ttname"><a href="class_character.html#a876cf4bd6f6241810cb3f6072e8205ed">Character::drawChar</a></div><div class="ttdeci">void drawChar(QPainter *p, Character *e=NULL)</div><div class="ttdoc">Zeichnet den Charakter. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00088">character.cpp:88</a></div></div>
+<div class="ttc" id="class_character_html_a732ddad97c8e4b271aac67ba1d7d3c98"><div class="ttname"><a href="class_character.html#a732ddad97c8e4b271aac67ba1d7d3c98">Character::moveRight</a></div><div class="ttdeci">void moveRight(bool value)</div><div class="ttdoc">Signalisiert das der Charakter nach rechts läuft oder nicht. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00188">character.cpp:188</a></div></div>
+<div class="ttc" id="class_character_html_a5745dbf38bf7b408f254408f898a2e46"><div class="ttname"><a href="class_character.html#a5745dbf38bf7b408f254408f898a2e46">Character::punch</a></div><div class="ttdeci">void punch()</div><div class="ttdoc">Signalisiert das der Charakter zuschlägt. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00208">character.cpp:208</a></div></div>
 <div class="ttc" id="class_character_html_a127f5ee58b01289418cf080a8328b6c7"><div class="ttname"><a href="class_character.html#a127f5ee58b01289418cf080a8328b6c7">Character::death</a></div><div class="ttdeci">void death()</div><div class="ttdoc">Der Charakter stirbt. </div></div>
-<div class="ttc" id="class_sprite_html"><div class="ttname"><a href="class_sprite.html">Sprite</a></div><div class="ttdoc">Sprite Klasse für die Bilder. </div><div class="ttdef"><b>Definition:</b> sprite.h:12</div></div>
-<div class="ttc" id="class_character_html_a374c40a183c8c1795b10004a07b36fd7"><div class="ttname"><a href="class_character.html#a374c40a183c8c1795b10004a07b36fd7">Character::setStunned</a></div><div class="ttdeci">void setStunned(bool value)</div><div class="ttdoc">Setzt den Charakter auf stunned oder nicht. </div><div class="ttdef"><b>Definition:</b> character.cpp:173</div></div>
-<div class="ttc" id="class_character_html_a28c072ac846a33336cc7c5fb869c4cd8"><div class="ttname"><a href="class_character.html#a28c072ac846a33336cc7c5fb869c4cd8">Character::getY</a></div><div class="ttdeci">int getY()</div><div class="ttdoc">Gibt den aktuellen Y-Wert zurück den der Charakter hat. </div><div class="ttdef"><b>Definition:</b> character.cpp:152</div></div>
-<div class="ttc" id="class_character_html_abd97793fd7945f52850018713e7726e3"><div class="ttname"><a href="class_character.html#abd97793fd7945f52850018713e7726e3">Character::getIcon</a></div><div class="ttdeci">QImage getIcon()</div><div class="ttdoc">Gibt das Icon zurück als QImage welches den Charakter darstellt. </div><div class="ttdef"><b>Definition:</b> character.cpp:293</div></div>
-<div class="ttc" id="class_character_html_a047f58799c51258670497cda68ca4b8c"><div class="ttname"><a href="class_character.html#a047f58799c51258670497cda68ca4b8c">Character::getMana</a></div><div class="ttdeci">int getMana()</div><div class="ttdoc">Gibt das aktuelle Mana des Charakteres zurück. </div><div class="ttdef"><b>Definition:</b> character.cpp:177</div></div>
-<div class="ttc" id="class_character_html_a1e00eede43aa9b436b0cbd2127ab251a"><div class="ttname"><a href="class_character.html#a1e00eede43aa9b436b0cbd2127ab251a">Character::getLife</a></div><div class="ttdeci">int getLife()</div><div class="ttdoc">Gibt das aktuelle Leben des Charakteres zurück. </div><div class="ttdef"><b>Definition:</b> character.cpp:156</div></div>
-<div class="ttc" id="class_character_html_a2257c559f50f1e78eea8d49dbe12af49"><div class="ttname"><a href="class_character.html#a2257c559f50f1e78eea8d49dbe12af49">Character::jumpUp</a></div><div class="ttdeci">void jumpUp()</div><div class="ttdoc">Signalisiert das der Charakter springt. </div><div class="ttdef"><b>Definition:</b> character.cpp:220</div></div>
-<div class="ttc" id="class_character_html"><div class="ttname"><a href="class_character.html">Character</a></div><div class="ttdoc">Character Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. ...</div><div class="ttdef"><b>Definition:</b> character.h:24</div></div>
-<div class="ttc" id="class_character_html_aacbdc7590f8a9f6b295117a9675e2ab5"><div class="ttname"><a href="class_character.html#aacbdc7590f8a9f6b295117a9675e2ab5">Character::reduceLife</a></div><div class="ttdeci">void reduceLife(int redu)</div><div class="ttdoc">Verringert das Leben des Charakteres. </div><div class="ttdef"><b>Definition:</b> character.cpp:164</div></div>
-<div class="ttc" id="class_character_html_a8cfbb3e6ea62013a74f7b837054ee03f"><div class="ttname"><a href="class_character.html#a8cfbb3e6ea62013a74f7b837054ee03f">Character::setCrouch</a></div><div class="ttdeci">void setCrouch(bool value)</div><div class="ttdoc">Signalisiert das der Charakter sich duckt oder sich nicht duckt. </div><div class="ttdef"><b>Definition:</b> character.cpp:204</div></div>
-<div class="ttc" id="class_character_html_a2c4dcc76fbba8481fba7e175378a4cd0"><div class="ttname"><a href="class_character.html#a2c4dcc76fbba8481fba7e175378a4cd0">Character::getName</a></div><div class="ttdeci">QString getName()</div><div class="ttdoc">Gibt den Namen des aktuellen Charakteres zurück. </div><div class="ttdef"><b>Definition:</b> character.cpp:297</div></div>
-<div class="ttc" id="class_character_html_a6a3f9b96fd22d73660f458e52a2e04ba"><div class="ttname"><a href="class_character.html#a6a3f9b96fd22d73660f458e52a2e04ba">Character::setLife</a></div><div class="ttdeci">void setLife(int value)</div><div class="ttdoc">Setzt das Leben eines Charakteres. </div><div class="ttdef"><b>Definition:</b> character.cpp:160</div></div>
+<div class="ttc" id="class_sprite_html"><div class="ttname"><a href="class_sprite.html">Sprite</a></div><div class="ttdoc">Sprite Klasse für die Bilder. </div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00012">sprite.h:12</a></div></div>
+<div class="ttc" id="class_character_html_a374c40a183c8c1795b10004a07b36fd7"><div class="ttname"><a href="class_character.html#a374c40a183c8c1795b10004a07b36fd7">Character::setStunned</a></div><div class="ttdeci">void setStunned(bool value)</div><div class="ttdoc">Setzt den Charakter auf stunned oder nicht. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00173">character.cpp:173</a></div></div>
+<div class="ttc" id="class_character_html_a28c072ac846a33336cc7c5fb869c4cd8"><div class="ttname"><a href="class_character.html#a28c072ac846a33336cc7c5fb869c4cd8">Character::getY</a></div><div class="ttdeci">int getY()</div><div class="ttdoc">Gibt den aktuellen Y-Wert zurück den der Charakter hat. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00152">character.cpp:152</a></div></div>
+<div class="ttc" id="class_character_html_abd97793fd7945f52850018713e7726e3"><div class="ttname"><a href="class_character.html#abd97793fd7945f52850018713e7726e3">Character::getIcon</a></div><div class="ttdeci">QImage getIcon()</div><div class="ttdoc">Gibt das Icon zurück als QImage welches den Charakter darstellt. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00293">character.cpp:293</a></div></div>
+<div class="ttc" id="class_character_html_a047f58799c51258670497cda68ca4b8c"><div class="ttname"><a href="class_character.html#a047f58799c51258670497cda68ca4b8c">Character::getMana</a></div><div class="ttdeci">int getMana()</div><div class="ttdoc">Gibt das aktuelle Mana des Charakteres zurück. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00177">character.cpp:177</a></div></div>
+<div class="ttc" id="class_character_html_a1e00eede43aa9b436b0cbd2127ab251a"><div class="ttname"><a href="class_character.html#a1e00eede43aa9b436b0cbd2127ab251a">Character::getLife</a></div><div class="ttdeci">int getLife()</div><div class="ttdoc">Gibt das aktuelle Leben des Charakteres zurück. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00156">character.cpp:156</a></div></div>
+<div class="ttc" id="class_character_html_a2257c559f50f1e78eea8d49dbe12af49"><div class="ttname"><a href="class_character.html#a2257c559f50f1e78eea8d49dbe12af49">Character::jumpUp</a></div><div class="ttdeci">void jumpUp()</div><div class="ttdoc">Signalisiert das der Charakter springt. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00220">character.cpp:220</a></div></div>
+<div class="ttc" id="class_character_html"><div class="ttname"><a href="class_character.html">Character</a></div><div class="ttdoc">Character Klasse ist für die Darstellung und Bewegungen der Charaktere zuständig. ...</div><div class="ttdef"><b>Definition:</b> <a href="character_8h_source.html#l00024">character.h:24</a></div></div>
+<div class="ttc" id="class_character_html_aacbdc7590f8a9f6b295117a9675e2ab5"><div class="ttname"><a href="class_character.html#aacbdc7590f8a9f6b295117a9675e2ab5">Character::reduceLife</a></div><div class="ttdeci">void reduceLife(int redu)</div><div class="ttdoc">Verringert das Leben des Charakteres. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00164">character.cpp:164</a></div></div>
+<div class="ttc" id="class_character_html_a8cfbb3e6ea62013a74f7b837054ee03f"><div class="ttname"><a href="class_character.html#a8cfbb3e6ea62013a74f7b837054ee03f">Character::setCrouch</a></div><div class="ttdeci">void setCrouch(bool value)</div><div class="ttdoc">Signalisiert das der Charakter sich duckt oder sich nicht duckt. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00204">character.cpp:204</a></div></div>
+<div class="ttc" id="class_character_html_a2c4dcc76fbba8481fba7e175378a4cd0"><div class="ttname"><a href="class_character.html#a2c4dcc76fbba8481fba7e175378a4cd0">Character::getName</a></div><div class="ttdeci">QString getName()</div><div class="ttdoc">Gibt den Namen des aktuellen Charakteres zurück. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00297">character.cpp:297</a></div></div>
+<div class="ttc" id="class_character_html_a6a3f9b96fd22d73660f458e52a2e04ba"><div class="ttname"><a href="class_character.html#a6a3f9b96fd22d73660f458e52a2e04ba">Character::setLife</a></div><div class="ttdeci">void setLife(int value)</div><div class="ttdoc">Setzt das Leben eines Charakteres. </div><div class="ttdef"><b>Definition:</b> <a href="character_8cpp_source.html#l00160">character.cpp:160</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 15 2015 19:30:21 for Fighterino by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>character.h</b></li>
+    <li class="footer">Generated on Thu Jan 15 2015 19:47:16 for Version by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

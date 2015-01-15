@@ -1,0 +1,17 @@
+digraph "Draw::keyPressEvent"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Draw::keyPressEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Character::punch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a5745dbf38bf7b408f254408f898a2e46",tooltip="Signalisiert das der Charakter zuschlägt. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Character::moveRight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a732ddad97c8e4b271aac67ba1d7d3c98",tooltip="Signalisiert das der Charakter nach rechts läuft oder nicht. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Character::moveLeft",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#adcc18bee13545c734c695dee06a9f094",tooltip="Signalisiert das der Charakter nach links läuft oder nicht. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Character::setCrouch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a8cfbb3e6ea62013a74f7b837054ee03f",tooltip="Signalisiert das der Charakter sich duckt oder sich nicht duckt. "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Character::jumpUp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_character.html#a2257c559f50f1e78eea8d49dbe12af49",tooltip="Signalisiert das der Charakter springt. "];
+}

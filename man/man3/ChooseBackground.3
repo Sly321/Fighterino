@@ -1,0 +1,151 @@
+.TH "ChooseBackground" 3 "Thu Jan 15 2015" "Version 9.9" "Version" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChooseBackground \- chooseBackground Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hintergrund für sein Spiel auswählen kann\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <choosebackground\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBselectedLeft\fP ()"
+.br
+.RI "\fIWird angetriggert wenn das linke Icon selektiert wurde\&. \fP"
+.ti -1c
+.RI "void \fBselectedMid\fP ()"
+.br
+.RI "\fIWird angetriggert wenn das mittige Icon selektiert wurde\&. \fP"
+.ti -1c
+.RI "void \fBselectedRight\fP ()"
+.br
+.RI "\fIWird angetriggert wenn das rechte Icon selektiert wurde\&. \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetCurrent\fP (int)"
+.br
+.RI "\fISignalisiert der Main das ein anderes Widget angezeigt werden soll\&. \fP"
+.ti -1c
+.RI "void \fBsetBackground\fP (int)"
+.br
+.RI "\fISignalisiert der Main das ein background ausgewählt wurde\&. \fP"
+.ti -1c
+.RI "void \fBright\fP ()"
+.br
+.RI "\fISignalisiert das der Anweder nach rechts gegangen ist\&. \fP"
+.ti -1c
+.RI "void \fBleft\fP ()"
+.br
+.RI "\fISignalisiert das der Anweder nach links gegangen ist\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChooseBackground\fP (QWidget *parent=0)"
+.br
+.RI "\fIContructor der chooseBackground Klasse\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpaintEvent\fP (QPaintEvent *e)"
+.br
+.RI "\fIZeichnet Elemente für die Klasse\&. \fP"
+.ti -1c
+.RI "void \fBkeyPressEvent\fP (QKeyEvent *e)"
+.br
+.RI "\fIRegistriert die Tastenschläge des Benutzers\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+chooseBackground Klasse symbolisiert ein Auswahlwidget in welchem der Benutzer einen Hintergrund für sein Spiel auswählen kann\&. 
+.PP
+Definition at line 10 of file choosebackground\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ChooseBackground::ChooseBackground (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Contructor der chooseBackground Klasse\&. \fBChooseBackground\fP Erstellt die nötigen Image dateien und initialisiert die Einstellungen für das Auswahlmenü\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP Das parent Widget falls vorhanden\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file choosebackground\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ChooseBackground::keyPressEvent (QKeyEvent * e)\fC [protected]\fP"
+
+.PP
+Registriert die Tastenschläge des Benutzers\&. keyPressEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Die Taste welche gedrückt wird\&. 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file choosebackground\&.cpp\&.
+.SS "void ChooseBackground::left ()\fC [signal]\fP"
+
+.PP
+Signalisiert das der Anweder nach links gegangen ist\&. left 
+.SS "void ChooseBackground::paintEvent (QPaintEvent * e)\fC [protected]\fP"
+
+.PP
+Zeichnet Elemente für die Klasse\&. paintEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP Das paintEvent\&. 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file choosebackground\&.cpp\&.
+.SS "void ChooseBackground::right ()\fC [signal]\fP"
+
+.PP
+Signalisiert das der Anweder nach rechts gegangen ist\&. right 
+.SS "void ChooseBackground::setBackground (int)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein background ausgewählt wurde\&. setBackground 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDer\fP background der ausgewählt wurde\&. 
+.RE
+.PP
+
+.SS "void ChooseBackground::setCurrent (int)\fC [signal]\fP"
+
+.PP
+Signalisiert der Main das ein anderes Widget angezeigt werden soll\&. setCurrent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDas\fP Widget welches angezeigt werden soll\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Version from the source code\&.
